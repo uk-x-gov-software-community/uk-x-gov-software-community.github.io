@@ -10,7 +10,7 @@
 <html lang="en" class="govuk-template">
 {% set themeColor = "blue" %}
 {% set bodyClasses = "no-js" %}
-
+{% set serviceName = "Cross Governemnt Software Community"%}
 {% set containerClasses = "govuk-width-container" %}
 <head>
   <meta charset="utf-8">
@@ -78,47 +78,37 @@
   {{ govukHeader({
     homepageUrl: "#",
     containerClasses: "govuk-width-container",
-    serviceName: "Service name",
+    serviceName: serviceName,
     serviceUrl: "#",
     navigation: [
       {
         href: "#1",
-        text: "Navigation item 1",
+        text: "About",
         active: true
       },
       {
         href: "#2",
-        text: "Navigation item 2"
+        text: "Events"
       },
       {
         href: "#3",
-        text: "Navigation item 3"
+        text: "Blog"
       }
     ]
   }) }}
 {% endblock %}
 <div class="govuk-width-container govuk-body">
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "alpha"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
   {{ govukBackLink({
     href: "#",
     text: "Back"
   }) }}
 {% endblock %}
-
 {% block content %}
- 
         <main class="govuk-main-wrapper " id="main-content" role="main">
           {{ heading | safe }}
           {{ content | safe }}
         </main>
- 
-  
 {% endblock %}
  </div>
 {% block footer %}
