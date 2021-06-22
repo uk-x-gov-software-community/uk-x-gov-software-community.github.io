@@ -3,7 +3,7 @@ name: build
 on: 
   push:
     branches:
-      - master
+      - feature/first-draft-site
 jobs:
   deploy:
     runs-on: ubuntu-latest
