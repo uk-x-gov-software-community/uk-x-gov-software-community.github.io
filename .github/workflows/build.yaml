@@ -1,9 +1,9 @@
 name: build
  
 on: 
-  push:
+  merge:
     branches:
-      - feature/first-draft-site
+      - master
 jobs:
   deploy:
     runs-on: ubuntu-latest
