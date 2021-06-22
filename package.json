@@ -4,7 +4,6 @@
   "description": "Site for UK Cross Government Software Development Group ",
   "main": ".eleventy.js",
   "dependencies": {
-    "@dvsa/cookie-manager": "github:dvsa/cookie-manager",
     "govuk-frontend": "^3.12.0"
   },
   "devDependencies": {
