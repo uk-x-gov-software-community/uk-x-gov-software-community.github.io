@@ -19,7 +19,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        env:
-          PUBLISH_DIR: _site 
-          PUBLISH_BRANCH: main
+          publish_dir:  _site 
+          publish_branch: gh-pages
+        
          
