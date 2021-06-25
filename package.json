@@ -1,0 +1,37 @@
+{
+  "name": "x-gov-software",
+  "version": "1.0.0",
+  "description": "Site for UK Cross Government Software Development Group ",
+  "main": ".eleventy.js",
+  "dependencies": {
+    "govuk-frontend": "^3.12.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build && eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uk-x-gov-software-community/about.git"
+  },
+  "keywords": [
+    "government",
+    "uk",
+    "software",
+    "development"
+  ],
+  "authors": [
+    "shaun.hare@dvsa.gov.uk"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uk-x-gov-software-community/about/issues"
+  },
+  "homepage": "https://github.com/uk-x-gov-software-community/about#readme"
+}
