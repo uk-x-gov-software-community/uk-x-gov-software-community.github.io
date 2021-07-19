@@ -2,12 +2,31 @@
 layout: layout.njk
 title: About
 ---
-# Cross Government Software Community 
+# Welcome to the Cross Government Software Community 
 
-About the community ...
+## Who are we
+We are a group of engineers working in software engineering across government, some of us are hands on developers, others working in other technical or management roles.
+## Vision
+To provide a forum for collaboration for software engineers across government
+*	To learn and to teach
+*	To share ideas
+*	To have some fun
 
-TECH IPSUM ready for Andy to help with content
+## How are we doing this
+*	Running monthly virtual lean coffee sessions 
+*	Developing our GitHub repo
+*	Looking to run more themed events 
+*	Hosting a virtual software engineering meetup in 2022
+*	We have a small facilitation group that is doing some of the initial setup
 
-Disruptive scrum project business model canvas user experience churn rate founders. Hackathon supply chain assets network effects user experience. Release partnership investor business-to-business stealth hypotheses ramen user experience traction. IPad client niche market churn rate seed money stock agile development investor virality pitch return on investment. Supply chain beta graphical user interface conversion business-to-business churn rate funding crowdsource direct mailing bandwidth. Holy grail metrics market virality supply chain niche market startup pitch infrastructure responsive web design business plan first mover advantage crowdfunding. IPad paradigm shift sales assets influencer direct mailing creative business plan. Hypotheses lean startup non-disclosure agreement funding business-to-business investor customer focus backing supply chain series A financing. User experience twitter supply chain rockstar. Infrastructure low hanging fruit influencer focus graphical user interface monetization android advisor disruptive pivot seed round traction mass market A/B testing.
+## We want you to be part of this - why not get involved?
+*	Signup to our [email mailing list on mail chimp](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) *Note* 
+You do need to signup with your gov email address to get added.
 
-More information on the group and mailing list 
+You will get a welcome email and will then be added onto our mailing list of events going forward.
+* Check out our [GitHub Repo](https://github.com/uk-x-gov-software-community/)
+* Check out our [Knowledge Hub Group and discussion forum](https://www.khub.net/group/cross-government-software-engineering-community)
+
+
+## Do you want to help facilitate the group ?
+Drop an email to Andy.Poole@ukho.gov.uk or david.heath@digital.cabinet-office.gov.uk and one of us can add you to the facilitators group
