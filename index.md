@@ -29,4 +29,4 @@ You will get a welcome email and will then be added onto our mailing list of eve
 
 
 ## Do you want to help facilitate the group ?
-Drop an email to Andy.Poole@ukho.gov.uk or david.heath@digital.cabinet-office.gov.uk and one of us can add you to the facilitators group
+Drop an email to [Andy Poole](mailto:Andy.Poole@ukho.gov.uk) or [David Heath](mailto:david.heath@digital.cabinet-office.gov.uk) and one of us can add you to the facilitators group
