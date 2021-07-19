@@ -20,8 +20,7 @@ To provide a forum for collaboration for software engineers across government
 *	We have a small facilitation group that is doing some of the initial setup
 
 ## We want you to be part of this - why not get involved?
-*	Signup to our [email mailing list on mail chimp](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) *Note* 
-You do need to signup with your gov email address to get added.
+*	Signup to our [email mailing list on mail chimp](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) - You'll need to signup with your gov email address
 
 You will get a welcome email and will then be added onto our mailing list of events going forward.
 * Check out our [GitHub Repo](https://github.com/uk-x-gov-software-community/)
