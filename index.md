@@ -2,7 +2,7 @@
 layout: layout.njk
 title: About
 ---
-# Welcome to the Cross Government Software Community 
+# Welcome to the Cross Government Software Engineering Community 
 
 ## Who are we
 We are a group of engineers working in software engineering across government, some of us are hands on developers, others working in other technical or management roles.
