@@ -36,37 +36,8 @@
 {% endblock %}
 </head>
 <body class="govuk-template__body">
-{% block bodyStart %}
-  {{ govukCookieBanner({
-    ariaLabel: "Cookies on [name of service]",
-    messages: [
-      {
-        headingText: "Cookies on [name of service]",
-        html: "<p>We use some essential cookies to make this service work.</p>
-               <p>We'd also like to use analytics cookies so we can understand how you use the service and make improvements.</p>",
-        actions: [
-          {
-            text: "Accept analytics cookies",
-            type: "button",
-            name: "cookies",
-            value: "accept"
-          },
-          {
-            text: "Reject analytics cookies",
-            type: "button",
-            name: "cookies",
-            value: "reject"
-          },
-          {
-            text: "View cookies",
-            href: "#"
-          }
-        ]
-      }
-    ]
-  }) }}
-{% endblock %}
-
+ 
+ 
 {% block skipLink %}
   {{ govukSkipLink({
     href: "#main-content",
@@ -82,27 +53,20 @@
     serviceUrl: "#",
     navigation: [
       {
-        href: "#1",
+        href: "/",
         text: "About",
         active: true
       },
       {
-        href: "#2",
-        text: "Events"
-      },
-      {
-        href: "#3",
-        text: "Blog"
+        href: "/resources",
+        text: "Resources"
       }
     ]
   }) }}
 {% endblock %}
 <div class="govuk-width-container govuk-body">
 {% block beforeContent %}
-  {{ govukBackLink({
-    href: "#",
-    text: "Back"
-  }) }}
+  
 {% endblock %}
 {% block content %}
         <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -116,20 +80,12 @@
     meta: {
       items: [
         {
-          href: "#1",
-          text: "Help"
+          href: "https://uk-cross-government-software-engineering-community.mailchimpsites.com/",
+          text: "Join the mailing list"
         },
         {
-          href: "#2",
-          text: "Cookies"
-        },
-        {
-          href: "#3",
-          text: "Contact"
-        },
-        {
-          href: "#4",
-          text: "Terms and conditions"
+          href: "/objectives",
+          text: "Objectives"
         }
       ]
     }
