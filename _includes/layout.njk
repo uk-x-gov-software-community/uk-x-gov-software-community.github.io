@@ -36,7 +36,7 @@
 {% endblock %}
 </head>
 <body class="govuk-template__body">
-{% block bodyStart %}
+ 
  
 {% block skipLink %}
   {{ govukSkipLink({
@@ -53,17 +53,13 @@
     serviceUrl: "#",
     navigation: [
       {
-        href: "#1",
+        href: "/",
         text: "About",
         active: true
       },
       {
-        href: "#2",
-        text: "Events"
-      },
-      {
-        href: "#3",
-        text: "Blog"
+        href: "/resources",
+        text: "Resources"
       }
     ]
   }) }}
@@ -84,16 +80,12 @@
     meta: {
       items: [
         {
-          href: "#1",
-          text: "Help"
-        },
-        {
-          href: "https://uk-cross-government-software-engineering-community.mailchimpsites.com",
+          href: "https://uk-cross-government-software-engineering-community.mailchimpsites.com/",
           text: "Join the mailing list"
         },
         {
-          href: "#4",
-          text: "Terms and conditions"
+          href: "/objectives",
+          text: "Objectives"
         }
       ]
     }
