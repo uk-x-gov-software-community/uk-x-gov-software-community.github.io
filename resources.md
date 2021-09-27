@@ -7,9 +7,11 @@ title: Resources
 ---
 
 ### Public civil service guidance and standards
-- <a href="https://gds-way.cloudapps.digital/">GDS Way</a>
-- <a href="https://github.com/UKHO/docs">UKHO</a>
-- <a href="https://github.com/DEFRA/software-development-standards">DEFRA</a>
-- <a href="https://ministryofjustice.github.io/technical-guidance/">MOJ</a>
-
+- [The GDS Way](https://gds-way.cloudapps.digital)
+- [UKHO](https://github.com/UKHO/docs)
+- [DEFRFA](https://github.com/DEFRA/software-development-standards)
+- [MOJ](https://ministryofjustice.github.io/technical-guidance/)
+- [Companies House](https://github.com/companieshouse/styleguides)
+- [Home Office](https://github.com/UKHomeOffice/technical-service-requirements)
+- [CDDO API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
 ---
