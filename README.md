@@ -62,7 +62,7 @@ If you've found a bug, check the open issues to see if it's already been reporte
 
 ## Testing
 
-Run the tests where needed, (at this time no functionality runnign that requires tests) but ensure you've run them before contributing any code and add tests if you're adding or extending any functionality.
+Run the tests where needed, (at this time no functionality is used that requires tests) but ensure you've run them before contributing any code and add tests if you're adding or extending any functionality.
 
 ## Submitting changes
 
