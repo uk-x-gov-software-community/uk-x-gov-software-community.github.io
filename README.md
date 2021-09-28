@@ -1,5 +1,4 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![MIT License][license-shield]][license-url]
+
 
 # Cross Government Software Engineering Community
 
