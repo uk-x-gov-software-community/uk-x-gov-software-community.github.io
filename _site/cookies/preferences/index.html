@@ -35,9 +35,76 @@
   <![endif]-->
 
 </head>
+
+<div id="cookie-banner-container">
+
+
+<div class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on the Cross Government Software Community site" id="cookie-banner">
+    
+    
+
+    <div class="govuk-cookie-banner__message govuk-width-container"
+    >
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+        <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on the Cross Government Software Community site</h2>
+        
+
+        <div class="govuk-cookie-banner__content">
+   <p class="govuk-body">We’d like to use analytics cookies so we can understand how you use the site and make improvements.</p>
+</div>
+      </div>
+    </div>
+
+      
+      <div class="govuk-button-group">
+        
+          
+            <button value="accept" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+              Accept analytics cookies
+            </button>
+          
+        
+          
+            <button value="reject" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+              Reject analytics cookies
+            </button>
+          
+        
+          
+            
+              
+              
+              <a class="govuk-link" href="/cookies">View cookies</a>
+            
+          
+        
+      </div>
+      
+    </div>
+  
+</div>
+
+</div>
+<div class="text govuk-visually-hidden theme__cookie-success-message-grey" id="cookie-preference-success">
+    <div class="govuk-width-container">
+        <div class="govuk-!-padding-top-5  success-message" aria-labelledby="cm_cookie_notification radio-analytics-on-label radio-analytics-off-label" role="alert" tabindex="-1">
+            <h3 class="govuk-heading-m">Your cookie settings were saved</h3>
+           <a class="govuk-link" href="/">Go to homepage</a></p>
+        </div>
+    </div>
+</div>
+<div class="govuk-visually-hidden theme__cookie-success-message-grey" id="accept-all-cookies-success">
+        <div class="govuk-width-container">
+            <div class="govuk-!-padding-top-5 govuk-!-padding-bottom-7">
+                <span class="govuk-body"  >You’ve accepted all cookies. You can <a href="/cookie-preferences">change your cookie settings</a> at any time.</span>
+                <span id="cookie-accept-all-success-banner-hide" class="govuk-body u-float-right"><a href="#hide">Hide</a></span>
+            </div>
+    </div>
+</div>
 <body class="govuk-template__body">
- 
- 
 
   <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
 
@@ -127,7 +194,73 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
           
-          
+          <script type="text/javascript">
+    document.getElementById('cookie-accept-all-success-banner-hide').onclick = function(){
+        document.getElementById('accept-all-cookies-success').classList.add('govuk-visually-hidden');
+    };
+</script>
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Cookies for the Cross government Software Community site.</h1>
+        <p class="govuk-body">Cookies are files saved on your phone, tablet or computer when you visit a website.</p>
+        <p class="govuk-body">We use cookies to store information about how you use this service, such as the pages you visit.</p>
+ <div class="js-show">
+    <h2 class="govuk-heading-l">Cookie settings</h2>
+    <p class="govuk-body">We use 2 types of cookie. You can choose which cookies you're happy for us to use.</p>
+    <form id="cookie-manager-form">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="hint-ga">
+                <legend class="govuk-fieldset__legend--m">Cookies that measure website use</legend>
+                <div id="hint-ga" class="u-margin-top-10 u-margin-bottom-30">
+                    <p class="govuk-body">
+                        We use Google Analytics software to collect information about how you use the Check MOT history.
+                        We do this to help make sure the site is meeting the needs of its users and to help us make improvements.
+                    </p>
+                    <p class="govuk-body">Google Analytics stores information about:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>the pages you visit on the find a HVT service</li>
+                        <li>how long you spend on each page</li>
+                        <li>how you got to the site</li>
+                        <li>what you click on while you're visiting the site</li>
+                    </ul>
+                    <p class="govuk-body">Google does not collect or store your personal information, for example your name or address,
+                        so this information can't be used to identify who you are. We don't allow Google to use or share our analytics data.</p>
+                </div>
+                <div class="govuk-radios govuk-radios--inline u-margin-top-30">
+                    <div class="govuk-radios__item">
+                        <input type="radio" name="analytics" id="radio-analytics-on" value="on" class="govuk-radios__input" >
+                        <label for="radio-analytics-on" class="govuk-label govuk-radios__label" id="radio-analytics-on-label">
+                            <span>On</span>
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input type="radio" name="analytics" id="radio-analytics-off" value="off" class="govuk-radios__input" checked="checked">
+                        <label for="radio-analytics-off" class="govuk-label govuk-radios__label" id="radio-analytics-off-label">
+                            <span>Off</span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+        <p class="govuk-body">The site uses cookies for remembering your analytics choice.</p>
+        <p class="govuk-body">They always need to be on.</p>
+        <p class="govuk-body"><a href="/cookies">Find out more about cookies Used</a></p>
+        <button class="govuk-button" type="submit" id="save-cookie-preferences">Save changes</button>
+    </form>
+</div>
+<noscript>
+    <div class="js-hidden text">
+        <h2 class="govuk-heading-l">Your browser does not support JavaScript</h2>
+        <p class="govuk-body">We use Javascript to set most of our cookies. Unfortunately Javascript is not running on your browser, so you cannot change your settings. You can try:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>reloading the page</li>
+            <li>turning on Javascript in your browser</li>
+        </ul>
+    </div>
+</noscript>
+</div>
+</div>
         </main>
 
  </div>
@@ -196,6 +329,50 @@
 
   <script src="/assets/all-min.js"></script>
   <script>window.GOVUKFrontend.initAll()</script>
+  <script src="/assets/cookie-manager-min.js"></script>
+
+  <script>
+  var configuration_object = {
+            "delete-undefined-cookies": true,
+            "user-preference-cookie-name": "cm-user-preferences",
+            "user-preference-cookie-secure": false,
+            "user-preference-saved-callback" : function () {
+                document.getElementById('cookie-preference-success').classList.remove('govuk-visually-hidden');
+                window.scrollTo(0,0);
+            } ,
+            "user-preference-cookie-expiry-days": 365,
+            "user-preference-configuration-form-id": "cookie-manager-form",
+            "cookie-banner-id": "cookie-banner-container",
+            "cookie-banner-visibility-class": "govuk-visually-hidden",
+            "cookie-banner-visible-on-page-with-preference-form": false,
+            "cookie-banner-saved-callback": function () {
+                document.getElementById('accept-all-cookies-success').classList.remove('govuk-visually-hidden');
+                var hide = document.getElementById("accept-all-cookies-success");
+                hide.addEventListener("click",hide.classList.add('govuk-visually-hidden') , false)
+            },
+            "set-checkboxes-in-preference-form": true,
+            "cookie-manifest": [
+                {
+                    "category-name": "essential",
+                    "optional": false,
+                    "cookies": [
+                        "cm-user-preferences"
+                    ]
+                },
+                {
+                    "category-name": "analytics",
+                    "optional": true,
+                    "cookies": [
+                        "_ga",
+                        "_gat",
+                        "_gid"
+                    ]
+                }
+            ]};
+  cookieManager.init(configuration_object);
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3PQ58K3S0"></script>
+  <script src="/assets/main.js"></script>
 
 </body>
 </html>

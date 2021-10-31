@@ -35,9 +35,8 @@
   <![endif]-->
 {% endblock %}
 </head>
+{% include "_cookie_banner.njk" %}
 <body class="govuk-template__body">
- 
- 
 {% block skipLink %}
   {{ govukSkipLink({
     href: "#main-content",
@@ -95,6 +94,50 @@
 {% block bodyEnd %}
   <script src="/assets/all-min.js"></script>
   <script>window.GOVUKFrontend.initAll()</script>
+  <script src="/assets/cookie-manager-min.js"></script>
+
+  <script>
+  var configuration_object = {
+            "delete-undefined-cookies": true,
+            "user-preference-cookie-name": "cm-user-preferences",
+            "user-preference-cookie-secure": false,
+            "user-preference-saved-callback" : function () {
+                document.getElementById('cookie-preference-success').classList.remove('govuk-visually-hidden');
+                window.scrollTo(0,0);
+            } ,
+            "user-preference-cookie-expiry-days": 365,
+            "user-preference-configuration-form-id": "cookie-manager-form",
+            "cookie-banner-id": "cookie-banner-container",
+            "cookie-banner-visibility-class": "govuk-visually-hidden",
+            "cookie-banner-visible-on-page-with-preference-form": false,
+            "cookie-banner-saved-callback": function () {
+                document.getElementById('accept-all-cookies-success').classList.remove('govuk-visually-hidden');
+                var hide = document.getElementById("accept-all-cookies-success");
+                hide.addEventListener("click",hide.classList.add('govuk-visually-hidden') , false)
+            },
+            "set-checkboxes-in-preference-form": true,
+            "cookie-manifest": [
+                {
+                    "category-name": "essential",
+                    "optional": false,
+                    "cookies": [
+                        "cm-user-preferences"
+                    ]
+                },
+                {
+                    "category-name": "analytics",
+                    "optional": true,
+                    "cookies": [
+                        "_ga",
+                        "_gat",
+                        "_gid"
+                    ]
+                }
+            ]};
+  cookieManager.init(configuration_object);
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3PQ58K3S0"></script>
+  <script src="/assets/main.js"></script>
 {% endblock %}
 </body>
 </html>
