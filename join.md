@@ -35,7 +35,7 @@ title: Join
 	<input type="text" value="" name="JOBTITLE" class="govuk-input" id="mce-JOBTITLE">
 </div>
 <div class="mc-field-group govuk-form-group">
-	<label for="mce-GITHUBID" class="govuk-label govuk-label--m">Github User ID </label>
+	<label for="mce-GITHUBID" class="govuk-label govuk-label--m">GitHub User ID </label>
 	<input type="text" value="" name="GITHUBID" class="govuk-input" id="mce-GITHUBID">
 </div>
 	<div id="mce-responses" class="clear">
