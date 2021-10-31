@@ -2,3 +2,7 @@
 .asterisk {
     color: $govuk-error-colour;
 }
+div.mce_inline_error{
+    color: $govuk-error-colour !important;
+    background-color: white !important;
+}

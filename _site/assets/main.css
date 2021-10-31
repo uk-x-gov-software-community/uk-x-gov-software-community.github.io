@@ -4981,3 +4981,7 @@
 
 .asterisk {
   color: #d4351c; }
+
+div.mce_inline_error {
+  color: #d4351c !important;
+  background-color: white !important; }
