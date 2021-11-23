@@ -17,7 +17,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
    <meta name="theme-color" content="blue"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Resources</title>
+  <title>Cookie Preferences</title>
 
   <!--[if !IE 8]><!-->
     <link href="/assets/main.css" rel="stylesheet">
@@ -206,20 +206,73 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
           
-          <h1>A list of x-gov software resources</h1>
-<hr>
-<h3>Public civil service guidance and standards</h3>
-<ul>
-<li><a href="https://gds-way.cloudapps.digital">The GDS Way</a></li>
-<li><a href="https://github.com/UKHO/docs">UKHO</a></li>
-<li><a href="https://github.com/DEFRA/software-development-standards">DEFRA</a></li>
-<li><a href="https://ministryofjustice.github.io/technical-guidance/">MOJ</a></li>
-<li><a href="https://github.com/companieshouse/styleguides">Companies House</a></li>
-<li><a href="https://github.com/UKHomeOffice/technical-service-requirements">Home Office</a></li>
-<li><a href="https://www.gov.uk/guidance/gds-api-technical-and-data-standards">CDDO API technical and data standards</a></li>
-</ul>
-<hr>
-
+          <script type="text/javascript">
+    document.getElementById('cookie-accept-all-success-banner-hide').onclick = function(){
+        document.getElementById('accept-all-cookies-success').classList.add('govuk-visually-hidden');
+    };
+</script>
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Cookies for the Cross government Software Community site.</h1>
+        <p class="govuk-body">Cookies are files saved on your phone, tablet or computer when you visit a website.</p>
+        <p class="govuk-body">We use cookies to store information about how you use this service, such as the pages you visit.</p>
+ <div class="js-show">
+    <h2 class="govuk-heading-l">Cookie settings</h2>
+    <p class="govuk-body">We use 2 types of cookie. You can choose which cookies you're happy for us to use.</p>
+    <form id="cookie-manager-form">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="hint-ga">
+                <legend class="govuk-fieldset__legend--m">Cookies that measure website use</legend>
+                <div id="hint-ga" class="u-margin-top-10 u-margin-bottom-30">
+                    <p class="govuk-body">
+                        We use Google Analytics software to collect information about how you use the Check MOT history.
+                        We do this to help make sure the site is meeting the needs of its users and to help us make improvements.
+                    </p>
+                    <p class="govuk-body">Google Analytics stores information about:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>the pages you visit on the find a HVT service</li>
+                        <li>how long you spend on each page</li>
+                        <li>how you got to the site</li>
+                        <li>what you click on while you're visiting the site</li>
+                    </ul>
+                    <p class="govuk-body">Google does not collect or store your personal information, for example your name or address,
+                        so this information can't be used to identify who you are. We don't allow Google to use or share our analytics data.</p>
+                </div>
+                <div class="govuk-radios govuk-radios--inline u-margin-top-30">
+                    <div class="govuk-radios__item">
+                        <input type="radio" name="analytics" id="radio-analytics-on" value="on" class="govuk-radios__input" >
+                        <label for="radio-analytics-on" class="govuk-label govuk-radios__label" id="radio-analytics-on-label">
+                            <span>On</span>
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input type="radio" name="analytics" id="radio-analytics-off" value="off" class="govuk-radios__input" checked="checked">
+                        <label for="radio-analytics-off" class="govuk-label govuk-radios__label" id="radio-analytics-off-label">
+                            <span>Off</span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+        <p class="govuk-body">The site uses cookies for remembering your analytics choice.</p>
+        <p class="govuk-body">They always need to be on.</p>
+        <p class="govuk-body"><a href="/cookies">Find out more about cookies Used</a></p>
+        <button class="govuk-button" type="submit" id="save-cookie-preferences">Save changes</button>
+    </form>
+</div>
+<noscript>
+    <div class="js-hidden text">
+        <h2 class="govuk-heading-l">Your browser does not support JavaScript</h2>
+        <p class="govuk-body">We use Javascript to set most of our cookies. Unfortunately Javascript is not running on your browser, so you cannot change your settings. You can try:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>reloading the page</li>
+            <li>turning on Javascript in your browser</li>
+        </ul>
+    </div>
+</noscript>
+</div>
+</div>
         </main>
 
  </div>
