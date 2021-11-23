@@ -35,9 +35,76 @@
   <![endif]-->
 
 </head>
+
+<div id="cookie-banner-container">
+
+
+<div class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on the Cross Government Software Community site" id="cookie-banner">
+    
+    
+
+    <div class="govuk-cookie-banner__message govuk-width-container"
+    >
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+        <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on the Cross Government Software Community site</h2>
+        
+
+        <div class="govuk-cookie-banner__content">
+   <p class="govuk-body">We’d like to use analytics cookies so we can understand how you use the site and make improvements.</p>
+</div>
+      </div>
+    </div>
+
+      
+      <div class="govuk-button-group">
+        
+          
+            <button value="accept" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+              Accept analytics cookies
+            </button>
+          
+        
+          
+            <button value="reject" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+              Reject analytics cookies
+            </button>
+          
+        
+          
+            
+              
+              
+              <a class="govuk-link" href="/cookies">View cookies</a>
+            
+          
+        
+      </div>
+      
+    </div>
+  
+</div>
+
+</div>
+<div class="text govuk-visually-hidden theme__cookie-success-message-grey" id="cookie-preference-success">
+    <div class="govuk-width-container">
+        <div class="govuk-!-padding-top-5  success-message" aria-labelledby="cm_cookie_notification radio-analytics-on-label radio-analytics-off-label" role="alert" tabindex="-1">
+            <h3 class="govuk-heading-m">Your cookie settings were saved</h3>
+           <a class="govuk-link" href="/">Go to homepage</a></p>
+        </div>
+    </div>
+</div>
+<div class="govuk-visually-hidden theme__cookie-success-message-grey" id="accept-all-cookies-success">
+        <div class="govuk-width-container">
+            <div class="govuk-!-padding-top-5 govuk-!-padding-bottom-7">
+                <span class="govuk-body"  >You’ve accepted all cookies. You can <a href="/cookie-preferences">change your cookie settings</a> at any time.</span>
+                <span id="cookie-accept-all-success-banner-hide" class="govuk-body u-float-right"><a href="#hide">Hide</a></span>
+            </div>
+    </div>
+</div>
 <body class="govuk-template__body">
- 
- 
 
   <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
 
@@ -157,17 +224,22 @@
 <li>Hosting a virtual software engineering meetup in 2022</li>
 <li>We have a small facilitation group that is doing some of the initial setup</li>
 </ul>
+<h2>Do you want to help facilitate the group ?</h2>
+<p>Drop an email to <a href="mailto:Andy.Poole@ukho.gov.uk">Andy Poole</a> or <a href="mailto:david.heath@digital.cabinet-office.gov.uk">David Heath</a> and one of us can add you to the facilitators group</p>
 <h2>We want you to be part of this - why not get involved?</h2>
 <ul>
-<li>Signup to our <a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/">email mailing list on mail chimp</a> - You'll need to signup with your gov email address</li>
-</ul>
-<p>You will get a welcome email and will then be added onto our mailing list of events going forward.</p>
-<ul>
+<li>Signup to our <a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/">email mailing list on mail chimp</a> - You'll need to signup with your gov email address - just sign up below.
+You will get a welcome email and will then be added onto our mailing list of events going forward.</li>
 <li>Check out our <a href="https://github.com/uk-x-gov-software-community/">GitHub Repo</a></li>
 <li>Check out our <a href="https://www.khub.net/group/cross-government-software-engineering-community">Knowledge Hub Group and discussion forum</a></li>
 </ul>
-<h2>Do you want to help facilitate the group ?</h2>
-<p>Drop an email to <a href="mailto:Andy.Poole@ukho.gov.uk">Andy Poole</a> or <a href="mailto:david.heath@digital.cabinet-office.gov.uk">David Heath</a> and one of us can add you to the facilitators group</p>
+<hr />
+<a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Join Mailing List 
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg>
+</a>
 
         </main>
 
@@ -243,6 +315,50 @@
 
   <script src="/assets/all-min.js"></script>
   <script>window.GOVUKFrontend.initAll()</script>
+  <script src="/assets/cookie-manager-min.js"></script>
+
+  <script>
+  var configuration_object = {
+            "delete-undefined-cookies": true,
+            "user-preference-cookie-name": "cm-user-preferences",
+            "user-preference-cookie-secure": false,
+            "user-preference-saved-callback" : function () {
+                document.getElementById('cookie-preference-success').classList.remove('govuk-visually-hidden');
+                window.scrollTo(0,0);
+            } ,
+            "user-preference-cookie-expiry-days": 365,
+            "user-preference-configuration-form-id": "cookie-manager-form",
+            "cookie-banner-id": "cookie-banner-container",
+            "cookie-banner-visibility-class": "govuk-visually-hidden",
+            "cookie-banner-visible-on-page-with-preference-form": false,
+            "cookie-banner-saved-callback": function () {
+                document.getElementById('accept-all-cookies-success').classList.remove('govuk-visually-hidden');
+                var hide = document.getElementById("accept-all-cookies-success");
+                hide.addEventListener("click",hide.classList.add('govuk-visually-hidden') , false)
+            },
+            "set-checkboxes-in-preference-form": true,
+            "cookie-manifest": [
+                {
+                    "category-name": "essential",
+                    "optional": false,
+                    "cookies": [
+                        "cm-user-preferences"
+                    ]
+                },
+                {
+                    "category-name": "analytics",
+                    "optional": true,
+                    "cookies": [
+                        "_ga",
+                        "_gat",
+                        "_gid"
+                    ]
+                }
+            ]};
+  cookieManager.init(configuration_object);
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3PQ58K3S0"></script>
+  <script src="/assets/main.js"></script>
 
 </body>
 </html>

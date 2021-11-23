@@ -19,13 +19,20 @@ To provide a forum for collaboration for software engineers across government
 *	Hosting a virtual software engineering meetup in 2022
 *	We have a small facilitation group that is doing some of the initial setup
 
-## We want you to be part of this - why not get involved?
-*	Signup to our [email mailing list on mail chimp](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) - You'll need to signup with your gov email address
+## Do you want to help facilitate the group ?
+Drop an email to [Andy Poole](mailto:Andy.Poole@ukho.gov.uk) or [David Heath](mailto:david.heath@digital.cabinet-office.gov.uk) and one of us can add you to the facilitators group
 
+## We want you to be part of this - why not get involved?
+*	Signup to our [email mailing list on mail chimp](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) - You'll need to signup with your gov email address - just sign up below.
 You will get a welcome email and will then be added onto our mailing list of events going forward.
 * Check out our [GitHub Repo](https://github.com/uk-x-gov-software-community/)
 * Check out our [Knowledge Hub Group and discussion forum](https://www.khub.net/group/cross-government-software-engineering-community)
 
 
-## Do you want to help facilitate the group ?
-Drop an email to [Andy Poole](mailto:Andy.Poole@ukho.gov.uk) or [David Heath](mailto:david.heath@digital.cabinet-office.gov.uk) and one of us can add you to the facilitators group
+<hr />
+<a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Join Mailing List 
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg>
+</a>
