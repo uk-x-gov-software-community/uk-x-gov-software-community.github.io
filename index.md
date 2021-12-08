@@ -26,7 +26,7 @@ Drop an email to [Andy Poole](mailto:Andy.Poole@ukho.gov.uk) or [David Heath](ma
 *	Signup to our [email mailing list on mail chimp](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) - You'll need to signup with your gov email address - just sign up below.
 You will get a welcome email and will then be added onto our mailing list of events going forward.
 * Check out our [GitHub Repo](https://github.com/uk-x-gov-software-community/)
-* Check out our [Knowledge Hub Group and discussion forum](https://www.khub.net/group/cross-government-software-engineering-community)
+* Check out our [Discussions](https://github.com/uk-x-gov-software-community/community-space/discussions)
 
 
 <hr />
