@@ -5,10 +5,12 @@ title: Objectives
 
 # Upcoming Events 
 
-* Our next meetup / Lean Coffee / Lightning talk event will be announced soon.
-* Our next facilitators meeting will be the 23rd of November 2021.
+* Our next meetup / Lean Coffee / Lightning talk event will be 16th of December 2021.
+
 
 # Past Events
+
+* Our last facilitators meeting will be the 23rd of November 2021. Notes for members can be found on github.
 
 We held lightning talks on Thursday 28 October
 With the following talks 
