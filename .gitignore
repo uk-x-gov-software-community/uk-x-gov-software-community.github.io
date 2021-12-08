@@ -104,3 +104,7 @@ dist
 .tern-port
 # vulnerability checks
 .snyk
+
+# Eleventy build output
+_site
+
