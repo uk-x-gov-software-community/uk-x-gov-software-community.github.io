@@ -10,6 +10,7 @@ title: Resources
 - [The GDS Way](https://gds-way.cloudapps.digital)
 - [UKHO](https://github.com/UKHO/docs)
 - [DEFRA](https://github.com/DEFRA/software-development-standards)
+- [DfE](https://technical-guidance.education.gov.uk)
 - [MOJ](https://ministryofjustice.github.io/technical-guidance/)
 - [Companies House](https://github.com/companieshouse/styleguides)
 - [Home Office](https://github.com/UKHomeOffice/technical-service-requirements)
