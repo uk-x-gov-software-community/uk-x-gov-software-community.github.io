@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build
-        uses: TartanLlama/actions-eleventy@v1.2
+        uses: TartanLlama/actions-eleventy@v1.3
         with:
           install_dependencies: true
       - name: Deploy
