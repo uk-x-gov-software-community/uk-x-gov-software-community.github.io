@@ -1,6 +1,10 @@
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPassthroughCopy('assets')
-    return {
-      passthroughFileCopy: true
-    }
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: false,
+    strictFilters: false,
+  });
+  eleventyConfig.addPassthroughCopy('assets')
+  return {
+    passthroughFileCopy: true
   }
+}
