@@ -1,6 +1,7 @@
 const gulp = require('gulp')
-const sass = require('gulp-sass')(require('node-sass'));
 const minify = require('gulp-minify')
+
+var sass = require('gulp-sass')(require('sass'));
 
 const compileStyles = () => {
     return gulp.src([
