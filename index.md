@@ -29,8 +29,7 @@ You will get a welcome email and will then be added onto our mailing list of eve
 * Existing members check out our [Discussions](https://github.com/uk-x-gov-software-community/community-space/discussions) (must be a member of our github organisation)
 
 ## How we use GitHub
-We use github to manage our group - once you sign up to our mailing list you will (assuming you have given a GitHub id) be aut enrolled on our organisation. You can then see meeting notes and join discussions on the discussion link.
-We really look forward to you being part of our community.
+We use github to manage our group - once you sign up to our mailing list you will (assuming you have given a GitHub id) be auto enrolled on our organisation. You can then see meeting notes and join discussions on the discussion link.
 
 Pull requests are welcomed for this site see the readme on our [GitHub Repo](https://github.com/uk-x-gov-software-community/) for more details.
 
