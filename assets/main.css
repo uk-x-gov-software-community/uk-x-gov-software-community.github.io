@@ -6533,3 +6533,11 @@ x:-moz-any-link {
     width: 25% !important;
   }
 }
+
+.govuk-header__logo {
+  display: none;
+}
+
+.govuk-footer__copyright-logo {
+  display: none;
+}
