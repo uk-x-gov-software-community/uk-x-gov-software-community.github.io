@@ -6541,3 +6541,7 @@ x:-moz-any-link {
 .govuk-footer__copyright-logo {
   display: none;
 }
+
+.govuk-body, .govuk-body-m {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
