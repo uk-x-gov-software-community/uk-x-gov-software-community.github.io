@@ -9,7 +9,7 @@ title: Objectives
 
 # Past Events
 
-* Our last lean coffees and facilitators meeting details and notes for members can be found on github.
+* Our last facilitators meeting will be the 23rd of November 2021. Notes for members can be found on github.
 
 We held lightning talks on Thursday 28 October
 With the following talks 
