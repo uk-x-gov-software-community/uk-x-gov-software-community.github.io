@@ -4,8 +4,8 @@ title: Objectives
 ---
 
 # Upcoming Events 
-
-* Lean coffees are held monthly on 4th Thursday of the month at 10.00-11.00. To get an invite please join the mailchimp list. Next dates 28 Apr, 26 May, 23 June
+* Note we are running an UnConference in November 2022 see (Cross Government Software Engineering Community UnConference)[https://www.eventbrite.co.uk/x/cross-government-software-engineering-community-unconference-tickets-439884665877] for more details 
+* Lean coffees are held monthly on 4th Thursday of the month at 10.00-11.00. To get an invite please join the mailchimp list. 
 
 # Past Events
 
