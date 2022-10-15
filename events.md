@@ -3,15 +3,37 @@ layout: layout.njk
 title: Objectives
 ---
 
-# Upcoming Events 
-* Note we are running an UnConference in November 2022 see (Cross Government Software Engineering Community UnConference)[https://www.eventbrite.co.uk/x/cross-government-software-engineering-community-unconference-tickets-439884665877] for more details 
+# Upcoming Events  
+
+* Note we are running an UnConference in November 2022 see [Cross Government Software Engineering Community UnConference](https://www.eventbrite.co.uk/x/cross-government-software-engineering-community-unconference-tickets-439884665877) for more details 
+
+
 * Lean coffees are held monthly on 4th Thursday of the month at 10.00-11.00. To get an invite please join the mailchimp list. 
 
 # Past Events
 
+When we have held lightening talks we store slides and opr video (where available) on our Gihub Community space - so members of the group
+can re-watch / get them if they missed the section.
+
+We held a lightening talk on Thursday 29th September 2022
+
+* **Elastic Cloud at the UKHO - Rossall Sandford Principal Software Engineer**
+
+We held a lightening talk on Thursday 30th Of June 2022
+
+* **Solid - A lightning talk intro to a new W3C standard for the storage and permissioned access of personal data for the next phase of the web. - Max Leonard (Inrupt)**
+
+
+We held Lightening talks on Thursday 24th March 2022
+
+* **Federated API discovery - Bethan Palmer (CDDO) and Jamie Tanna (CDDO)**
+* **Get a fishing license service - Phil Benson, DEFRA**
+* **Federated APIs - Michal Poreba, DiT**
+
+
 * Our last facilitators meeting will be the 23rd of November 2021. Notes for members can be found on github.
 
-We held lightning talks on Thursday 28 October
+We held lightning talks on Thursday 28 October 2021
 With the following talks 
 
 * **Welcome and community goals by David Heath (GDS) and Andy Poole (UKHO)** 
