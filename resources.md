@@ -15,8 +15,10 @@ title: Resources
 - [Companies House](https://github.com/companieshouse/styleguides)
 - [Home Office](https://github.com/UKHomeOffice/technical-service-requirements)
 - [CDDO API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
+- [NHS Business Services Authority playbook](https://nhsbsa.github.io/nhsbsa-digital-playbook/)
+
 ---
 
-### Tools 
+### Tools
 
-[Cross-UK-Gov Public Repository Leaderboard](https://github.com/uk-x-gov-software-community/xgov-opensource-repo-scraper) - a tool listing open source repos from across government - You can get the raw data in [json format](https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/repos.json) which is updated nightly via github actions. 
+[Cross-UK-Gov Public Repository Leaderboard](https://github.com/uk-x-gov-software-community/xgov-opensource-repo-scraper) - a tool listing open source repos from across government - You can get the raw data in [json format](https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/repos.json) which is updated nightly via github actions.
