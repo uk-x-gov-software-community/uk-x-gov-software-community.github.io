@@ -66,7 +66,7 @@ Run the tests where needed, (at this time no functionality is used that requires
 
 ## Submitting changes
 
-To add changes, make a new branch off master.
+To add changes, make a new branch off main.
 
 If you're not a member of the project, you'll need to fork the project and create a branch on your fork. See full instructions [here](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 
@@ -80,7 +80,7 @@ We don't squash merge to preserve the history of the work so always write clear 
 
 Here's a [handy resource](https://github.com/alphagov/styleguides/blob/master/git.md) for writing good commit messages and general git housekeeping.
 
-Once you have committed your changes, raise a pull request into master. Add as much information as you can to the pull request, make sure you complete the template and to include the issue number you're changes are addressing.
+Once you have committed your changes, raise a pull request into main. Add as much information as you can to the pull request, make sure you complete the template and to include the issue number you're changes are addressing.
 
 Before raising a pull request, ensure all tests pass and you have run the linting tools. See the README for instructions on how to do this.
 
