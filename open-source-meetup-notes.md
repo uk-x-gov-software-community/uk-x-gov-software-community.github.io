@@ -6,9 +6,9 @@ title: x-gov Open Source Community Meeting Notes
 
 ## Overview
 
-Notes from the x-Gov open source community meet ups.
+Notes from the monthly x-Gov open source community meet ups.
 
-Slack channel: https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8
+To find out details of the meet ups see the [#open-code x-gov slack channel](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8).
 
 ## 12 Apr 2023
 
@@ -21,28 +21,27 @@ Slack channel: https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8
 - before releasing code open source we have to speak to patent teams, in case there is valuable IP
 - also the press office need briefing in case the public raise questions
 - we follow a checklist for all new projects similar to the NHS one
- - PII / classification scrub
- - Static Analysis and Vulnerability dependency check (& future plan)
- - Independent review
+  - PII / classification scrub
+  - Static Analysis and Vulnerability dependency check (& future plan)
+  - Independent review
 - GCHQ does not take part in the GDS / CDDO service assessment, but have internal assessment processes
 - Have built an internal portal where people can see issues with projects and pick them up and work on them
 - Are working to automate the sign-up process for the GCHQ org on GitHub
  
-- Changing culture for inner source
- - sharing code inside of a dept.
- - building confidence on allowing other teams to work on each other's code so avoiding to have to raise tickets on backlogs that never get looked at
- - requires confidence in your automation
+### Changing culture for inner source
+- sharing code inside of a dept.
+- building confidence on allowing other teams to work on each other's code so avoiding to have to raise tickets on backlogs that never get looked at
+- requires confidence in your automation
 
 ### Tooling
 - tooling for API catalogues [Kong](https://konghq.com/)
 - [Backstage](https://backstage.io/) framework for building service catalogues
 
-- Forcing everything to be open is too restrictive
- - As required by the [Service Manual - GOV.UK (www.gov.uk)](https://www.gov.uk/service-manual)
- - we should have a more orderly process to decide what to make open
- - "everything is open" is not very constructive
- 
 ### Challenges
+- Forcing everything to be open is too restrictive
+  - As required by the [Service Manual - GOV.UK (www.gov.uk)](https://www.gov.uk/service-manual)
+  - we should have a more orderly process to decide what to make open
+  - "everything is open" is not very constructive
 - Working with GitLab vs GitHub, how can you pull things in?
 - Open source review panel: How do you scale this sort of process up?
  
@@ -63,7 +62,7 @@ Meeting notes:
 ### Going from closed to open
 - Separate out data and info from source code
 - Mirroring closed GitLab main repo into a public GitHub repo
- - Binned the history of the repo
+  - Binned the history of the repo
 
 ### Challenges
 

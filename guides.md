@@ -8,4 +8,4 @@ title: Guides
 Totally unofficial community sourced guidance on aspects of software development x-gov.
 
 - [Open source guide](/guides-open-source)
-- [Open source meet-up notes](/open-source-meetup)
+- [Open source meet-up notes](/open-source-meetup-notes)

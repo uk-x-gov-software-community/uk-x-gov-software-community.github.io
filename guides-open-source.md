@@ -51,6 +51,6 @@ Specific to x-Gov:
 
 - [X-UK-Gov Public Repository Leaderboard](https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/)
 - [#open-code x-gov slack channel](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8)
-- [Open source meet-up notes](/open-source-meetup)
+- [Open source meet-up notes](/open-source-meetup-notes)
 - [NHS Open SOurce Programme](https://www.england.nhs.uk/digitaltechnology/open-source/)
  
