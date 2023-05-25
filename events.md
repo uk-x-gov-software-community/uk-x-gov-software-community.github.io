@@ -5,15 +5,14 @@ title: Objectives
 
 # Upcoming Events  
 
-* Note we are running an UnConference in November 2022 see [Cross Government Software Engineering Community UnConference](https://www.eventbrite.co.uk/x/cross-government-software-engineering-community-unconference-tickets-439884665877) for more details 
-
-
-* Lean coffees are held monthly on 4th Thursday of the month at 10.00-11.00. To get an invite please join the mailchimp list. 
+* Lean coffees are held monthly on 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
 # Past Events
 
-When we have held lightening talks we store slides and opr video (where available) on our Gihub Community space - so members of the group
-can re-watch / get them if they missed the section.
+## 2022
+
+* We ran an [Unconference in November 2022](https://www.eventbrite.co.uk/x/cross-government-software-engineering-community-unconference-tickets-439884665877)
+* When we have held lightening talks we store slides and opr video (where available) on our [Gihub Community space](https://github.com/uk-x-gov-software-community/community-space). - so members of the group can re-watch / get them if they missed the section.
 
 We held a lightening talk on Thursday 29th September 2022
 
@@ -30,6 +29,7 @@ We held Lightening talks on Thursday 24th March 2022
 * **Get a fishing license service - Phil Benson, DEFRA**
 * **Federated APIs - Michal Poreba, DiT**
 
+## 2021
 
 * Our last facilitators meeting will be the 23rd of November 2021. Notes for members can be found on github.
 
