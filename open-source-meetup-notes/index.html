@@ -17,7 +17,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
    <meta name="theme-color" content="blue"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Open Source Guide</title>
+  <title>x-gov Open Source Community Meeting Notes</title>
 
   <!--[if !IE 8]><!-->
     <link href="/assets/main.css" rel="stylesheet">
@@ -218,47 +218,94 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
           
-          <h1>x-Gov Open Source Guide</h1>
+          <h1>x-Gov Open Source Community Meeting Notes</h1>
 <h2>Overview</h2>
-<p><strong>WIP - DRAFT</strong></p>
-<p>How teams x-Gov are approaching <a href="https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open">service standard point 12</a>.</p>
-<p>Based on discussions had at the regular <a href="/open-source-meetup">open source meet-up</a>.</p>
-<p>All contributions welcome! Fork this repo and PR.</p>
-<h2>Approaches</h2>
-<p>Place to add or link to case studies...</p>
-<h2>Tools</h2>
-<p>List of useful tools</p>
+<p>Notes from the monthly x-Gov open source community meet ups.</p>
+<p>To find out details of the meet ups see the <a href="https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8">#open-code x-gov slack channel</a>.</p>
+<h2>12 Apr 2023</h2>
+<h3>Case study</h3>
 <ul>
-<li><a href="https://github.com/microsoft/sbom-tool">Microsoft Software Bill of Materials (SBOM) tool</a></li>
-<li><a href="https://github.blog/2023-03-28-introducing-self-service-sboms/">GitHub self-service SBOMs</a></li>
-<li><a href="https://docs.github.com/en/code-security/dependabot">dependabot</a> - GitHub dependency scanning</li>
-<li><a href="https://snyk.io/product/open-source-security-management/">snyk</a>  - open source code security tool</li>
-<li><a href="https://backstage.io/">Backstage</a> - framework for building service catalogues</li>
-<li><a href="https://konghq.com/">Kong</a> - tooling for API catalogues</li>
+<li>Presentation around GCHQ's open source approach</li>
+<li>1st project went out 7/8 years ago</li>
+<li>trying to follow TCoP and get more eyes on the development that we do</li>
+<li>we want to demonstrate to our people that we can work out of the shadows</li>
+<li>currently quite an involved process to get an organisational GitHub account</li>
+<li>before releasing code open source we have to speak to patent teams, in case there is valuable IP</li>
+<li>also the press office need briefing in case the public raise questions</li>
+<li>we follow a checklist for all new projects similar to the NHS one
+<ul>
+<li>PII / classification scrub</li>
+<li>Static Analysis and Vulnerability dependency check (&amp; future plan)</li>
+<li>Independent review</li>
 </ul>
-<h2>Reasons to adopt open source</h2>
-<p>General:</p>
-<ul>
-<li>Quality through collaboration - developers can work together with other experts resulting in a higher quality product</li>
-<li>Security through visibility - opening up the source code allows developers around the world to find the security flaws and bugs in the code</li>
-<li>Promotes good practice - by exposing code to the scrutiny of others encourages developers not to take shortcuts and use workarounds</li>
-<li>No vendor lock in - using proprietary software can force businesses to continue relying on a product because they lack the flexibility and freedom to break free</li>
-<li>Cheaper - open source doesn’t mean free, often open source products will sell support and training, or hosted solutions, however these can be cheaper than proprietary licenses</li>
-<li>Continuous improvement mantra - open source developers often try to create products that are as useful to the community as possible, and are constantly trying to improve the software, proprietary solutions serve the vendor, which may lead to prioritising features for big clients rather than the wider community</li>
+</li>
+<li>GCHQ does not take part in the GDS / CDDO service assessment, but have internal assessment processes</li>
+<li>Have built an internal portal where people can see issues with projects and pick them up and work on them</li>
+<li>Are working to automate the sign-up process for the GCHQ org on GitHub</li>
 </ul>
-<p>Specific to x-Gov:</p>
+<h3>Changing culture for inner source</h3>
 <ul>
-<li>Our money, our code - public services are built with public money, the code they’re based should be made available for people to reuse and build on</li>
-<li>Don't repeat yourself - open source code can be reused by developers working in government, saving time and resources and reducing duplication of effort</li>
-<li>Keeping it simple and clear - publishing code in the open from the start encourages people to create better documentation and to structure the code more clearly, making it easier to maintain in the future</li>
-<li>Help others to help you - working in the open invites other developers across Government to make suggestions about how the code can be improved or where security can be improved</li>
+<li>sharing code inside of a dept.</li>
+<li>building confidence on allowing other teams to work on each other's code so avoiding to have to raise tickets on backlogs that never get looked at</li>
+<li>requires confidence in your automation</li>
 </ul>
-<h2>See Also</h2>
+<h3>Tooling</h3>
 <ul>
-<li><a href="https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/">X-UK-Gov Public Repository Leaderboard</a></li>
-<li><a href="https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8">#open-code x-gov slack channel</a></li>
-<li><a href="/open-source-meetup-notes">Open source meet-up notes</a></li>
-<li><a href="https://www.england.nhs.uk/digitaltechnology/open-source/">NHS Open SOurce Programme</a></li>
+<li>tooling for API catalogues <a href="https://konghq.com/">Kong</a></li>
+<li><a href="https://backstage.io/">Backstage</a> framework for building service catalogues</li>
+</ul>
+<h3>Challenges</h3>
+<ul>
+<li>Forcing everything to be open is too restrictive
+<ul>
+<li>As required by the <a href="https://www.gov.uk/service-manual">Service Manual - GOV.UK (www.gov.uk)</a></li>
+<li>we should have a more orderly process to decide what to make open</li>
+<li>&quot;everything is open&quot; is not very constructive</li>
+</ul>
+</li>
+<li>Working with GitLab vs GitHub, how can you pull things in?</li>
+<li>Open source review panel: How do you scale this sort of process up?</li>
+</ul>
+<h3>Next Meeting</h3>
+<ul>
+<li>Try to get someone from CDDO to talk about the open source point of the service standard</li>
+<li>Conversations around inner source</li>
+<li>Call for case studies on how other teams are doing open source in their depts.</li>
+</ul>
+<h2>03 Mar 2023</h2>
+<p>Inaugural meeting of the x-gov open source community.</p>
+<p>Meeting notes:</p>
+<h3>Starting out in the open</h3>
+<ul>
+<li>use commit scanning to catch things locally before being pushed into public repos</li>
+</ul>
+<h3>Going from closed to open</h3>
+<ul>
+<li>Separate out data and info from source code</li>
+<li>Mirroring closed GitLab main repo into a public GitHub repo
+<ul>
+<li>Binned the history of the repo</li>
+</ul>
+</li>
+</ul>
+<h3>Challenges</h3>
+<ul>
+<li>effort needed to put pipelines and process in place to go from private repo to public repo</li>
+<li>a process for when things go wrong, for example:
+<ul>
+<li>revoke and rotate leaked keys immediately</li>
+</ul>
+</li>
+<li>trade off between time and effort spent on this rather than new features</li>
+<li>if urgent bugs are identified in public code do you have the resource to fix the bugs?</li>
+<li>how to build a community to support and maintain the code?</li>
+<li>no-one has ever PR'd into our repo</li>
+</ul>
+<h3>Reasons to do open source</h3>
+<ul>
+<li>promote best practice as there is nowhere to hide</li>
+<li>less likely to take shortcuts as the code is there for everyone to see</li>
+<li>knowledge transfer: teams and people change</li>
 </ul>
 
         </main>
