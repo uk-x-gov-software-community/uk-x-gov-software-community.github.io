@@ -10,6 +10,22 @@ Notes from the monthly x-Gov open source community meet ups.
 
 To find out details of the meet ups see the [#open-code x-gov slack channel](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8).
 
+## 19 May 2023
+
+### Code reuse - Open/Inner Source Presentation
+
+Presenter: [Soydaner](https://github.com/soydaner)
+
+![Slide1](open-source-presentation/slide-1.png)
+![Slide2](open-source-presentation/slide-2.png)
+![Slide3](open-source-presentation/slide-3.png)
+![Slide4](open-source-presentation/slide-4.png)
+![Slide5](open-source-presentation/slide-5.png)
+![Slide6](open-source-presentation/slide-5.png)
+![Slide7](open-source-presentation/slide-7.png)
+![Slide8](open-source-presentation/slide-8.png)
+![Slide9](open-source-presentation/slide-9.png)
+
 ## 12 Apr 2023
 
 ### Case study
