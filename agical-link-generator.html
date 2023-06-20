@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 600px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        
+        input[type="datetime-local"] {
+            width: 312px; /* Adjusted to fit the border size */
+        }
+        
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function generateURL() {
+            var subject = encodeURIComponent(document.getElementById('subject').value);
+            var description = encodeURIComponent(document.getElementById('description').value);
+            var location = encodeURIComponent(document.getElementById('location').value);
+            var date = document.getElementById('dtstart').value;
+            var tstart = "11:00:00+01:00";
+            var tend = "12:00:00+01:00";
+            var dtstart = encodeURIComponent(`${date}T${tstart}`);
+            var dtend = encodeURIComponent(`${date}T${tend}`);
+            var reminder = "10";
+            
+            var url = 'https://ics.agical.io/?subject=' + subject +
+                '&description=' + description +
+                '&location=' + location +
+                '&dtstart=' + dtstart +
+                '&dtend=' + dtend +
+                '&reminder=' + reminder;
+            
+            document.getElementById('generated-url').textContent = url;
+            document.getElementById('generated-url').href = url;
+        }
+    </script>
+</head>
+<body>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" value="Cross Government Software Community Lean Coffee" placeholder="Cross Government Software Community Lean Coffee"><br>
+    
+    <label for="description">Description:</label>
+    <textarea id="description" rows="4" cols="30">Meeting of the Cross Government Community, featuring talks and Lean Coffee discussion.
+
+Join on zoom https://us02web.zoom.us/j/MEETINGID
+Meeting ID MEETINGID
+Passcode PASSCODE</textarea><br>
+    
+    <label for="location">Location:</label>
+    <input type="text" id="location" placeholder="https://us02web.zoom.us/j/MEETINGID"><br>
+    
+    <label for="dtstart">Date</label>
+    <input type="date" id="dtstart"><br>
+    
+    <button onclick="generateURL()">Generate URL</button><br>
+    
+    <p>Generated URL: <a id="generated-url" href="" target="_blank"></a></p>
+</body>
+</html>
