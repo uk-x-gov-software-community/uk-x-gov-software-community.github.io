@@ -83,5 +83,4 @@ An aim of the group is to understand and share recruitment experience.
 
 ### 5. Represent the software engineering community in DDAT conversations
 
-An aim of the group is to discuss and represent the community in relation to the [DDAT Framework] 
-(https://www.gov.uk/guidance/software-developer)
+An aim of the group is to discuss and represent the community in relation to the [DDAT Framework](https://www.gov.uk/guidance/software-developer)
