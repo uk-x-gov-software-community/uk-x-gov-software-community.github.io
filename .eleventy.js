@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
     strictFilters: false,
   });
   eleventyConfig.addPassthroughCopy('assets')
+  eleventyConfig.addPassthroughCopy('open-source-presentation/*.png')
   return {
     passthroughFileCopy: true
   }
