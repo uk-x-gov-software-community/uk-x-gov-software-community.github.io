@@ -7,7 +7,7 @@ ENV GID=1001
 RUN mkdir -p /app
 WORKDIR /app
 
-RUN addgroup -g 1001 "$USER"
+RUN addgroup -g "$UID" "$USER"
 RUN adduser \
     --disabled-password \
     --gecos "" \
@@ -22,7 +22,7 @@ RUN npm install
 
 RUN chown -R "$UID":"$GID" /app
 
-USER 1001
+USER "$UID"
 
 EXPOSE 8081
 
