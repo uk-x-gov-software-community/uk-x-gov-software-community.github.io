@@ -222,6 +222,180 @@
 <h2>Overview</h2>
 <p>Notes from the monthly x-Gov open source community meet ups.</p>
 <p>To find out details of the meet ups see the <a href="https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8">#open-code x-gov slack channel</a>.</p>
+<h2>21 Jul 2023</h2>
+<p>No specific agenda items this week so had another general discussion on topics raised by the group.</p>
+<ul>
+<li>
+<p>Friction to adopting open source solutions</p>
+<ul>
+<li>Supplier felt it was better to build your own, as easier to maintain</li>
+<li>Could use well known tech like Python, REST APIs, standard databases rather than a open source product with a small pool of developers and active community</li>
+<li>Specific example: data catalogue https://github.com/ckan/ckan</li>
+<li>UK HO seem to have used this: https://github.com/UKHomeOffice/data-catalogue</li>
+<li>It powers catalog.data.gov, open.canada.ca/data, data.humdata.org among many other sites. Use across other governments so is probably a good sign.</li>
+<li>Also has 3.9K Stars, 1.9K Forks, 301 contributors, recent last commit / historic activity, uses well known programming language: Python</li>
+<li>Remember the motivation of the supplier who may want to build their own as they can charge more and also develop their own skills</li>
+<li>Same argument can be applied against commercial closed source solutions, as these may seem a better choice due to be supported and paid for with agreed SLAs for fixing issues</li>
+<li>Recommendation around data catalogues and data mesh architectures: <a href="https://www.youtube.com/watch?v=nGRvlobeM_U">AWS re:Invent 2022 - Building data mesh architectures on AWS (ANT336) - YouTube</a> - Data-first organizations are increasingly curious about data mesh architectures. In this session, learn how to design, build, and operationalize a data mesh ...</li>
+</ul>
+</li>
+<li>
+<p>Concerns when open source product goes commercial and becomes closed source</p>
+<ul>
+<li>For example: camunda open source workflow engine, from v8 is now closed source</li>
+<li>Depends on how permissive the original license was</li>
+<li>Depends on the size of the community</li>
+<li>Gov has not got resource to take on the support of unadopted or dormant open source solutions</li>
+<li>Elastic / open search good example of an open source solution going commercial and then being forked by the community and development carrying on</li>
+</ul>
+</li>
+<li>
+<p>Use of GitHub for documentation and diagrams-as-code</p>
+<ul>
+<li><a href="https://github.com/co-cddo/data-architecture/tree/main#publish-to-public-repository">Example of following a private/public repo approach</a>, with github action that pushes files to the public repo based on a file extension and naming convention</li>
+<li>Specifically all PlantUML files <code>.puml</code> are automatically published along with other files ending in <code>-p.*</code></li>
+<li>Bit of a hacky approach, using GitHub like a CMS</li>
+<li>Could there be something similar / more built-in using github pages?</li>
+<li>Could you extract -&gt; put in git -&gt; have a release pipeline to zip it up and attach to a release for people to consume?</li>
+<li>Two diagrams-as-code tools:
+<ul>
+<li><a href="https://mermaid.js.org/">Mermaid</a></li>
+<li><a href="https://crashedmind.github.io/PlantUMLHitchhikersGuide/">PlantUML</a></li>
+</ul>
+</li>
+<li>Mermaid is natively supported by GitHub markdown:</li>
+</ul>
+<pre><code class="language-mermaid">classDiagram
+  Doodad &lt;|-- Thingamy
+  Doodad &lt;|-- Wotsit
+  Doodad &lt;|-- Bananas
+  Doodad : +int id
+  Doodad: +isUseful()
+  Doodad: +twiddle()
+  class Thingamy{
+    +String colour
+    +untwirl()
+  }
+  class Wotsit{
+    -int size
+    -canTwirl()
+  }
+  class Bananas{
+    +bool defunct
+    +unfold()
+  }
+</code></pre>
+<ul>
+<li>PlantUML must be pre-rendered using a GitHub action or the URL of a public raw PlantUML resource can be sent via a public PlantUML server to render the image through an image URL in markdown, for example:</li>
+</ul>
+<p><img src="http://www.plantuml.com/plantuml/proxy?cache=no&amp;src=https://raw.githubusercontent.com/nhsx/dt-architecture/main/architects.puml?token=GHSAT0AAAAAACCIMGVSQUQELMVPVUONRIXWZGD4WFQ" alt="Example of a PlantUML rendered diagram in GitHub"></p>
+<ul>
+<li>Keep our docs in our environment and publish them using GitHub pages.</li>
+<li>We have some very limited use of mermaid diagrams. Usually use draw.io for those sorts of diagrams.</li>
+<li>We don't have anything on GitHub which is written outside the development team as that tends to be internal.</li>
+<li>For example: <a href="https://github.com/gchq/gaffer-doc">Documentation for Gaffer</a></li>
+</ul>
+</li>
+</ul>
+<h2>23 Jun 2023</h2>
+<p>No agenda items this week so had a general discussion on topics brought up by the group</p>
+<ul>
+<li>
+<p>Update on service manual</p>
+<ul>
+<li>small team in CDDO looking at putting together a backlog for updates to the service manual</li>
+<li>service assessment team in CDDO are doing work around updating training for assessors
+<ul>
+<li>Looking at training courses for x-gov service assessors</li>
+<li>Training for internal departmental assessors too</li>
+<li>One member of team looking at all the training provided for assessors and refreshing that</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Reusable components</p>
+<ul>
+<li>DWP, building strategic reference architecture</li>
+<li>Creating components that can be reused across services</li>
+<li>These are not currently open source</li>
+<li>Some improvements around point 12 in the service standard could make it more explicit that open sourcing reusable components is preferred
+<ul>
+<li>An enhanced point 12 should stress that open sourced things should somehow be curated such to be reusable, but doing this well would be a considerable overhead on service teams</li>
+</ul>
+</li>
+<li>Can be resistance from leadership at high level to open sourcing
+<ul>
+<li>Generally developers who are building the components are all pro open sourcing</li>
+<li>This results in teams open sourcing less reusable parts of their code base at Beta to get through assessment rather than just reusing already open sourced components</li>
+<li>CDDO could take this to CDO council and lobby at a senior level &quot;for buy once use many&quot; to include code reuse and architecture patterns</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Blockers to open sourcing</p>
+<ul>
+<li>DVSA previously quite risk averse to open source due to concerns over fraud</li>
+<li>Have now open sourced some smaller components</li>
+<li>Infrastructure as code (IaC) not open source and no plans to make it
+<ul>
+<li>Apps are generally open sourced at ONS, but the IaC isn't,  This could make it tricky for people to consume what is open-sourced due to not having the infrastructure.  Again, confusion/misconceptions of open IaC being too risky.</li>
+</ul>
+</li>
+<li>By not putting a whole service open source but just the reusable parts could reduce the perceived risk of fraud</li>
+<li>We have increased security risks in the new geo-political reality
+<ul>
+<li>Other countries are open sourcing nothing about their gov projects</li>
+</ul>
+</li>
+<li>But what about gen AI and github co-pilot how will this affect the risk appetite?</li>
+</ul>
+</li>
+<li>
+<p>Measuring the value of open source</p>
+<ul>
+<li>How many people are using the code?</li>
+<li>Sometimes people can look at code without actively reusing it and take inspiration from it</li>
+<li>No point just putting stuff on GitHub with no explanation or understanding or how to consume it</li>
+<li>Huge promise on return from investment, but must put in the effort</li>
+<li>ONS do see open sourcing as beneficial from a recruitment perspective as well, but this is really hard to quantify though</li>
+<li><a href="https://www.youtube.com/watch?v=7Cqv_gdTkg4">The Prisoner’s Dilemma</a>, a classic philosophical problem. Basically sharing and co-operation have real benefits, but selfish behaviours produce poor outcomes.
+<ul>
+<li>This also relate to the <a href="https://www.youtube.com/watch?v=ZVqDsJP5FIc">Public Goods Game/Nash Equilibrium theory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Inner source</p>
+<ul>
+<li>Maybe the answer is inner-sourcing, using all the approaches of open source in a restricted setting?</li>
+<li>What about shared GitHub org x-gov for private repositories where code  can be shared x-gov but not publicly
+<ul>
+<li>But what is the risk with making it public? Would the risk be limited by opening it only to huge range of unknown civil servants and contractors within the civil service?</li>
+<li>Something like this was tried in 2012 and turned off in 2015 because no one used it</li>
+<li>Current thinking is to use a federated model to enable things to be more easily found x-gov, like the x-gov data marketplace</li>
+<li>Are we saying that being able to share just with x-gov users would not be useful rather than to the whole public?
+<ul>
+<li>The problem is find-ability not who can find it</li>
+<li>Could open source gov projects include a x-gov GitHub repo label, as this could make it easier to find stuff?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Usage of paid GitHub enterprise instances</p>
+<ul>
+<li><a href="https://github.com/dvsa">DVSA</a></li>
+<li>CO</li>
+<li>ONS</li>
+<li>DfT</li>
+</ul>
+</li>
+</ul>
 <h2>19 May 2023</h2>
 <h3>Code reuse - Open/Inner Source Presentation</h3>
 <ul>

@@ -225,23 +225,220 @@
     width:100%;
   }
 </style>
-<h2>Slide 1</h2>
-<p><img src="slide-1.png" alt="Slide1"></p>
-<h2>Slide 2</h2>
+<h2>Code reuse - Open/Inner Source</h2>
+<ul>
+<li>Intro</li>
+<li>Findings</li>
+<li>Today's Picture</li>
+<li>Code reuse definition</li>
+<li>Requirements</li>
+<li>Maturity: An interpretation for Open/Inner Sourcing concept</li>
+<li>A Solution</li>
+<li>Closing
+<img src="slide-1.png" alt="Slide1"></li>
+</ul>
+<h2>Findings</h2>
+<h3>Sharing reusing:</h3>
+<ul>
+<li>No internal sharing/reusing practices</li>
+<li>There are successful projects that can be reusable are in open repositories.</li>
+<li>No external usage/contribution to them</li>
+<li>15K open repositories
+<ul>
+<li>Few of them getting hit/popular</li>
+</ul>
+</li>
+<li>Not all repos are for reuse: document/solution specific</li>
+<li>Security and technical (network, for example) restrictions</li>
+<li>Even if people decided to reuse/contribute, departments are not ready to meet this collaboration ○ Capability, Maturity
+<ul>
+<li>No governance, management, standardization,</li>
+<li>Tech issues: synchronization, Security (for sharing internal resources with other departments)</li>
+<li>Behavioural: Teams are isolated. Project Delivery methodologies does not support mutual collaboration, dependencies</li>
+<li>Orgs internal structures are different and their security restrictions and networking patterns are too restrictive to accept  collaboration from other departments.</li>
+</ul>
+</li>
+</ul>
+<h3>Open</h3>
+<ul>
+<li>Reputation, Accountability, Responsibility are all OK.</li>
+<li>Without collaboration, it is not possible to reach: better security, quality, and rich content. (+ open to duplication) ○ Contrary, these goals may be affected badly by lack of collaboration. (for example: not easy to identify security flaws.)</li>
+<li>Being Open: we have 15K repo and for a long time we are open,. how much value it adds to us so far? And metrics (KPIs) ?  and monitoring?</li>
+<li>Then a question: what is the true value of being open!</li>
+</ul>
 <p><img src="slide-2.png" alt="Slide2"></p>
-<h2>Slide 3</h2>
+<h2>Findings cont.</h2>
+<h3>Opensource:</h3>
+<ul>
+<li>67 Country; ~900 public bodies.</li>
+<li>68 U.K. Central, 31 U.K. Council, 15322 repositories.</li>
+<li>Not all of them are are actual source code. There are documentations repositories as well.</li>
+<li>Difficult to know who is contributing, anyone, someone from the owner department or from another department.</li>
+</ul>
+<h3>Departments:</h3>
+<ul>
+<li>800-1600-2000 engineers; 50-150 teams</li>
+<li>500 - 1200 repos and more than 10 million codes</li>
+<li>In some departments  half of repositories are not be maintained</li>
+<li>50% old tech stack</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>watch - fork - star</th>
+<th>Issues closed-new-total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tensorflow/tensorflow</td>
+<td>78.7K - 88.2K - 174K</td>
+<td>243 - 120 - 209</td>
+</tr>
+<tr>
+<td>microsoft/vscode</td>
+<td>3.2K - 25.5K - 146K</td>
+<td>1619 - 591 - 5K</td>
+</tr>
+<tr>
+<td>gchq/CyberChef</td>
+<td>364 - 2.5K - 21K</td>
+<td>2 - 12 - 257</td>
+</tr>
+<tr>
+<td>gchq/Gaffer</td>
+<td>145 - 353 - 1.7K</td>
+<td>6 - 4 - 114</td>
+</tr>
+<tr>
+<td>alphagov/govuk-frontend</td>
+<td>56 - 292 - 865 - 266</td>
+<td>37 - 35 : 13</td>
+</tr>
+<tr>
+<td>dwp/govuk-casa</td>
+<td>8 - 24 - 32</td>
+<td>2 - 1 - 1</td>
+</tr>
+</tbody>
+</table>
+<p>Being Open does not guarantee the reuse. Not all code  can be reusable.
+Without dependencies being open the code not much  useful.
+Too specific to government. Not so much for useful public  usage.
+Not visible.
+People may hesitate to join</p>
 <p><img src="slide-3.png" alt="Slide3"></p>
-<h2>Slide 4</h2>
+<h2>Today</h2>
+<ul>
+<li>Big departments have capacity to provide  reusable valuable content. Do not expect  same from small ones.</li>
+<li>They have governance for technology  reuse</li>
+<li>They share sharable and reusable  artefacts as open.</li>
+<li>not everything is open and can be open.</li>
+<li>There is no maturity for code reuse (Both  organisational and individual)</li>
+<li>Internal resources has no discoverability  and visibility to outsider</li>
+<li>No structured/defined inter departmental</li>
+</ul>
 <p><img src="slide-4.png" alt="Slide4"></p>
-<h2>Slide 5</h2>
+<h2>Code Reuse Definition</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>Benefits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pragmatic/Opportunistic</td>
+<td>involves consuming existing code, leveraging  accessible code written by others. Requires:  discoverability and writing code specifically with the  intention of facilitating reuse</td>
+<td>Limited assistance to individuals who reuse code - for organizations, it may not provide significant  value and can have potential side effects such as  code duplication and degradation of quality. True value to both the entire community and the  organization.</td>
+</tr>
+<tr>
+<td>Strategic/Optimised</td>
+<td>goes beyond individual consumption collaboration and contribution. collectively creating and sharing code, fostering a  collaborative environment where developers actively  participate in building and improving reusable components</td>
+<td>enhanced code quality, increased security, efficient  and cost-effective development, and faster  time-to-market</td>
+</tr>
+</tbody>
+</table>
+<h3>Code Reuse</h3>
+<ul>
+<li>OpenSource is more than  code reuse(pragmatic).</li>
+</ul>
+<h3>Open Source --&gt;  Inner Source</h3>
+<ul>
+<li>Organisation can practice OpenSource internally. This is called  InnerSource</li>
+<li>Open/Inner Source has challenges like behavioural adoption, Technical,  Security,</li>
+<li>Open/Inner source requires Governance, Management, a solution for  discoverability, Patterns for practices, Standardized and good code writing.</li>
+</ul>
 <p><img src="slide-5.png" alt="Slide5"></p>
-<h2>Slide 6</h2>
+<h2>Reuse Requirements</h2>
+<h3>Resource</h3>
+<ul>
+<li>Open or inner</li>
+<li>Does not need to be best!</li>
+<li>Library/package, code  snipped, component, API,  service.</li>
+</ul>
+<h3>Searchable &amp; Reachable</h3>
+<ul>
+<li>Open resources</li>
+<li>Internal resources: Signposted</li>
+<li>Access upon request</li>
+</ul>
+<h3>Organisational Readiness</h3>
+<ul>
+<li>Governance, Policy</li>
+<li>Technical limitations; mediums: Direct Access, artefact share Delivery Methodology</li>
+</ul>
+<h3>People Readiness</h3>
+<ul>
+<li>Behavioural Change Intention &amp; Desire</li>
+</ul>
+<h3>Improve Discoverability</h3>
+<ul>
+<li>Quickly achievable</li>
+<li>It alone cannot guarantee code reuse</li>
+<li>In future, it has great opportunities for AI backed features</li>
+<li>Single GitHub Signposts Repo</li>
+<li>Departments provide their sharable (inner)  codes/artefacts</li>
+<li>A simple search tool which enables the search across  all open repos including this signposts repo.</li>
+<li>Most popular searches</li>
+<li>Who will implement the pilot, Where is hosted, What are the KPIs?</li>
+</ul>
+<h3>InnerSource Adoption</h3>
+<ul>
+<li>Requires Strategic decision, Long Term detailed planning,  Difficult to achieve</li>
+<li>Required to get full benefit from code reuse</li>
+<li>Requires approval and strong support/sponsorship!</li>
+<li></li>
+</ul>
 <p><img src="slide-6.png" alt="Slide6"></p>
-<h2>Slide 7</h2>
+<h2>Maturity: An interpretation for Open/Inner Sourcing concept</h2>
 <p><img src="slide-7.png" alt="Slide7"></p>
-<h2>Slide 8</h2>
+<h2>A Solution</h2>
+<ul>
+<li>Long term real solution. It has the greatest value for  community, government and so public.</li>
+<li>Once established then it will have its own momentum.</li>
+<li>Requires strong collaboration while building the model.</li>
+<li>Requires a few pilot implementations with departments</li>
+<li>Full adoption and valuable outcome needs time.</li>
+<li>Requires well established monitoring metrics for assessing<br>
+success. Difficult to find a proper way of assuring the  success. Difficult to measure success (requires time)</li>
+</ul>
 <p><img src="slide-8.png" alt="Slide8"></p>
-<h2>Slide 9</h2>
+<h2>A metaphor and closing</h2>
+<blockquote>
+<p>&quot;We can only provide the soil, fertilizer, and seeds; it is the farmers who do the planting,  watering, and harvesting, and the yield and quality of the crop cannot be guaranteed in  advance!&quot;</p>
+</blockquote>
+<p>Just as providing the raw materials for farming does not ensure a successful harvest, simply  making code available for reuse does not guarantee its effectiveness. To truly benefit the  community and the original source, a more collaborative approach like Open Source  methodology is preferred, where not only reuse but also contribution is encouraged. For  organizations, InnerSource is often the necessary first step for code reuse. However, no  approach or solution can guarantee that code will be effectively reused or produce desired  outcomes.</p>
+<h3>Some resources</h3>
+<ul>
+<li><a href="https://innersourcecommons.org/">innersource commons</a></li>
+<li><a href="https://nhsdigital.github.io/rap-community-of-practice/implementing_RAP/how-to-publish-your-code-in-the-open/">NHS how-to-publish-your-code-in-the-open</a></li>
+<li><a href="https://github.com/GSA/code-gov/blob/master/docs/metadata_examples.md">gov.us metadata_examples.md</a></li>
+<li><a href="https://backstage.io/docs/features/software-catalog/descriptor-format/#overall-shape-of-an-entity">Descriptor Format of Catalog Entities | Backstage Software Catalog and Developer Platform</a></li>
+</ul>
 <p><img src="slide-9.png" alt="Slide9"></p>
 
         </main>
