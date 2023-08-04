@@ -40,6 +40,38 @@ To develop the website you will need the following.
   ```
      npx @11ty/eleventy --serve --port=8081
    ```
+
+### Installation (Docker)
+
+Before running Docker installation please make sure Docker process is running.
+
+1. Clone the repo
+   ```
+   git clone git@github.com:uk-x-gov-software-community/uk-x-gov-software-community.github.io.git
+   ```
+2. Build the repository locally.
+   ```
+   docker build -t uk-xgov-software-community .
+   ```
+3. Run the site locally
+   ```
+   docker run -dp 127.0.0.1:8081:8081 uk-xgov-software-community
+   ```
+
+Once you are done with the work with the container, you can stop the Docker container.
+
+1. Fetch the docker container ID:
+   ```
+   docker container ls | grep "uk-xgov-software-community"
+   ```
+2. Copy the container ID.
+3. Stop the container.
+   ```
+   docker container kill <CONTAINER_ID>
+   ```
+
+This stops the container from running and releases all bound ports.
+
 <!-- ROADMAP -->
 ## Roadmap
 
