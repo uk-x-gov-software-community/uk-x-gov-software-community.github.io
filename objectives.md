@@ -1,9 +1,8 @@
 ---
-layout: layout.njk
-title: Objectives
+layout: page.njk
+title: Our Objectives
 ---
 
-# Our Objectives
 
 ### 1. Connect development teams across government
 

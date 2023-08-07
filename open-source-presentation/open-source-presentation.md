@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: page.njk
 title: Code reuse - Open/Inner Source Presentation
 ---
 # Code reuse - Open/Inner Source Presentation - 19 May 2023

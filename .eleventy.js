@@ -1,4 +1,4 @@
-const govukEleventyPlugin = require('govuk-eleventy-plugin')
+const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
@@ -55,7 +55,7 @@ module.exports = function(eleventyConfig) {
      markdownTemplateEngine: 'njk',
      dir: {
        // Use layouts from the plugin
-       layouts: 'node_modules/govuk-eleventy-plugin/layouts'
+       layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
      }
    }
  };
