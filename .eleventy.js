@@ -18,7 +18,34 @@ module.exports = function(eleventyConfig) {
    eleventyConfig.addPlugin(govukEleventyPlugin,{
     header: {
       organisationLogo: '',
-      organisationName: 'Cross Government Software Community'
+      organisationName: 'Cross Government Software Community',
+      navigation: [
+        {
+          href: "#",
+          text: "Navigation item 1",
+          active: true
+        },
+        {
+          href: "#",
+          text: "Navigation item 2"
+        },
+        {
+          href: "#",
+          text: "Navigation item 3"
+        },
+        {
+          href: "#",
+          text: "Navigation item 4"
+        }
+      ]
+    },
+    footer: {
+      contentLicence: {
+        html: 'A community project. <a class="govuk-footer__link" href="https://github.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io">GitHub source</a>.' 
+      },
+      copyright: {
+        text: '© Cross Government Software Community'
+      }
     }
    })
 
