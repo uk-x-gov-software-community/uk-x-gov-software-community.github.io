@@ -27,7 +27,6 @@ related:
 {% include "menu.njk" %}
 
 
-
 ## Our Vision
 To provide a forum for collaboration for software engineers across government
 *	To learn and to teach
