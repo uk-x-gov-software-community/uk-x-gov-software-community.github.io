@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
         html: 'A community project. <a class="govuk-footer__link" href="https://github.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io">GitHub source</a>.<br /> Thanks to <a href="https://x-govuk.github.io/govuk-eleventy-plugin/" class="govuk-link" >X-GOVUK projects</a> for the template' 
       },
       copyright: {
-        text: '© Cross Government Software Community'
+        text: '© Cross Government Software Engineering Community'
       }
     }
    })
