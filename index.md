@@ -36,7 +36,7 @@ To provide a forum for collaboration for software engineers across government
 Our vision helps us fullfil our  [Objectives](/objectives).
 
 ## How are we doing this
-* Engaging with the community on UK Government Digital Slack - in the #software-development channel
+* Engaging with the community on [UK Government Digital Slack](https://ukgovernmentdigital.slack.com/) - in the #software-development channel
 *	Running monthly virtual lean coffee sessions 
 *	Developing our GitHub repo
 *	Looking to run more themed events 

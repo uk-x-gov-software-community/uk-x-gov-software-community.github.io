@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: Events
+title: Resources 
 ---
 
 # A list of x-gov software resources
