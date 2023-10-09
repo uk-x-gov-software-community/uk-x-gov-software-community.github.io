@@ -10,6 +10,105 @@ Notes from the monthly x-Gov open source community meet ups.
 
 To find out details of the meet ups see the [#open-code x-gov slack channel](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8).
 
+## 15 Sep 2023
+
+Only a small group this week has a general conversation about open source.
+
+SF (CDDO) - Head of DevOps Modernising Tech
+  - How do we bake open source into everything we do
+  - How do we take something from private to public
+  - SALSA
+  - Also US have just done something around SBOMs
+  
+RS - NHS Tech Lead (previously iPlayer)
+  - Couldn't open source everything due licensing issues
+
+SF
+  - DSIT is going to release a big report about open source
+  - But it isn't bold enough
+
+RS 
+  - Do we have an open source governance process?
+
+SF
+  - Not that I know of
+
+AS (CDDO formerly NHSX) 
+  - From NHS perspective NHS BSA and NHSD have their own published processes and governance around doing open source
+  - But nothing central, hence why this forum was initiated by J from GCHQ
+
+SF
+  - Can save a lot of money by adopting open source solutions
+  - Also there is a procurement mechanism thing about people getting 3rd parties to manage the open source aspects of their services
+  - Lawyers and licensing - dread these discussions
+
+RS
+  - If you are building open source on top of open-source there is value in that
+
+SF
+  - Next week there is 2 day conference called DevOps day london
+  - SS (CDDO) and me are trying to set-up a devops community
+  - We are asking for funding for this
+  - We need money to get a venue 
+  - Initial focus on CO staff
+  - Thereafter generic devops cloud-ops
+
+RS
+  - We do meet ups with Azure and GCP in our area (Leeds)
+
+SF
+  - Went to thing the other day about MS copilot
+  - Would be useful for other people to come to
+
+AS
+  - Spoke to MLOps supplier who may be able to present at that community
+
+SF
+  - share great code from parts of gov to other parts of gov
+  - How does my team get that code visible to other parts of gov?
+
+RS
+  - is that public public or shared between depts?
+
+SF
+  - initially share it between depts
+  - and then fully public 
+
+AS
+  - this is built into the service standards to enforce open source before beta
+  - try to apply this to internal facing services
+  - requires culture shift
+
+SF
+  - 65,000 gov repos in github
+  - but 45,000 are not open source
+  - how do we make it all open source?
+  - first step is make it visible to other gov depts
+
+RS
+  - Who keeps these things up to date
+  - Some projects use tools that are no longer being managed
+  - Different languages, how do you manage libraries that provide a specific API but they are Node and you're in Java?
+
+SF
+  - US gov have a format for a maintainer file that can describe if a repo is actively maintained
+  - Lot of barriers to doing simple things like raising a PR
+  - Hopeful that we can do it
+
+RS
+  - How?
+  - How do you make your software findable and reusable?
+
+AS
+  - This has some similarity to Data Marketplace
+  - Facilitating data sharing x-gov
+
+SF
+  - How do you find things?
+  - We (CDDO) would love to do something like code.gov.uk 
+  - US have set up this site: https://code.gov/agency-compliance/compliance/dashboard/
+
+
 ## 21 Jul 2023
 
 No specific agenda items this week so had another general discussion on topics raised by the group.
@@ -66,7 +165,7 @@ No specific agenda items this week so had another general discussion on topics r
   ```
   - PlantUML must be pre-rendered using a GitHub action or the URL of a public raw PlantUML resource can be sent via a public PlantUML server to render the image through an image URL in markdown, for example:
 
-  ![Example of a PlantUML rendered diagram in GitHub](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/nhsx/dt-architecture/main/architects.puml?token=GHSAT0AAAAAACCIMGVSQUQELMVPVUONRIXWZGD4WFQ)
+  ![Example of a PlantUML rendered diagram in GitHub](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/nhsx/dt-architecture/main/architects.puml?token=GHSAT0AAAAAACG43ULGXIUWHLCKIJW7H3YAZIVVD5A)
 
   - Keep our docs in our environment and publish them using GitHub pages. 
   - We have some very limited use of mermaid diagrams. Usually use draw.io for those sorts of diagrams.
