@@ -53,17 +53,17 @@
             var description = encodeURIComponent(document.getElementById('description').value);
             var location = encodeURIComponent(document.getElementById('location').value);
             var date = document.getElementById('dtstart').value;
-            var tstart = "11:00:00+01:00";
-            var tend = "12:00:00+01:00";
-            var dtstart = encodeURIComponent(`${date}T${tstart}`);
-            var dtend = encodeURIComponent(`${date}T${tend}`);
+            var tstart = "11:00:00";
+            var tend = "12:00:00";
+            var dtstart = new Date(`${date}T${tstart}`).toISOString();
+            var dtend = new Date(`${date}T${tend}`).toISOString();
             var reminder = "10";
             
             var url = 'https://ics.agical.io/?subject=' + subject +
                 '&description=' + description +
                 '&location=' + location +
-                '&dtstart=' + dtstart +
-                '&dtend=' + dtend +
+                '&dtstart=' + encodeURIComponent(dtstart) +
+                '&dtend=' + encodeURIComponent(dtend) +
                 '&reminder=' + reminder;
             
             document.getElementById('generated-url').textContent = url;
