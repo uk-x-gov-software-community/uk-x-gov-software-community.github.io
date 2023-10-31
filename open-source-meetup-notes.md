@@ -10,6 +10,198 @@ Notes from the monthly x-Gov open source community meet ups.
 
 To find out details of the meet ups see the [#open-code x-gov slack channel](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8).
 
+## 13 Oct 2023
+
+Again no specific agenda but a general discussion about scanning open repositories for vulnerabilities and introducing pre-commit checks to the developer workflow.
+
+Attendees:
+- AS (CDDO)
+- Jim (GCHQ)
+- RS (NHS)
+- ME (Gov Scot)
+- CS (CDDO)
+- PC (NCSC)
+- SS (CDDO)
+- BA (DFE)
+- MO (CPS)
+- CP (DCMS)
+
+Jim GCHQ
+- github.com/mi6
+- Intelligence Community Design System
+- Is this worth having given gov uk design system?
+
+CS
+- As an internal design system is worth having as often don't want to follow the one thing per page restriction
+
+RS (NHS)
+- There is a common framework in different gov depts 
+
+Jim GCHQ
+- Concourse Tools resource creator in python
+- nix bootstrap project written in pascal
+
+ME (Gov Scot)
+- Contributor license agreement - interesting to see
+
+Jim GCHQ
+- We have this set up for all repositories 
+
+SS CDDO
+- One nix officianado in GDS 
+
+AS CDDO
+- What is concourse?
+
+SS
+- Like jenkins, for pipelines, it is a thing doer, without a fancy UI
+
+ME
+- Moved to github for source of truth and used git actions for building the npm packages
+
+RS
+- Who watches what is going into you repository from contributors?
+- We noticed on one open source repository a lot of strange npm packages being added and then we had to...
+
+ME
+- Not like you need to change packages on design system so not really an issue
+
+AS
+- Can you have rules to flag up things like changes to packages in PRs?
+
+ME
+- Not AFAIK
+
+SS
+- Github enterprise has some advanced security features but not sure what they are
+
+ME
+- It seems like for a public repo you get the full github security features but you don't get the organisational view
+
+SS
+- Interesting question who has an enterprise github license
+
+CS 
+- You can get an org level view but it's all a bit disjointed
+
+PC
+- If you use multiple platforms and vendors your need to be careful not to get multiple alerts for the same thing which can overwhelm your developers
+
+Jim
+- A lot of these vulnerability tools are just scanning a database somewhere for a version or vulnerability rather than actual detecting anything bad themselves
+
+SS
+- We had admin front end on govuk paas and half of the work of the developers was merging the automerges because we were very paranoid
+
+Jim 
+- We have security dashboards but they are not necessarily being looked at very often
+
+CS
+- In theory this is feeding into your sophisticated SOC
+
+BA (DFE)
+MO (CPS) joined
+
+PC
+- Will put it through the github pipeline and will scan for issues then and alert the actual team the made the thing as it's their responsibility to maintain the security
+
+SS
+- Is anyone using pre-commit hooks that are more sophisticated than linting?
+
+CS
+- Pre-commit hooks are annoying you have to set them up on your machine, git guardian is quite good to stop you accidentally committing secrets and has better entropy scanning than github's own secret scanner
+
+- If you are signing code it takes longer generally than any pre-commit hook would
+
+PC
+- Usually don't use pre-commit hook as it is up to the developer to do this so not really a security control
+
+ME
+- We had experience when pre-commit would stop the commit and the developer would receive no feedback that the commit had failed
+
+CS
+- Implicit supply chain issues with pre-commits that involve running a binary on a machine
+
+Jim
+- Had pushback from teams about using stuff like dependabot that means they will get a lot of false positives of a dependency of a dependency when our code doesn't use any of that 
+
+CS
+- Core K8S had a massive vulnerabilities but was such a strange config that it was unlikely to ever be a risk, snyk had a way of reporting this, so you can only fix the things that really need fixing
+
+ME
+- How does snyk know what it is your production code is using?
+  
+CS
+- Suspect it is static parsing of the code paths 
+
+Jim
+- The scoring thing is interesting, remembering the article the developer for Curl wrote about them making up the CVE rankings
+
+RS
+- Read similar thing that the CVE for curl was serious but not really that likely
+
+AS
+- Seems like the likelihood rating is wrong for these CVEs if the likelihood of being in that config / baseline is low initially shouldn't be critical
+
+CS
+- Someone called chain guard has analysed what is wrong with CVE ratings
+
+SS
+- Interested in the new snyk feature feels like it is LLM driven
+
+CP (DCMS)
+- We could get them to demo that feature to this group?
+
+Huddle chat notes:
+
+Jim GCHQ
+- https://design.sis.gov.uk/
+- > Intelligence Community Design System - Intelligence Community Design System
+Use the UK Intelligence Community's Design System to create accessible, usable, and consistent capabilities for complex and specialised needs (2 MB)
+
+CS CDDO
+- I just left CPS, I got code of conducts automatically added to repos eg https://github.com/CPS-Innovation/Polaris/blob/main/CODE_OF_CONDUCT.md
+
+PC NCSC
+- Yup, it does things - repos are optional
+- GitHub actions checks on PRs are always a good first pass
+
+CS CDDO
+- https://david-gilbertson.medium.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5
+- > I’m harvesting credit card numbers and passwords from your site. Here’s how.
+The following is a true story. Or maybe it’s just based on a true story. Perhaps it’s not true at all.
+Reading time
+10 min read
+22 May 2019
+- pretty good example of that sort of thing ^
+
+Jim GCHQ
+- https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+- > About code owners - GitHub Docs
+You can use a CODEOWNERS file to define individuals or teams that are responsible for code in a repository. (7 kB)
+- Work in progress - we've been ok with the Free Team plan so far as we've only used it for Open Source where you get most of the features for free
+
+PC NCSC
+- Precommit: go linting
+- PR workflows: gosec etc
+
+CS CDDO
+- https://pre-commit.com/
+- From memory AWS Inspector is powered by Snyk as well
+
+Jim GCHQ
+- https://daniel.haxx.se/blog/2023/03/06/nvd-makes-up-vulnerability-severity-levels/
+
+CS CDDO
+- https://www.linkedin.com/in/danlorenc/ posts are really interesting and relevant on the point
+- https://snyk.io/product/snyk-code/
+- > Code Security & Code Quality Scanning | Snyk
+Learn more about Snyk Code that uses AI for code security testing and provides actionable suggestions right when the code is written.
+- see the “Prioritize top code risks” bit
+
+AS CDDO
+- Just as an idea for the next meet-up we could try a more structured lean coffee format, if people would find that useful? https://easyretro.io/publicboard/2qsREoUcr2Trw8OrxOwLEW6XdOJ3/2776df3f-7a8d-4b58-b5a2-e75047bdefd4
+
 ## 15 Sep 2023
 
 Only a small group this week has a general conversation about open source.
