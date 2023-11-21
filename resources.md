@@ -1,6 +1,6 @@
 ---
-layout: layout.njk
-title: Resources
+layout: page.njk
+title: Resources 
 ---
 
 # A list of x-gov software resources

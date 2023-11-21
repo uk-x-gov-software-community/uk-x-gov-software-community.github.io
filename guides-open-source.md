@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: page.njk
 title: Open Source Guide
 ---
 # x-Gov Open Source Guide

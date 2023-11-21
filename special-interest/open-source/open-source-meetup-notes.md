@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: page.njk
 title: x-gov Open Source Community Meeting Notes
 ---
 # x-Gov Open Source Community Meeting Notes
@@ -426,7 +426,7 @@ No agenda items this week so had a general discussion on topics brought up by th
 ### Code reuse - Open/Inner Source Presentation
 
 - Presenter: [Soydaner](https://github.com/soydaner)
-- Slides: [open source presentation](/open-source-presentation/)
+- Slides: [open source presentation](/special-interest/open-source/open-source-presentation/)
 
 ## 12 Apr 2023
 
