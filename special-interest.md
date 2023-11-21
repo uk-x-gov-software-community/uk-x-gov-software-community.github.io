@@ -22,3 +22,14 @@ title: Events
 ---
 
 ### Open Source Software
+
+
+*Aim:* To bring together practitioners from across government who are working to promote open source development in their organisations. The group meets to discuss and share issues, tools and blockers relating to open source (and inner source) development. The goal is to develop shared best practices and approaches to doing open source in a government context and to drive adoption across HMG.
+
+*Contact:* jim17197@gchq.gov.uk, alex.smith@digital.cabinet-office.gov.uk 
+
+*Meetings:* Every four weeks on a Friday
+
+*Meeting notes:* [Open source meet-up notes](/open-source-meetup-notes)
+
+*Slack Channel:* [#open-code](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8) on UK Government Digital slack
