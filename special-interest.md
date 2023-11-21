@@ -40,6 +40,6 @@ Community Goal Coordinate work drive change across the Civil Service in the fiel
 
 *Meetings:* Every four weeks on a Friday
 
-*Meeting notes:* [Open source meet-up notes](/open-source-meetup-notes)
+*Meeting notes:* [Open source meet-up notes](/special-interest/open-source/open-source-meetup-notes)
 
 *Slack Channel:* [#open-code](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8) on UK Government Digital slack
