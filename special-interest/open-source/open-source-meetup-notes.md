@@ -2,7 +2,6 @@
 layout: page.njk
 title: x-gov Open Source Community Meeting Notes
 ---
-# x-Gov Open Source Community Meeting Notes
 
 ## Overview
 

@@ -1,4 +1,7 @@
-# Open Source Guide - DRAFT
+---
+layout: page.njk
+title: Open Source Guide - DRAFT
+---
 
 ## Overview 
 
