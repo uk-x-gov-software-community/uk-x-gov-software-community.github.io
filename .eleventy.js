@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
  module.exports = function(eleventyConfig) {
    // Register the plugin
    eleventyConfig.addPlugin(govukEleventyPlugin,{
+    fontFamily: 'arial, sans-serif',
     header: {
       organisationLogo: '',
       organisationName: 'Cross Government Software Engineering Community',
