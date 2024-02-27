@@ -14,18 +14,18 @@ We have no planned events yet this year. If you would like to propose an event t
 ## 2022
 
 * We ran an [Unconference in November 2022](https://www.eventbrite.co.uk/x/cross-government-software-engineering-community-unconference-tickets-439884665877)
-* When we have held lightening talks we store slides and opr video (where available) on our [Gihub Community space](https://github.com/uk-x-gov-software-community/community-space). - so members of the group can re-watch / get them if they missed the section.
+* When we have held lightning talks we store slides and opr video (where available) on our [Gihub Community space](https://github.com/uk-x-gov-software-community/community-space). - so members of the group can re-watch / get them if they missed the section.
 
-We held a lightening talk on Thursday 29th September 2022
+We held a lightning talk on Thursday 29th September 2022
 
 * **Elastic Cloud at the UKHO - Rossall Sandford Principal Software Engineer**
 
-We held a lightening talk on Thursday 30th Of June 2022
+We held a lightning talk on Thursday 30th Of June 2022
 
 * **Solid - A lightning talk intro to a new W3C standard for the storage and permissioned access of personal data for the next phase of the web. - Max Leonard (Inrupt)**
 
 
-We held Lightening talks on Thursday 24th March 2022
+We held Lightning talks on Thursday 24th March 2022
 
 * **Federated API discovery - Bethan Palmer (CDDO) and Jamie Tanna (CDDO)**
 * **Get a fishing license service - Phil Benson, DEFRA**
