@@ -7,7 +7,7 @@ title: Resources
 ---
 
 ### Public civil service guidance and standards
-- [The GDS Way](https://gds-way.cloudapps.digital)
+- [The GDS Way](https://gds-way.digital.cabinet-office.gov.uk/)
 - [UKHO](https://github.com/UKHO/docs)
 - [DEFRA](https://github.com/DEFRA/software-development-standards)
 - [DfE](https://technical-guidance.education.gov.uk)
