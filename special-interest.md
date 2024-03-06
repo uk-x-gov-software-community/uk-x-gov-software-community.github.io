@@ -47,7 +47,7 @@ Community Goal Coordinate work drive change across the Civil Service in the fiel
 ---
 ### Heads of Engineering
 
-*Aim:* To bring together Heads of Engineering from across government to share best practice, discuss common challenges and work together to improve the quality of software engineering across government. A series of talks and discussions will be held to share knowledge and experience. Supported by the CDDO (Central Digital and Data Office) and a group of volunteers from across government.
+*Aim:* To bring together Heads of Engineering from across government to share best practice, discuss common challenges and work together to improve the quality of software engineering across government. A series of talks and discussions will be held to share knowledge and experience. Supported by the CDDO (Central Digital and Data Office) and a group of volunteers from across government. ( Stephen Ford CDDO, Shaun Hare DVSA, David Heath GDS, Andy Poole UKHO, Sebastian Schmieschek CDDO, Hen Wager HMCTS)
 
 *Contact:* cross-government-software-engineering-heads-of-engineering@digital.cabinet-office.gov.uk
 
