@@ -1,0 +1,15 @@
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+    You have only a few days left to take our in person conference survey.
+    <a class="govuk-notification-banner__link" href="https://docs.google.com/forms/d/e/1FAIpQLSdO0KMSqbtJCL4JXd-2LMGwGamyMUDOypi445N9FtLIrjxH-w/viewform">Take our conference survey now</a>.
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+    </div>
+</div>
