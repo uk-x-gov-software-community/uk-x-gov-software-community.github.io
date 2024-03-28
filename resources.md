@@ -13,7 +13,7 @@ title: Resources
 - [DfE](https://technical-guidance.education.gov.uk)
 - [MOJ](https://ministryofjustice.github.io/technical-guidance/)
 - [Companies House](https://github.com/companieshouse/styleguides)
-- [Home Office](https://github.com/UKHomeOffice/technical-service-requirements)
+- [Home Office](https://engineering.homeoffice.gov.uk/)
 - [CDDO API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
 - [NHS Business Services Authority playbook](https://nhsbsa.github.io/nhsbsa-digital-playbook/)
 
