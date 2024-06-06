@@ -1,10 +1,8 @@
 ---
 layout: page.njk
-title: Events
+title: Lean Coffee
 ---
 
-# Lean Coffee Session
----
 Our Lean coffees are held monthly on 4th Thursday of the month at 11.00-12.00.
 
 ### What is a lean coffee and how does it work?
