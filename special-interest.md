@@ -1,10 +1,11 @@
 ---
 layout: page.njk
-title: Events
+title: Special Interest Groups
 ---
 
-# There are a number of separate special interest groups aligned to the main group 
----
+Special interest groups are hosted and supported by the Cross Government Software Engineering Community and exist to provide a forum for community members to explore specific topics of interest in more depth. 
+
+If you'd like to join a special interest group please contact the relevant SIG lead.
 
 ### Sustainable Software 
 
@@ -16,8 +17,6 @@ Community Goal Coordinate work drive change across the Civil Service in the fiel
 
 *Slack Channel:* [#green-software-development](https://ukgovernmentdigital.slack.com/archives/C04C60X2FJA) on UK Government Digital slack
 
-
-
 ---
 
  ### Inclusive Recruitment
@@ -27,12 +26,9 @@ Community Goal Coordinate work drive change across the Civil Service in the fiel
 
 *Meetings:* Every 4-6 weeks, for 1 hour. We will review progress on creating resources, prioritise what resources to create next, and leave space to discuss ongoing recruitment campaigns if people want feedback on their own processes or job ads
 
-
-
 ---
 
 ### Open Source Software
-
 
 *Aim:* To bring together practitioners from across government who are working to promote open source development in their organisations. The group meets to discuss and share issues, tools and blockers relating to open source (and inner source) development. The goal is to develop shared best practices and approaches to doing open source in a government context and to drive adoption across HMG.
 
