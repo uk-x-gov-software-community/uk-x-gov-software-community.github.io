@@ -5,9 +5,7 @@ title: Events
 
 # Upcoming Events  
 
-We have no planned events yet this year. If you would like to propose an event then the best way is come to discuss it at one of our regular sessions.
-
-* Lean coffees are held monthly on 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
+Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
 # Past Events
 
