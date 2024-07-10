@@ -23,7 +23,7 @@ Community Goal Coordinate work drive change across the Civil Service in the fiel
 
 |     | Inclusive Recruitment SIG|
 |-----|---|
-|Contact | _vacant_ |
+|Contact | kulwant.lall@digital.justice.gov.uk |
 | Meetings | Every 4-6 weeks, for 1 hour. We will review progress on creating resources, prioritise what resources to create next, and leave space to discuss ongoing recruitment campaigns if people want feedback on their own processes or job ads |
 
 ## Open Source Software
@@ -47,4 +47,4 @@ A series of talks and discussions will be held to share knowledge and experience
 |     | Heads of Engineering SIG|
 |-----|---|
 |Contact | [cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk](mailto:cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk) |
-| Slack Channel | [#heads-of-engineering](https://ukgovernmentdigital.slack.com/archives/C058C1K39NV) private channel on UK Government Digital slack, contact the organisers for an inviation to the channel |
+| Slack Channel | [#heads-of-engineering](https://ukgovernmentdigital.slack.com/archives/C058C1K39NV) private channel on UK Government Digital slack, contact the organisers for an invitation to the channel |
