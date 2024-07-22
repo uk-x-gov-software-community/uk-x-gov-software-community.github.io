@@ -482,24 +482,24 @@ Learn more about Snyk Code that uses AI for code security testing and provides a
 </li>
 <li>Mermaid is natively supported by GitHub markdown:</li>
 </ul>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--mermaid" tabindex="0"><code><span class="x-govuk-code__variable">classDiagram</span>
-  <span class="x-govuk-code__variable">Doodad</span> &lt;|-- <span class="x-govuk-code__variable">Thingamy</span>
-  <span class="x-govuk-code__variable">Doodad</span> &lt;|-- <span class="x-govuk-code__variable">Wotsit</span>
-  <span class="x-govuk-code__variable">Doodad</span> &lt;|-- <span class="x-govuk-code__variable">Bananas</span>
-  <span class="x-govuk-code__variable">Doodad</span> : +<span class="x-govuk-code__variable">int</span> <span class="x-govuk-code__variable">id</span>
-  <span class="x-govuk-code__variable">Doodad</span>: +<span class="x-govuk-code__function"><span class="x-govuk-code__title">isUseful</span>()</span>
-  <span class="x-govuk-code__variable">Doodad</span>: +<span class="x-govuk-code__function"><span class="x-govuk-code__title">twiddle</span>()</span>
-  <span class="x-govuk-code__variable">class</span> <span class="x-govuk-code__variable">Thingamy</span>{
-    +<span class="x-govuk-code__variable">String</span> <span class="x-govuk-code__variable">colour</span>
-    +<span class="x-govuk-code__function"><span class="x-govuk-code__title">untwirl</span>()</span>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--mermaid" tabindex="0"><code>classDiagram
+  Doodad &lt;|-- Thingamy
+  Doodad &lt;|-- Wotsit
+  Doodad &lt;|-- Bananas
+  Doodad : +<span class="x-govuk-code__keyword">int</span> id
+  Doodad: +isUseful()
+  Doodad: +twiddle()
+  <span class="x-govuk-code__class"><span class="x-govuk-code__keyword">class</span> <span class="x-govuk-code__title">Thingamy</span></span>{
+    +String colour
+    +untwirl()
   }
-  <span class="x-govuk-code__variable">class</span> <span class="x-govuk-code__variable">Wotsit</span>{
-    -<span class="x-govuk-code__variable">int</span> <span class="x-govuk-code__variable">size</span>
-    -<span class="x-govuk-code__function"><span class="x-govuk-code__title">canTwirl</span>()</span>
+  <span class="x-govuk-code__class"><span class="x-govuk-code__keyword">class</span> <span class="x-govuk-code__title">Wotsit</span></span>{
+    -<span class="x-govuk-code__keyword">int</span> size
+    -canTwirl()
   }
-  <span class="x-govuk-code__variable">class</span> <span class="x-govuk-code__variable">Bananas</span>{
-    +<span class="x-govuk-code__variable">bool</span> <span class="x-govuk-code__variable">defunct</span>
-    +<span class="x-govuk-code__function"><span class="x-govuk-code__title">unfold</span>()</span>
+  <span class="x-govuk-code__class"><span class="x-govuk-code__keyword">class</span> <span class="x-govuk-code__title">Bananas</span></span>{
+    +bool defunct
+    +unfold()
   }
 </code></pre>
 
