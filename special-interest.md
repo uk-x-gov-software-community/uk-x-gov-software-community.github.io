@@ -9,7 +9,7 @@ If you'd like to join a special interest group please contact the relevant SIG l
 
 ## Sustainable Software 
 
-Community Goal Coordinate work drive change across the Civil Service in the field of Green Software Engineering. See the [private community space](https://github.com/uk-x-gov-software-community/community-space/tree/main/special-interest-meetings/green-software) for more information [Link Available to Software Engineering Community members]
+Community Goal Coordinate work drive change across the Civil Service in the field of Green Software Engineering. See the [private community space](https://github.com/uk-x-gov-software-community/community-space/tree/main/special-interest-meetings/green-software) for more information [Link only available to Software Engineering Community members]
 
 |     | Sustainable Software SIG|
 |-----|---|
@@ -19,11 +19,11 @@ Community Goal Coordinate work drive change across the Civil Service in the fiel
 
 ## Inclusive Recruitment
 
-[Our aim](https://github.com/uk-x-gov-software-community/community-space/blob/main/special-interest-meetings/inclusive-recruitment/2023-08-09.md#1-goal) [Link Available to Software Engineering Community members] is to increase the diversity of software engineers and other technical disciplines across government. We plan to do this by creating resources to support the development of more inclusive hiring practices, advocating and signposting people to these good practices and building a community where people can share ideas and discuss improving practices.
+[Our aim](https://github.com/uk-x-gov-software-community/community-space/blob/main/special-interest-meetings/inclusive-recruitment/2023-08-09.md#1-goal) [Link only available to Software Engineering Community members] is to increase the diversity of software engineers and other technical disciplines across government. We plan to do this by creating resources to support the development of more inclusive hiring practices, advocating and signposting people to these good practices and building a community where people can share ideas and discuss improving practices.
 
 |     | Inclusive Recruitment SIG|
 |-----|---|
-|Contact | _vacant_ |
+|Contact | kulwant.lall@digital.justice.gov.uk |
 | Meetings | Every 4-6 weeks, for 1 hour. We will review progress on creating resources, prioritise what resources to create next, and leave space to discuss ongoing recruitment campaigns if people want feedback on their own processes or job ads |
 
 ## Open Source Software
@@ -47,4 +47,4 @@ A series of talks and discussions will be held to share knowledge and experience
 |     | Heads of Engineering SIG|
 |-----|---|
 |Contact | [cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk](mailto:cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk) |
-| Slack Channel | [#heads-of-engineering](https://ukgovernmentdigital.slack.com/archives/C058C1K39NV) private channel on UK Government Digital slack, contact the organisers for an inviation to the channel |
+| Slack Channel | [#heads-of-engineering](https://ukgovernmentdigital.slack.com/archives/C058C1K39NV) private channel on UK Government Digital slack, contact the organisers for an invitation to the channel |
