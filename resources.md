@@ -18,6 +18,9 @@ title: Resources
 - [NHS Business Services Authority playbook](https://nhsbsa.github.io/nhsbsa-digital-playbook/)
 
 ---
+### Colleagues outside of UK Government
+
+International Governments digital blogs and news we are aware of can be found [here](/colleagues/).
 
 ### Tools
 
