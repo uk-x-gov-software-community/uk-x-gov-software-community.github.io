@@ -7,6 +7,15 @@ title: Events
 
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
+Here are the next meetings for the **Heads of Engineering Special Interest Group**:
+11 Sept - Virtual - 1-3pm: "Effective Logging and Observability"
+23 October - Virtual - 1-3pm
+2 Dec - In Person - Full day - London
+21 Jan - Virtual - 1-3pm
+6 Mar - In Person - Full day - venue TBC
+
+If you wish to join this interest group, please contact engineering-excellence@digital.cabinet-office.gov.uk
+
 # Past Events
 
 ## 2022
