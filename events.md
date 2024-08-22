@@ -15,7 +15,7 @@ Here are the next meetings for the **Heads of Engineering Special Interest Group
 * 21 Jan 2025 - Virtual - 1-3pm
 * 6 Mar 2025 - In Person - Full day - venue TBC
 
-If you wish to join this interest group, please contact engineering-excellence@digital.cabinet-office.gov.uk
+If you wish to join this interest group, please [contact us](/special-interest/#heads-of-engineering) 
 
 # Past Events
 
