@@ -48,3 +48,4 @@ A series of talks and discussions will be held to share knowledge and experience
 |-----|---|
 |Contact | [cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk](mailto:cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk) |
 | Slack Channel | [#heads-of-engineering](https://ukgovernmentdigital.slack.com/archives/C058C1K39NV) private channel on UK Government Digital slack, contact the organisers for an invitation to the channel |
+| Meetings | For the meeting schedule, visit https://uk-x-gov-software-community.github.io/events/ |
