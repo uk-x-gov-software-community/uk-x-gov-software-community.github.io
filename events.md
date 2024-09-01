@@ -7,6 +7,12 @@ title: Events
 
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
+Next Lean Coffee: 26 September 11:00 – 12:00
+
+We are planning a virtual short talk event in on 24th October 2024. Around the theme of recent Government Initiatives. We have speakers from CCDO Engineering Excellence, TechTrack and Top 75 services team. If you would like to know more or have something to present please [contact us](/contact/)
+
+## Special Interest Groups
+
 Here are the next meetings for the **Heads of Engineering Special Interest Group**:
 
 * 11 Sept 2024 - Virtual - 1-3pm: "Effective Logging and Observability"
