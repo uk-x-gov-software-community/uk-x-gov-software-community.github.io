@@ -9,7 +9,7 @@ Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-
 
 Next Lean Coffee: 26 September 11:00 – 12:00
 
-We are planning a virtual short talk event in on 24th October 2024. Around the theme of recent Government Initiatives. We have speakers from CCDO Engineering Excellence, TechTrack and Top 75 services team. If you would like to know more or have something to present please [contact us](/contact/)
+We are planning a virtual short talk event in on 24th October 2024 10:00 - 12:00. Around the theme of recent Government Initiatives. We have speakers from CCDO Engineering Excellence, TechTrack and Top 75 services team. If you would like to know more or have something to present please [contact us](/contact/)
 
 ## Special Interest Groups
 
