@@ -49,3 +49,14 @@ A series of talks and discussions will be held to share knowledge and experience
 |Contact | [cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk](mailto:cross-government-software-engineering-heads-of-engineering+managers@digital.cabinet-office.gov.uk) |
 | Slack Channel | [#heads-of-engineering](https://ukgovernmentdigital.slack.com/archives/C058C1K39NV) private channel on UK Government Digital slack, contact the organisers for an invitation to the channel |
 | Meetings | For the meeting schedule, visit https://uk-x-gov-software-community.github.io/events/ |
+
+## Logging and Observability 
+
+Community Goal Coordinate work drive change across the Civil Service in the field of logging and observability
+
+|     | Logging and Observability SIG|
+|-----|---|
+| Contact  | John Clarke (John Clarke@ukho.gov.uk or on x-gov slack) | We are just getting started, get in touch if you would like to be involved.
+| Meetings | TBC  |
+| Slack Channel | 
+
