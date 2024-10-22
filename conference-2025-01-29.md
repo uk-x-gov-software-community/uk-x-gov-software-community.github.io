@@ -24,7 +24,7 @@ This event has a limited capacity. Therefore, to ensure a diverse representation
 
 As part of the conference schedule, you have the opportunity to give a 10-minute lightning talk on a topic of your choice. 
 
-If you have an interesting, funny, frustrating or inspiring story from your time working in government, please submit a talk title and brief description via our form. We have up to 6 spaces for these 10-minute talks (including optional 5 minutes for questions). 
+If you have an interesting, funny, frustrating or inspiring story from your time working in government, **[please submit a talk title and brief description via our form](https://docs.google.com/forms/d/e/1FAIpQLSdPAm-_gH6r9TAXBzsplKvCANWEI3kZJYEmlo2UA-uFs2KdnA/viewform?usp=sf_link)**. We have up to 6 spaces for these 10-minute talks (including optional 5 minutes for questions).
 
 Submissions will be reviewed by the conference organising committee. If your talk is accepted, you will be guaranteed a ticket.
 
