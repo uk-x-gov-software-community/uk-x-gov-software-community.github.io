@@ -18,7 +18,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build && eleventy",
+    "build": "eleventy",
     "build:local:docker": "docker build -t uk-xgov-software-community . && docker run -dp 127.0.0.1:8081:8081 uk-xgov-software-community"
   },
   "repository": {

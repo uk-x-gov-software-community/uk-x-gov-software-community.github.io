@@ -3,7 +3,7 @@ layout: page.njk
 title: Cross Government Software Engineering Conference 2025
 ---
 
-![Drawing with stylised people with laptops at a table discussing code](https://raw.githubusercontent.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io/conference.png)
+![Drawing with stylised people with laptops at a table discussing code](/assets/images/conference.png)
 
 📣 **Register your interest for the Cross Government Software Engineering Conference 2025**
 
