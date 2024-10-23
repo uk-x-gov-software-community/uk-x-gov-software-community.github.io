@@ -5,15 +5,18 @@ module.exports = function(eleventyConfig) {
     dynamicPartials: false,
     strictFilters: false,
   });
-  eleventyConfig.addPassthroughCopy('assets')
-  eleventyConfig.addPassthroughCopy('open-source-presentation/*.png')
   return {
-    passthroughFileCopy: true
-  }
+   addPassthroughCopy: function (dir) {
+     eleventyConfig.addPassthroughCopy(dir)
+   },
+  };
 }
 
 
  module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('assets')
+  eleventyConfig.addPassthroughCopy('open-source-presentation/*.png')
+ 
    // Register the plugin
    eleventyConfig.addPlugin(govukEleventyPlugin,{
     fontFamily: 'arial, sans-serif',
