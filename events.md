@@ -17,10 +17,8 @@ We are pleased to invite you also to the in-person [Cross Government Software En
 
 Here are the next meetings for the **Heads of Engineering Special Interest Group**:
 
-* 11 Sept 2024 - Virtual - 1-3pm: "Effective Logging and Observability"
-* 23 October 2024 - Virtual - 1-3pm
-* 2 Dec 2024 - In Person - Full day - London
-* 21 Jan 2025 - Virtual - 1-3pm
+* 30 January 2025 - Hybrid - 1-3 PM Career progression for Tech Tracks (Collaborative workshop)
+
 * 6 Mar 2025 - In Person - Full day - venue TBC
 
 If you wish to join this interest group, please [contact us](/special-interest/#heads-of-engineering) 
