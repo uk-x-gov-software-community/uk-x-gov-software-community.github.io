@@ -26,7 +26,7 @@ The Cross Government Software Engineering Conference will take place on Wednesda
 | 11:30 - 13:00 | Lightning Talks (6 sessions with Q&A) | Lean Coffee Session |
 | 13:00 - 14:00 | Lunch ||
 | 14:00 - 15:00 |  Keynote - Terence Eden, Lessons learned Open Sourcing the UK's Covid Tracing App ||
-| 15:00 - 16:30 |  Deep-dive tech sessions | Lean Coffee Session |
+| 15:00 - 15:20 |  Tech Talk TBC | Lean Coffee Session |
 |15:20 - 15:40 | GOV.UK One Login: What, Why and How - Phil Fordham & Paul Dougan | Lean Coffee Session |
 | 15:40 - 16:00 |Applying AI to the Legislative Process - Liam Wilkinson (i.AI) | Lean Coffee Session |
 | 16:00 - 16:20 | Evolving GOV.UK Chat from Prototype to Production AI System - Alessia Tosi, Kevin Dew and Rich Eveson | Lean Coffee Session |
