@@ -22,7 +22,7 @@ The Cross Government Software Engineering Conference will take place on Wednesda
 | Time |  Main Room | Breakout room 1 |
 |-----|---|---|
 | 09:00 - 10:30 | Registration | |
-| 10:30 - 11:30 |  Keynote - Asmin Hussain, Green Software Foundation (with Q&A)
+| 10:30 - 11:30 |  Keynote - Asim Hussain, Green Software Foundation (with Q&A)
 | 11:30 - 13:00 | Lightning Talks (6 sessions with Q&A) | Lean Coffee Session |
 | 13:00 - 14:00 | Lunch ||
 | 14:00 - 15:00 |  Keynote - Terence Eden, Lessons learned Open Sourcing the UK's Covid Tracing App ||
