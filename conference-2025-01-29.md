@@ -67,6 +67,7 @@ You can book a wide range of hotels in the area through CTM or any other provide
 * ibis London City - Shoreditch
 * Wilde apartments, Commercial street
 * Leman Locke studios, Leman street
+* Travelodge London Central Aldgate East
 
 Please contact us if you need any further information, either using the Cross Government Slack ( in the software development channel ) or by emailing the <a href="mailto:secretariat-engineering-conference@digital.cabinet-office.gov.uk" >organising committee at secretariat-engineering-conference@digital.cabinet-office.gov.uk </a>
 
