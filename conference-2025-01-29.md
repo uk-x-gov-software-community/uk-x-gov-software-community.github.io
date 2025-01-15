@@ -53,7 +53,7 @@ N.B. There is no parking on site.
 
 ### On the day
 
-Please remember to bring a valid form of ID and, where applicable, a Civil Service pass.
+Please remember to bring a valid form of ID and preferably a Civil Service pass.
 On the day you will also be given a conference pass to keep with you at all times, so that you can access the areas reserved for the event.
 You will be able to use GovWifi on the premises.
 Food and beverages, including tea and coffee, will be provided, please contact the organising committee if you have any specific request (secretariat-engineering-conference@digital.cabinet-office.gov.uk).
