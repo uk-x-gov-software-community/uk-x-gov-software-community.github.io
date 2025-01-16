@@ -8,10 +8,11 @@ title: Events
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
 ## 2025
+* 29th January 2025 - In Person - 9:00 - 17:00 - [Cross Government Software Engineering Conference 2025](/conference-2025-01-29/)!
 
 * 27th February 2025 - Virtual - 11:00 - 12:00 - Lean Coffee
 
-We are pleased to invite you also to the in-person [Cross Government Software Engineering Conference 2025](/conference-2025-01-29/)!
+
 
 ## Special Interest Groups
 
