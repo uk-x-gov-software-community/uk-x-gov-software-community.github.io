@@ -1,6 +1,7 @@
 const govukEleventyPlugin = require('@x-govuk/govuk-eleventy-plugin')
 
 module.exports = function(eleventyConfig) {
+  
   eleventyConfig.setLiquidOptions({
     dynamicPartials: false,
     strictFilters: false,

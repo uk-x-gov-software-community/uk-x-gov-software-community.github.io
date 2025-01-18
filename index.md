@@ -7,6 +7,9 @@ description: We are a group of engineers working in software engineering across 
 startButton:
   href: "https://uk-cross-government-software-engineering-community.mailchimpsites.com/"
   text: Join our Mailing list
+image:
+  src: "../../assets/images/masthead_bg.png"
+  alt: "Cross Governemnt Software Engineering"
 related:
   sections:
     - title: Related links
@@ -21,7 +24,7 @@ related:
           href: ../../resources
         - text: Lean Coffee
           href: ../../lean-coffee
-        
+     
 
 ---
 {% include "banner.njk" %}
