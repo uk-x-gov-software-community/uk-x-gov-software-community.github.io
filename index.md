@@ -8,7 +8,7 @@ startButton:
   href: "https://uk-cross-government-software-engineering-community.mailchimpsites.com/"
   text: Join our Mailing list
 image:
-  src: "../../assets/images/color_masthead_bg.png"
+  src: "../../assets/images/masthead_bg.png"
   alt: "Cross Governemnt Software Engineering"
 related:
   sections:

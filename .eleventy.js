@@ -23,16 +23,17 @@ module.exports = function(eleventyConfig) {
     fontFamily: 'arial, sans-serif',
     header: {
       logotype: {
-        html: '<img id="xgov-logo" src="assets/logo/cgov-logo.svg" alt="Cross Government Software Engineering Community">',
+        html: '<img id="xgov-logo" src="../../assets/logo/cgov-logo-2.svg" alt="Cross Government Software Engineering Community">',
       },
        productName: 'Cross Government Software Engineering Community',
     },
+    
     footer: {
       contentLicence: {
         html: 'A community project. <a class="govuk-footer__link" href="https://github.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io">GitHub source</a>.<br /> Thanks to <a href="https://x-govuk.github.io/govuk-eleventy-plugin/" class="govuk-link" >X-GOVUK projects</a> for the template' 
       },
       copyright: {
-        text: '© Cross Government Software Engineering Community'
+        html: 'Responsibility &#9745; Pragmatism  &#9745; Public Service  &#9745; <br /> © Cross Government Software Engineering Community'
       }
     }
    })
