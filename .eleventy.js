@@ -22,9 +22,9 @@ module.exports = function(eleventyConfig) {
     fontFamily: 'arial, sans-serif',
     header: {
       logotype: {
-        html: '<img src="assets/logo/cgov-logo.svg"  style="align:middle;padding:right:1em" width="35px" height="35px" alt="Cross Government Software Engineering Community">',
+        html: '<img id="xgov-logo" src="assets/logo/cgov-logo.svg" alt="Cross Government Software Engineering Community">',
       },
-      productName: 'Cross Government Software Engineering Community',
+       productName: 'Cross Government Software Engineering Community',
     },
     footer: {
       contentLicence: {
