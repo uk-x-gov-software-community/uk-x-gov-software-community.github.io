@@ -19,20 +19,27 @@ On Wednesday, 29th January 2025, we will be hosting an in-person conference in L
 ### The Agenda of the event 
 The Cross Government Software Engineering Conference will take place on Wednesday, 29th January 2025 from 9 AM to 5PM, social (optional) from 5PM onwards. Below the breakdown of the sessions:
 
-| Time          | Main Room                                                                                             | Breakout room 1     |
-|---------------|-------------------------------------------------------------------------------------------------------|---------------------|
-| 09:00 - 10:30 | Registration                                                                                          |                     |
-| 10:30 - 11:30 | Keynote - Asim Hussain, Green Software Foundation (with Q&A)                                          |                     |
-| 11:30 - 11:30 | Conference photo                                                                                      |                     |
-| 11:30 - 13:00 | Lightning Talks (6 sessions with Q&A)                                                                 | Lean Coffee Session |
-| 13:00 - 14:00 | Lunch                                                                                                 |                     |
-| 14:00 - 15:00 | Keynote - Terence Eden, Lessons learned Open Sourcing the UK's Covid Tracing App                      |                     |
-| 15:00 - 15:20 | Transforming how we implement the rules of legal aid - Bex Appleyard                                  | Lean Coffee Session |
-| 15:20 - 15:40 | GOV.UK One Login: What, Why and How - Phil Fordham & Paul Dougan                                      | Lean Coffee Session |
-| 15:40 - 16:00 | Applying AI to the Legislative Process - Liam Wilkinson (i.AI)                                        | Lean Coffee Session |
-| 16:00 - 16:20 | Evolving GOV.UK Chat from Prototype to Production AI System - Alessia Tosi, Kevin Dew and Rich Eveson | Lean Coffee Session |
-| 16:20 - 16:30 | Break                                                                                                 |                     |
-| 16:30 - 17:00 | Closing Session - X-Gov Software Dev Community and How to Get Involved                                |                     |
+| Time          | Social Space                                                                     | Garage                                                                                                | Room 701            |
+|---------------|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|---------------------|
+| 09:00 - 10:30 | Registration                                                                     |                                                                                                       |                     |
+| 10:30 - 11:30 | Keynote - Asim Hussain, Green Software Foundation (with Q&A)                     |                                                                                                       |                     |
+| 11:30 - 11:30 | Conference photo                                                                 |                                                                                                       |                     |
+| 11:30 - 11:30 |                                                                                  | Conference photo                                                                                      |                     |
+| 11:30 - 11:40 |                                                                                  | Lightning Talks - Transforming API Management: From Vendor Lock-in to Open Source, Abhi Markan        | Lean Coffee Session |
+| 11:43 - 11:53 |                                                                                  | Lightning Talks - So, you're interested in Green Software - now what?, Rachael Robinson               | Lean Coffee Session |
+| 11:56 - 12:06 |                                                                                  | Lightning Talks - Creative Technology in Government, Brendan Arnold                                   | Lean Coffee Session |
+| 12:09 - 12:19 |                                                                                  | Lightning Talks - Data Engineering is a Software Discipline, Michal Poreba                            | Lean Coffee Session |
+| 12:22 - 12:32 |                                                                                  | Lightning Talks - We Ran a Hackathon: Here's How to Make It Work, Hettie Street and Stephanie De Jong | Lean Coffee Session |
+| 12:35 - 12:45 |                                                                                  | Lightning Talks - User: Friend or Foe?, Paul King                                                     | Lean Coffee Session |
+| 12:45 - 13:00 |                                                                                  | Lightning Talks Q&A                                                                                   | Lean Coffee Session |
+| 13:00 - 14:00 |                                                                                  | Lunch                                                                                                 |                     |
+| 14:00 - 15:00 | Keynote - Terence Eden, Lessons learned Open Sourcing the UK's Covid Tracing App |                                                                                                       |                     |
+| 15:00 - 15:20 |                                                                                  | Transforming how we implement the rules of legal aid - Bex Appleyard                                  | Lean Coffee Session |
+| 15:20 - 15:40 |                                                                                  | GOV.UK One Login: What, Why and How - Phil Fordham & Paul Dougan                                      | Lean Coffee Session |
+| 15:40 - 16:00 |                                                                                  | Applying AI to the Legislative Process - Liam Wilkinson (i.AI)                                        | Lean Coffee Session |
+| 16:00 - 16:20 |                                                                                  | Evolving GOV.UK Chat from Prototype to Production AI System - Alessia Tosi, Kevin Dew and Rich Eveson | Lean Coffee Session |
+| 16:20 - 16:30 |                                                                                  | Break                                                                                                 |                     |
+| 16:30 - 17:00 | Closing Session - X-Gov Software Dev Community and How to Get Involved           |                                                                                                       |                     |
 
 
 Social (optional) 5PM onwards
