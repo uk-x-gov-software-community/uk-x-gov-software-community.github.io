@@ -16,6 +16,7 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build
+      - run: cp  _site/assets/favicon.*  _site/assets/images/. # fix for  favicon
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         if: github.ref == 'refs/heads/main'

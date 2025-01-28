@@ -1,0 +1,22 @@
+$govuk-brand-colour:#09233b;
+$govuk-link-colour:#062D56;
+$govuk-link-hover-colour:#1d70b8;
+$xgov-font-family: 'Helvetica', 'Arial', sans-serif;
+#xgov-logo {
+    background-color: transparent;
+    width: 35px;
+    height: 39.9px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.x-govuk-masthead {
+    background-image: url('../../assets/images/color_masthead_bg_cover.png');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: 85% 70%;
+    font-family: $xgov-font-family;
+}
+.govuk-heading-l {
+    color: $govuk-link-hover-colour !important;
+}
