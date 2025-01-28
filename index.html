@@ -1,38 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template no-js">
+<html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8">
-    <title>Welcome - Cross Government Software Engineering Community</title>
+    <title>Welcome - GOV.UK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#0b0c0c"> 
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0b0c0c">
 
-  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon">
-  <link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c">
-  <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
-
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/govuk.css">
 
-  <meta property="og:url" content="/">
+
   <meta property="og:title" content="Welcome">
 <meta property="og:description" name="description" content="We are a group of engineers working in software engineering across government, some of us are hands on developers, others working in other technical or management roles.">
-    
   </head>
-  <body class="govuk-template__body ">
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
       <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
 
-  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <header class="govuk-header app-header app-header--no-border" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            Cross Government Software Engineering Community
-          </span>
+          <img id="xgov-logo" src="../../assets/logo/cgov-logo-2.svg" alt="Cross Government Software Engineering Community">
+        <span class="govuk-header__product-name">
+          Cross Government Software Engineering Community
         </span>
       </a>
     </div>
@@ -40,9 +33,11 @@
   </div>
 </header>
 
-
   
-<div class="x-govuk-masthead x-govuk-masthead--large">
+
+  <main id="main-content" role="main">
+    
+<div class="x-govuk-masthead">
   <div class="govuk-width-container">
     
     <div class="govuk-grid-row">
@@ -50,41 +45,44 @@
         <h1 class="x-govuk-masthead__title">
           Welcome
         </h1>
-        <div class="x-govuk-masthead__description">
+        <p class="x-govuk-masthead__description">
           We are a group of engineers working in software engineering across government, some of us are hands on developers, others working in other technical or management&nbsp;roles.
-        </div>
-        <a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/" role="button" draggable="false" class="govuk-button x-govuk-button--inverse govuk-button--start" data-module="govuk-button">
+        </p>
+        <a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/" role="button" draggable="false" class="govuk-button govuk-button--inverse govuk-button--start" data-module="govuk-button">
   Join our Mailing list
   <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
     <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
-  </svg></a>
+  </svg>
+</a>
+      </div>
+      <div class="govuk-grid-column-one-third-from-desktop">
+        <div class="x-govuk-masthead__image">
+          <img src="../../assets/images/masthead_bg.png" alt="Cross Governemnt Software Engineering">
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-
-        <div class="govuk-width-container ">
-        <main class="govuk-main-wrapper " id="main-content" role="main">
-  <div class="app-prose-scope"><div class="govuk-grid-row">
+    <div class="govuk-main-wrapper">
+      <div class="govuk-width-container">
+          <div class="app-prose-scope"><div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-notification-banner" role="region"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title" >
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Important
     </h2>
   </div>
-  <div class="govuk-notification-banner__content">  <p class="govuk-notification-banner__heading">
-    Joining us at our In-person Cross Government Software Engineering Conference 2025 ?
-    <a class="govuk-notification-banner__link" href="/conference-2025-01-29/">All you need to know here </a>.
-  </p>
-</div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+        Joining us at our In-person Cross Government Software Engineering Conference 2025 ?
+        <a class="govuk-notification-banner__link" href="/conference-2025-01-29/">All you need to know here </a>.
+      </p>
+  </div>
 </div>
 <p class="govuk-body"></div></p>
-</div>
-<div class="govuk-grid-row">
+</div><div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <h1 class="govuk-heading-l">Learn about</h1>
 </div>
@@ -148,33 +146,33 @@ You will get a welcome email and will then be added onto our mailing list of eve
 
 
 <div class="x-govuk-related-navigation">
-    <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-links">
-      <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-links">
-        Related links
-      </h2>
-        <ul class="x-govuk-related-navigation__link-list">
-            <li class="x-govuk-related-navigation__link">
-              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../objectives">Objectives</a>
-            </li>
-            <li class="x-govuk-related-navigation__link">
-              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../events">Events</a>
-            </li>
-            <li class="x-govuk-related-navigation__link">
-              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../special-interest">Special Interest groups</a>
-            </li>
-            <li class="x-govuk-related-navigation__link">
-              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../resources">Resources</a>
-            </li>
-            <li class="x-govuk-related-navigation__link">
-              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../lean-coffee">Lean Coffee</a>
-            </li>
-        </ul>
-    </nav>
+  <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-links">
+    <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-links">
+      Related links
+    </h2>
+    <ul class="x-govuk-related-navigation__link-list">
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../objectives">Objectives</a>
+      </li>
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../events">Events</a>
+      </li>
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../special-interest">Special Interest groups</a>
+      </li>
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../resources">Resources</a>
+      </li>
+      <li class="x-govuk-related-navigation__link">
+        <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../lean-coffee">Lean Coffee</a>
+      </li>
+    </ul>
+  </nav>
 </div>
 
-        </main>
       </div>
-
+    </div>
+  </main>
 
   <footer class="govuk-footer app-footer " role="contentinfo">
   <div class="govuk-width-container ">
@@ -183,15 +181,13 @@ You will get a welcome email and will then be added onto our mailing list of eve
           <span class="govuk-footer__licence-description">
             A community project. <a class="govuk-footer__link" href="https://github.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io">GitHub source</a>.<br /> Thanks to <a href="https://x-govuk.github.io/govuk-eleventy-plugin/" class="govuk-link" >X-GOVUK projects</a> for the template
           </span>
-      </div>
-      <div class="govuk-footer__meta-item">© Cross Government Software Engineering Community
-      </div>
+      </div><div class="govuk-footer__meta-item">Responsibility &#9745; Pragmatism  &#9745; Public Service  &#9745; <br /> © Cross Government Software Engineering Community
+        </div>
     </div>
   </div>
 </footer>
 
 
-  <script src="/assets/govuk.js"></script>
-  <script>document.documentElement.classList.remove('no-js')</script>
+  <script src="/assets/govuk.js" type="module"></script>
   </body>
 </html>

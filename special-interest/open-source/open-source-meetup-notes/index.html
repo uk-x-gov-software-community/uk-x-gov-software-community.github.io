@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template no-js">
+<html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8">
-    <title>x-gov Open Source Community Meeting Notes - Cross Government Software Engineering Community</title>
+    <title>x-gov Open Source Community Meeting Notes - GOV.UK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#0b0c0c"> 
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0b0c0c">
 
-  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon">
-  <link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c">
-  <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
-
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/govuk.css">
 
-  <meta property="og:url" content="/special-interest/open-source/open-source-meetup-notes/">
+
   <meta property="og:title" content="x-gov Open Source Community Meeting Notes">
 
-    
   </head>
-  <body class="govuk-template__body ">
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
       <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
@@ -29,10 +23,9 @@
   <div class="govuk-header__container govuk-width-container app-header__container">
     <div class="govuk-header__logo app-header__logo">
       <a href="/" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <span class="govuk-header__logotype-text">
-            Cross Government Software Engineering Community
-          </span>
+          <img id="xgov-logo" src="../../assets/logo/cgov-logo-2.svg" alt="Cross Government Software Engineering Community">
+        <span class="govuk-header__product-name">
+          Cross Government Software Engineering Community
         </span>
       </a>
     </div>
@@ -40,17 +33,18 @@
   </div>
 </header>
 
+  
 
-      <div class="govuk-width-container ">
-  <div class="govuk-breadcrumbs govuk-!-display-none-print">
+      <div class="govuk-width-container">
+  <nav class="govuk-breadcrumbs govuk-!-display-none-print" aria-label="Breadcrumb">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="/">Home</a>
     </li>
   </ol>
-</div>
+</nav>
 
-        <main class="govuk-main-wrapper " id="main-content" role="main">
+        <main class="govuk-main-wrapper" id="main-content">
   <header class="app-document-header">
   <h1 class="app-document-header__title govuk-heading-xl">
     x-gov Open Source Community Meeting Notes
@@ -719,15 +713,13 @@ Learn more about Snyk Code that uses AI for code security testing and provides a
           <span class="govuk-footer__licence-description">
             A community project. <a class="govuk-footer__link" href="https://github.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io">GitHub source</a>.<br /> Thanks to <a href="https://x-govuk.github.io/govuk-eleventy-plugin/" class="govuk-link" >X-GOVUK projects</a> for the template
           </span>
-      </div>
-      <div class="govuk-footer__meta-item">© Cross Government Software Engineering Community
-      </div>
+      </div><div class="govuk-footer__meta-item">Responsibility &#9745; Pragmatism  &#9745; Public Service  &#9745; <br /> © Cross Government Software Engineering Community
+        </div>
     </div>
   </div>
 </footer>
 
 
-  <script src="/assets/govuk.js"></script>
-  <script>document.documentElement.classList.remove('no-js')</script>
+  <script src="/assets/govuk.js" type="module"></script>
   </body>
 </html>
