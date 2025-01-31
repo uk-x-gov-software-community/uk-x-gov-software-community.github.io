@@ -5,6 +5,7 @@ title: Cross Government Software Engineering Conference 2025
 
 ![Drawing with stylised people with laptops at a table discussing code](/assets/images/conference.png)
 
+{% include "banner.njk" %} 
 
 On Wednesday, 29th January 2025, we will be hosting an in-person conference in London, bringing together members of the community for an exciting day of talks, discussions, and networking. 
 
