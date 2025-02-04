@@ -19,7 +19,7 @@ It took a lot of organising by the Cross Government Software Engineering Communi
 
 
 ### Keynote Highlights
-The conference kicked off with an inspiring keynote from Asim Hussain of the Green Software Foundation. His talk focused on sustainable software practices, highlighting the need for consistent measurement of environmentally responsible development approaches and cloud use. This keynote, reminding attendees of their responsibility to consider sustainability in their software engineering efforts.
+The conference kicked off with an inspiring keynote from Asim Hussain of the Green Software Foundation. His talk focused on sustainable software practices, highlighting the need for consistent measurement of environmentally responsible development approaches and cloud use. This keynote reminded attendees of their responsibility to consider sustainability in their software engineering efforts.
 Later in the afternoon, Terence Eden captivated and inspired the audience with lessons from open-sourcing the UK's COVID-19 tracing app. His story of the time showed all sides to open collaboration in government projects, emphasising how these principles (embraced in the service standard) can lead to better public trust and more robust software solutions and better security.
 <p style="clear:both;"></p>
 <img src="/assets/images/conference-2025/teden.jpg"
