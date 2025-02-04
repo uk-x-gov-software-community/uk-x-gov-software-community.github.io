@@ -11,7 +11,7 @@ author: Shaun Hare
 
 The Cross Government Software Engineering Conference, held on January 29, 2025, in GDS Whitechapel building in London, was a fantastic gathering of professionals dedicated to the advancement of software development within the public sector.  
 
-It took a lot of organising by the Cross Government Software Engineering Community, but this event was a powerful reminder of the value of collaboration, knowledge sharing, and innovation in government technology. Pulling off an event of this scale was no small feat, and immense credit goes to the organising committee, particularly hard work by Alex Coleman Active Travel England and Claudia Chiurlia GDS’s Engineering Excellence team, and the conference helpers who ensured everything ran smoothly. The success of the conference demonstrated a strong demand for continued engagement and collaboration within the community. 
+It took a lot of organising by the Cross Government Software Engineering Community, but this event was a powerful reminder of the value of collaboration, knowledge sharing, and innovation in government technology. Pulling off an event of this scale was no small feat, and immense credit goes to the organising committee, particularly hard work by Alex Coleman (Active Travel England) and Claudia Chiurlia (GDS’s Engineering Excellence team), and the conference helpers who ensured everything ran smoothly. The success of the conference demonstrated a strong demand for continued engagement and collaboration within the community. 
 
 <img src="/assets/images/conference-2025/posters.jpg"
      alt="Posters at Cross Government Software Engineering Conference"
