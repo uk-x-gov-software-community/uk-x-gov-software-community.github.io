@@ -61,7 +61,7 @@ These sessions provided an a in-depth look at the innovative work teams are doin
 
 ### Building Connections and Community
 
-As is always a valuable aspect of the conference being the opportunity to network. With attendees from 36 different departments and agencies, the event hopefully will create new connections between people who might otherwise not meet. There seemed to be people lost in discussions, sharing challenges, and exchanging best practices, the objectives of a cross-government software engineering community were surely met.
+The conference also provided valuable time for attendees to network and chat. With attendees from 36 different departments and agencies, the event hopefully created new connections between people who might otherwise not meet. At lunch there seemed to be people lost in discussions, sharing challenges, and exchanging best practices, the objectives of a cross-government software engineering community were surely met.
 
 ### A Big Success 
 
