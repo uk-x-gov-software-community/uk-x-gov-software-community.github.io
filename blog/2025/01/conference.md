@@ -32,7 +32,7 @@ Later in the afternoon, Terence Eden captivated and inspired the audience with l
 
 ### Engaging Lightning Talks
 
-One of the standout features of the conference came from the community members themselves , this was the series of lightning talks, where speakers from various government departments delivered the following topics :
+One of the standout features of the conference came from the community members themselves, this was the series of lightning talks, where speakers from various government departments delivered the following topics:
 
 - Transforming API Management: From Vendor Lock-in to Open Source by Abhi Markan
 
