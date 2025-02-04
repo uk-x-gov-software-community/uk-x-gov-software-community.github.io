@@ -57,7 +57,7 @@ Beyond the lightning talks, the conference provided in-depth sessions that explo
 
 - Evolving GOV.UK Chat from Prototype to Production AI System by Alessia Tosi, Kevin Dew, and Rich Eveson
 
-These sessions provided a service view, from the teams themselves a real deep look at the innovative work happening across government departments, offering attendees practical takeaways to improve their own projects.
+These sessions provided an a in-depth look at the innovative work teams are doing across government departments, offering attendees practical takeaways to improve their own projects.
 
 ### Building Connections and Community
 
