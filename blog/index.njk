@@ -1,0 +1,27 @@
+---
+layout: page.njk
+title: Events and Blogs
+permalink: /blog/index.html
+---
+<h1 class="govuk-heading-l">Events</h1>
+
+<p class="govuk-body">We have a range of events from Lean Coffee sessions to Special Interest groups.</p>
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+     Our next event is :
+    </h3>
+    {% include "_latest_event.njk" %}
+<p>
+<a class="govuk-link" href="/events"> See all events </a>
+</p>
+ {% for post in collections.post %}
+    <h2 class="govuk-heading-l">Blog: {{ post.data.title }}</h2>
+    <p class="govuk-body">{{ post.data.date }}</p>  
+     <p class="govuk-body">Written by : {{ post.data.author }}</p>  
+    <p class="govuk-body">{{ post.data.description }}</p>
+    <p class="govuk-body">{{ post.data.excerpt | safe }}</p>
+    <p class="govuk-body"><a class="govuk-link" href="{{ post.url | url }}">Read more</a></p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+{% endfor %}
+
+
+  
