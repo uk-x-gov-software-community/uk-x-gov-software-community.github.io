@@ -66,7 +66,7 @@ The conference also provided valuable time for attendees to network and chat. Wi
 ### A Big Success 
 
 While not everyone who wanted to attend could get a ticket, the enthusiasm for this event signals the need for more opportunities like this in the future. As we take a well-earned break, plans are already in motion for what comes next.
-For those working in UK Government software engineering, joining our community is a fantastic way to stay connected and engaged. The momentum from this conference will continue to drive innovation and collaboration across departments.
+For those working in UK Government software engineering, [joining our community](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) is a fantastic way to stay connected and engaged. The momentum from this conference will continue to drive innovation and collaboration across departments.
 
 <img src="/assets/images/conference-2025/david.jpg"
      alt="David Heath closing conference remarks at Cross Government Software Engineering Conference"
