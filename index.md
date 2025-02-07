@@ -49,15 +49,12 @@ Our vision helps us fullfil our  [Objectives](/objectives).
 ## Do you want to help facilitate the group ?
 Drop an email to [Andy Poole](mailto:Andy.Poole@ukho.gov.uk) or [David Heath](mailto:david.heath@digital.cabinet-office.gov.uk) or [Shaun Hare](mailto:shaun.hare@dvsa.gov.uk) and one of us can add you to the facilitators group
 
-## We want you to be part of this - why not get involved?
-*	Signup to our [email mailing list on mail chimp](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) - You'll need to signup with your government email address - just sign up below.
-You will get a welcome email and will then be added onto our mailing list of events going forward.
-* Check out our [GitHub Repo](https://github.com/uk-x-gov-software-community/)
-* Existing members check out our [Discussions](https://github.com/uk-x-gov-software-community/community-space/discussions) (must be a member of our github organisation)
+## Join us!
+*	Join the community by signing up to our [mailing list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/)
+* Chat with us in [`#software-development`](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L) in [cross-gov slack](https://x-govuk.github.io/posts/how-to-use-cross-government-slack/). 
+* Members can access our [private community space](community-space) where you'll find notes from our past meetings
 
-## How we use GitHub
-We use github to manage our group - once you sign up to our mailing list you will (assuming you have given a GitHub id) be auto enrolled on our organisation. You can then see meeting notes and join discussions on the discussion link.
-
+## Contributing to this site
 Pull requests are welcomed for this site see the readme on our [GitHub Repo](https://github.com/uk-x-gov-software-community/) for more details.
 
 
