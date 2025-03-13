@@ -9,21 +9,33 @@ title: Events
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
 ## 2025
-* 27th February 2025 - Virtual - 11:00 - 12:00 - Lean Coffee
+* 27th March 2025 - Virtual - 11:00 - 12:00 - Lean Coffee
 
-We just ran * 29th January 2025 - In Person Conference  - 9:00 - 17:00 - [Cross Government Software Engineering Conference 2025 see details ](/conference-2025-01-29/)!
 
 ## Special Interest Groups
 
-Here are the next meetings for the **Heads of Engineering Special Interest Group**:
+Here are the next meetings for the special interest groups.
 
-* 30 January 2025 - Hybrid - 1-3 PM Career progression for Tech Tracks (Collaborative workshop)
+Green Software Community meeting - tbc
 
-* 6 Mar 2025 - In Person - Full day - venue TBC
+Head of Engineering SIG - tbc
+
 
 If you wish to join this interest group, please [contact us](/special-interest/#heads-of-engineering) 
 
 # Past Events
+
+## 2025
+
+We just ran * 29th January 2025 - In Person Conference  - 9:00 - 17:00 - [Cross Government Software Engineering Conference 2025 see details ](/conference-2025-01-29/)!
+
+Green Software Community meeting 5th March 2025 - 1-2 PM - Virtual
+
+**Heads of Engineering Special Interest Group**:
+
+* 30 January 2025 - Hybrid - 1-3 PM Career progression for Tech Tracks (Collaborative workshop)
+
+* 6 Mar 2025 - Virtual - 1-3 PM - Heads of Engineering SIG - (Collaborative workshop)
 
 ## 2024
 Thursday 28th November 2024 from 11 am to 12 noon
