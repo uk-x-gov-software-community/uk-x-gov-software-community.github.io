@@ -6,7 +6,7 @@ description: Nominations to be a member of the community management committee fo
 ---
 
 # Management Committee Nominations
-The nominations for the next facilitators are now open. If you would like to nominate yourself, please fill in the form below. For more details about the role of a facilitator, please see the [Terms of Reference ](/tor/).
+The nominations to be a member of the management committee are now open. If you would like to nominate yourself, please fill in the form below. For more details about the roles and responsibilites of the management committee, please see the [Terms of Reference ](/tor/).
 
 
 
