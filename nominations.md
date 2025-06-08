@@ -14,6 +14,6 @@ The nominations to be a member of the management committee are now open. If you 
 
 Nominations will close on **Tuesday 1st July**.
 
-The new facilitators will be elected, and an announcement will be about exactly when this will be, but it will be in early July.
+If there are more candidates than vacancies the community will hold an election during July with results announced at the AGM in August. If there fewer or as many candidates as vacancies candidates will be accepted by a show of hands at the AGM
 
 **Note:** You can only nominate yourself, not others. If you are nominating yourself, please ensure you have read the [Terms of Reference](/tor/) and are happy to commit to the role. This nomination will be published, so please ensure you are happy with the information you provide.
