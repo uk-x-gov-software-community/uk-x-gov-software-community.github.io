@@ -2,7 +2,7 @@
 layout: product
 title: Nominations
 permalink: /nominations/
-description: Nominations for the next facilitators to run the organising group meetings and events.
+description: Nominations to be a member of the community management committee for 2025 AGM.
 ---
 
 # Facilitators Nominations
