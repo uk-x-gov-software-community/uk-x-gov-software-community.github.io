@@ -5,7 +5,7 @@ permalink: /nominations/
 description: Nominations to be a member of the community management committee for 2025 AGM.
 ---
 
-# Facilitators Nominations
+# Management Committee Nominations
 The nominations for the next facilitators are now open. If you would like to nominate yourself, please fill in the form below. For more details about the role of a facilitator, please see the [Terms of Reference ](/tor/).
 
 
