@@ -10,7 +10,7 @@ The nominations to be a member of the management committee are now open. If you 
 
 
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMWznVRC98YmdMflxgqQdKFh3xHRLCrYX0CNxlSmPIIM-hPw/viewform?embedded=true" width="640" height="1370" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMWznVRC98YmdMflxgqQdKFh3xHRLCrYX0CNxlSmPIIM-hPw/viewform?embedded=true" width="640" height="1570" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 Nominations will close on **Tuesday 1st July**.
 
