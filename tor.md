@@ -62,7 +62,7 @@ Anyone who has been an approved member of our email list for at least six weeks 
 
 ## Code of Conduct
 
-The Cross Government Software Engineering Community is committed to fostering a welcoming, inclusive, and professional environment for all members regardless of gender, sexual orientation, disability, preferred programming language, technical experience, ethnicity, socioeconomic status, and religion (or lack thereof). We invite all who participate in the community to help us create safe and positive experiences for everyone. 
+The Cross Government Software Engineering Community is committed to fostering a welcoming, inclusive, and professional environment for all members regardless of gender, gender reassignment, sexual orientation, disability, age, preferred programming language, technical experience, ethnicity, socioeconomic status, and religion (or lack thereof). We invite all who participate in the community to help us create safe and positive experiences for everyone. 
 
 This Code of Conduct outlines the expected behavior and standards for all participants.
 
