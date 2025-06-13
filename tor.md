@@ -50,7 +50,7 @@ To be a **member** of the community you:
    3. local government  
    4. the NHS  
    5. the Police  
-2. must be either a civil servant, interim/contractor or from a service provider  
+2. must be either a crown servant, civil servant, interim/contractor or from a service provider  
 3. agree to support the aims and objectives of the community  
 4. agree not to use the community to promote your commercial interests, without prior written agreement from the management committee
 
