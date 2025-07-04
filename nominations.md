@@ -8,7 +8,7 @@ description: Nominations to be a member of the community management committee fo
 # Management Committee Nominations
 The nominations to be a member of the management committee are now open. If you would like to nominate yourself, please fill in the form below. For more details about the roles and responsibilites of the management committee, please see the [Terms of Reference ](/tor/).
 
-
+Nominations will close at **12:00 on Thursday 10 July**.
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMWznVRC98YmdMflxgqQdKFh3xHRLCrYX0CNxlSmPIIM-hPw/viewform?embedded=true" width="640" height="1570" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
