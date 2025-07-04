@@ -53,8 +53,8 @@
             var description = encodeURIComponent(document.getElementById('description').value);
             var location = encodeURIComponent(document.getElementById('location').value);
             var date = document.getElementById('dtstart').value;
-            var tstart = "11:00:00";
-            var tend = "12:00:00";
+            var tstart = document.getElementById('tstart').value;
+            var tend = document.getElementById('tend').value;
             var dtstart = new Date(`${date}T${tstart}`).toISOString();
             var dtend = new Date(`${date}T${tend}`).toISOString();
             var reminder = "10";
@@ -87,6 +87,12 @@ Passcode PASSCODE</textarea><br>
     
     <label for="dtstart">Date</label>
     <input type="date" id="dtstart"><br>
+
+    <label for="tstart">Start time</label>
+    <input type="text" id="tstart" value="11:00:00"><br>
+
+    <label for="tend">End time</label>
+    <input type="text" id="tend"  value="12:00:00"><br>
     
     <button onclick="generateURL()">Generate URL</button><br>
     
