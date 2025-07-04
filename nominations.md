@@ -12,7 +12,7 @@ The nominations to be a member of the management committee are now open. If you 
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMWznVRC98YmdMflxgqQdKFh3xHRLCrYX0CNxlSmPIIM-hPw/viewform?embedded=true" width="640" height="1570" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-Nominations will close on **Tuesday 1st July**.
+Nominations will close at **12:00 on Thursday 10 July**.
 
 If there are more candidates than vacancies the community will hold an election during July with results announced at the AGM in August. If there fewer or as many candidates as vacancies candidates will be accepted by a show of hands at the AGM
 
