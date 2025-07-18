@@ -27,6 +27,7 @@ related:
      
 
 ---
+{% include "banner.njk" %}
 {% include "menu.njk" %}
 
 

@@ -30,6 +30,6 @@ The following candidates have been nominated for the 2025 Management Committee:
 
 The election officer will be Wednesday Moore, Senior Community Manager Engineering Excellence GDS. We encourage all community members to review the candidates' bios and consider the contributions they can make to the community when casting their votes.
 
-If you have any questions about the election process or the candidates, please contact the current Management Committee at our [shared mailbox](mailto:ross-government-software-engineering-community-organisers@digital.cabinet-office.gov.uk).
+If you have any questions about the election process or the candidates, please contact the current management committee at our [shared mailbox](mailto:ross-government-software-engineering-community-organisers@digital.cabinet-office.gov.uk).
 
 
