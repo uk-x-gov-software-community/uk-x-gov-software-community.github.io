@@ -12,7 +12,7 @@ The Cross Government Software Engineering Community is holding elections for the
 Nominations for the committee closed on **Thursday 10 July**. We received a number of nominations, and the candidates are listed below. Voting will take place during the month of August, with results announced at the AGM August 14th 2025. There are 6 vacancies on the committee, and we have 8 candidates.
 
 ## Voting Process
-Voting will be conducted via an online ballot, which will be sent to all members of the Cross Government Software Engineering Community that have been present on the mailing list for the prior six weeks. Each member will be sent an email containing a vote link, please ensure you check your inbox (and spam folder) for this email. Community members will have the opportunity to vote for up to 6 candidates. The candidates with the highest number of votes will be elected to the Management Committee.
+Voting will be conducted via an online ballot. As per our Terms of Reference, you will be eligible to vote if you have been an approved member of our email list for at least six weeks prior to the vote. Each eligible member will be sent an email containing a unique voter link, please ensure you check your inbox (and spam folder) for this email. You will be asked to vote by ranking candidates in preference order, the winning candidates will be determined using [ranked choice voting](https://www.rcv123.org/vote-counting).
 
 ## Candidates for the 2025 Management Committee
 The following candidates have been nominated for the 2025 Management Committee:
