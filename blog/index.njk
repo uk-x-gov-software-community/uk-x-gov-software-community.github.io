@@ -13,7 +13,7 @@ permalink: /blog/index.html
 <p>
 <a class="govuk-link" href="/events"> See all events </a>
 </p>
- {% for post in collections.post %}
+ {% for post in collections.post | reverse %}
     <h2 class="govuk-heading-l">Blog: {{ post.data.title }}</h2>
     <p class="govuk-body">{{ post.data.date }}</p>  
      <p class="govuk-body">Written by : {{ post.data.author }}</p>  
