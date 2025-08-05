@@ -17,6 +17,7 @@ title: Resources
 - [CDDO API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
 - [NHS Business Services Authority playbook](https://nhsbsa.github.io/nhsbsa-digital-playbook/)
 - [HMCTS](https://hmcts.github.io)
+- [The MHCLG Way](https://communitiesuk.github.io/mhclg-way/)
 
 ---
 ### Colleagues outside of UK Government
