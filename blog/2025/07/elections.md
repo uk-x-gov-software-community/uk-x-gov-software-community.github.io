@@ -7,6 +7,11 @@ date: 2025-08-05
 excerpt: "Nominations for the Cross Government Software Engineering Community Management Committee. Read more about the candidates and how to vote."
 author: Wednesday Moore
 ---
+
+**Update**
+Elections for the Cross Government Software Engineering Community Management Committee 2025 closed on **Thursday 13th of August**. Results will be announced at the AGM on **August 14th 2025**, new committee members will take up their roles immediately. Thank you to all who voted and to the candidates for their nominations.
+
+
 The Cross Government Software Engineering Community is holding elections for the Management Committee. The committee plays a crucial role in guiding the community's direction, organising events, and fostering collaboration among software engineers across government departments. See our [Terms of Reference](/tor/) for more details about the committee's roles and responsibilities.
 
 Nominations for the committee closed on **Thursday 10 July**. We received a number of nominations, and the candidates are listed below. Voting will take place during the month of August, with results announced at the AGM August 14th 2025. There are 6 vacancies on the committee, and we have 8 candidates.
