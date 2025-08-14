@@ -47,7 +47,7 @@ Our vision helps us fullfil our  [Objectives](/objectives).
 *	We have a small facilitation group that is doing some of the initial setup
 
 ## Do you want to help facilitate the group ?
-Drop an email to [Andy Poole](mailto:Andy.Poole@ukho.gov.uk) or [David Heath](mailto:david.heath@digital.cabinet-office.gov.uk) or [Shaun Hare](mailto:shaun.hare@dvsa.gov.uk) and one of us can add you to the facilitators group
+If you're interested in helping to facilitate the group in the future, please reach out to one of the current management committee members who will be happy to discuss this with you.
 
 ## Join us!
 *	Join the community by signing up to our [mailing list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/)
