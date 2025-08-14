@@ -10,7 +10,7 @@ This page shows our terms of reference.
 
 If you wish to comment on the TOR, you can comment on the [open pull request](https://github.com/uk-x-gov-software-community/community-space/pull/49) in our [community space](https://uk-x-gov-software-community.github.io/community-space/). 
 
-The TOR was adopted at our first AGM in Aug 2025. 
+The TOR was adopted at our first AGM in August 2025. 
 
 ----------
 
