@@ -20,7 +20,7 @@ Please contact the group facilitators if you need assistance adding topics or wa
 * [Andy Poole](mailto:Andy.Poole@ukho.gov.uk)
 * [David Heath](mailto:david.heath@digital.cabinet-office.gov.uk)
 * [Shaun Hare](mailto:shaun.hare@dvsa.gov.uk)
-* [Alex Coleman](mailto:alex.coleman@ate.gov.uk)
+* [Alex Coleman](mailto:alex.coleman@activetravelengland.gov.uk)
 * [Nayyab Naqvi](mailto:Nayyab.Naqvi@dsit.gov.uk)
 * [Greg Stevenson](mailto:greg.stevenson@digital.cabinet-office.gov.uk)
 
