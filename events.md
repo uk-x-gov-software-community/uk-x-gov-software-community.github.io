@@ -11,7 +11,6 @@ Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-
 ## 2025
 * Thursday 14th August 2025 - Annual General Meeting - 10:30- 11:30 - Virtual
 
-
 ## Special Interest Groups
 
 Here are the next meetings for the special interest groups.
