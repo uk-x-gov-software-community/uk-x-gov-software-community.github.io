@@ -9,7 +9,7 @@ title: Events
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
 ## 2025
-* Thursday 14th August 2025 - Annual General Meeting - 10:30- 11:30 - Virtual
+* Thursday 28th August 2025 - Lean Coffee - 11:00- 12:00 - Virtual
 
 ## Special Interest Groups
 
