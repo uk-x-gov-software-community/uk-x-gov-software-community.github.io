@@ -14,7 +14,7 @@ The TOR was adopted at our first AGM in August 2025.
 
 ----------
 
-# Cross Government Software Engineering Community - Terms of Reference (DRAFT)
+# Cross Government Software Engineering Community - Terms of Reference
 
 ## Purpose and authority
 
