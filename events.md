@@ -9,6 +9,11 @@ title: Events
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
 ## 2025
+
+* Thursday 18th December 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Thursday 27th November 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Thursday 30th October 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Wednesday 22nd October 2025 - Inclusive Recruitment SIG catch up - 10:30am - 11:30am - Virtual - Contact [Kulwant Lall](mailto:Kulwant.Lall@Justice.gov.uk)
 * Thursday 25th September 2025 - Lean Coffee - 11am - 11:50am  - Virtual
 
 ## Special Interest Groups
