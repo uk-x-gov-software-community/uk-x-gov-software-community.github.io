@@ -1,4 +1,4 @@
-FROM node:20-alpine3.18
+FROM node:22-alpine
 
 ENV USER=xgov-software-community
 ENV UID=1001
