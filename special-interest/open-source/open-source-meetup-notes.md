@@ -2,13 +2,37 @@
 layout: page.njk
 title: x-gov Open Source Community Meeting Notes
 ---
-# x-Gov Open Source Community Meeting Notes
 
 ## Overview
 
 Notes from the monthly x-Gov open source community meet ups.
 
 To find out details of the meet ups see the [#open-code x-gov slack channel](https://ukgovernmentdigital.slack.com/archives/C0Q3KG7B8).
+
+## 08 Dec 2023
+
+Attendees:
+- AS (CDDO)
+- DO (ONS)
+
+Notes:
+- Discussed perceived security risks of releasing Infrastructure-as-Code (IaC)
+- Felt these were often over stated by cyber teams
+- AS (CDDO) talked about draft guidelines drawn up whilst at DHSC / NHS-TD to address service teams concerns over meeting point 12 of the service standard
+  - See: [DRAFT open source guidelines](/special-interest/open-source/open-source-guide)
+
+- Heightened level of cyber threats from foreign states
+- Supply chain attacks
+- Addressed by the use of Snyk and depandabot
+- No first hand experience of how good Snyk actually is
+
+- Similar to Top 75 services could identify Top 100 public gov repos
+- Question around linking live services with repo
+- Could something like security.txt work, e.g. gov.txt, with details of a live services open code repositories?
+
+## 10 Nov 2023
+
+No notes this time, AS (CDDO) did not attend.
 
 ## 13 Oct 2023
 
