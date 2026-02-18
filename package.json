@@ -4,14 +4,14 @@
   "description": "Site for UK Cross Government Software Development Group ",
   "main": ".eleventy.js",
   "dependencies": {
-    "@dvsa/cookie-manager": "^1.1.0",
+    "@dvsa/cookie-manager": "^1.1.2",
     "@x-govuk/govuk-eleventy-plugin": "^6.7.2",
-    "govuk-frontend": "^5.8.0",
-    "npm": "^10.5.2",
-    "sass": "^1.44.0"
+    "govuk-frontend": "^5.14.0",
+    "npm": "^11.8.0",
+    "sass": "^1.97.3"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.2",
     "gulp": "^5.0.0",
     "gulp-minify": "^3.0.0",
     "gulp-sass": "^5.0.0"
