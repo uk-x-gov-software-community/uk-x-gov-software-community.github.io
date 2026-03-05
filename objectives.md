@@ -8,7 +8,7 @@ title: Our Objectives
 
 ## Overview
 
-These objectives define how the community will grow, engage members, communicate effectively, and improve diversity and inclusion across government software engineering teams.  
+These objectives define how the community will grow, engage members, communicate effectively, and improve diversity and inclusion across government software engineering teams. We aim to act as a facilitator to represent the views of the community and influence the Government Digital and Data (GDaD) capability framework.
 
 They align with cross-government priorities including learning & development, standards adoption, and representation in DDaT conversations.
 
@@ -20,15 +20,8 @@ They align with cross-government priorities including learning & development, st
 Grow a strong, representative cross-government software engineering community.
 
 ### Key Outcomes
-- Increase total community membership to **1,000 members by October 2026**
-- Increase **departmental representation** from **X% to X + 12%**
 - Broaden eligibility so membership reflects the **wider software engineering ecosystem**, not only self-identified software developers
 
-### Key Actions
-- Review and update the **Terms of Reference (ToR)** to clarify eligibility
-- Align Mailchimp, Slack, and event participation criteria with the updated ToR
-- Work with Heads of Engineering and Digital Leaders to promote community membership
- 
 
 ---
 
@@ -72,15 +65,12 @@ Ensure consistent, multi-channel communication so community activity is visible 
 - **Newsletter** – core updates, events, standards, and learning resources  
 - **X-Gov Slack** – day-to-day discussion and quick engagement  
 
-### Key Actions
-- Establish a simple **content cadence** (monthly or quarterly)
-- Use Heads of Engineering networks and existing platforms to amplify messages
-- Ensure all major events, learning resources, and standards updates are communicated consistently
-
 ---
 ### 4. Promoting diversity and inclusion
 
 ### Objective
+The make up of the software engineering profession should reflect the society we serve in all aspects of diversity. 
+
 An aim of the group is to understand 
 how can we improve diversity and inclusion within our government software engineering community? and promote greater diversity and understand.
 
@@ -88,21 +78,16 @@ Actively improve gender diversity within the software engineering community.
 
 **What are departments already doing?**
 
-An aim of the group is to understand what departments and bodies are doing in this area.
+An aim of the group is to understand what departments and bodies are doing in this area. 
 
 **Sharing recruitment experience**
 
-An aim of the group is to understand and share recruitment experience. 
+An aim of the group is to understand and share recruitment experience.  
 
 ### Key Outcomes
-- Establish a **baseline** for current representation of women in the community
+- Establish a **baseline** for current representation of under represented groups in the community specifically women in engineering
 - Track participation and representation over time
 - Increase participation of women in community events and leadership roles
-
-### Key Actions
-- Run events specifically aimed at **Women in Tech**
-- Highlight role models, career journeys, and learning pathways
-- Share good practice across departments on inclusive recruitment and progression
  
 ---
 ## 5. Learning, Standards & DDaT Representation (Cross-Cutting)
@@ -114,7 +99,6 @@ These priorities are embedded across all objectives.
   - Apprenticeships
   - Pair programming
   - Hack days and code retreats
-  - Learning platforms (e.g. Pluralsight, O’Reilly)
 
 ### Championing Standards
 - Promote cross-government software engineering standards
@@ -135,6 +119,7 @@ An aim of the group is to discuss and represent the community in relation to the
 
 These objectives will be reviewed periodically to:
 - Track progress against outcomes
+- Ratify with the community 
 - Refresh ownership where needed
 - Respond to changes in cross-government priorities
 
