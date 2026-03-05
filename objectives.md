@@ -10,7 +10,7 @@ title: Our Objectives
 
 These objectives define how the community will grow, engage members, communicate effectively, and improve diversity and inclusion across government software engineering teams. We aim to act as a facilitator to represent the views of the community and influence the Government Digital and Data (GDaD) capability framework.
 
-They align with cross-government priorities including learning & development, standards adoption, and representation in DDaT conversations.
+We have aligned our objectives with cross-government priorities including learning & development, standards adoption, and representation in GDaD conversations.
 
 ---
 
