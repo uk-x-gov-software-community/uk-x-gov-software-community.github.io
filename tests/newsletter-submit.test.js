@@ -1,12 +1,15 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import {
   validateRequired,
   validateLink,
+  countWords,
   buildIssueTitle,
   formatIssueBody,
   buildDispatchPayload,
   parseDeviceCodeResponse,
-  isMemberResponse
+  isMemberResponse,
+  revealFormFields,
+  FORM_FIELD_GROUP_IDS
 } from '../assets/newsletter-submit.js'
 
 describe('validateRequired', () => {
@@ -45,6 +48,38 @@ describe('validateLink', () => {
   })
   it('rejects an ftp URL (non-http/https protocol)', () => {
     expect(validateLink('ftp://example.com/file')).toBe(false)
+  })
+})
+
+describe('countWords', () => {
+  it('returns 0 for an empty string', () => {
+    expect(countWords('')).toBe(0)
+  })
+  it('returns 0 for a whitespace-only string', () => {
+    expect(countWords('   ')).toBe(0)
+  })
+  it('returns 0 for undefined', () => {
+    expect(countWords(undefined)).toBe(0)
+  })
+  it('returns 1 for a single word', () => {
+    expect(countWords('hello')).toBe(1)
+  })
+  it('counts words separated by spaces', () => {
+    expect(countWords('one two three')).toBe(3)
+  })
+  it('counts words separated by mixed whitespace', () => {
+    expect(countWords('one  two\nthree\tfour')).toBe(4)
+  })
+  it('ignores leading and trailing whitespace', () => {
+    expect(countWords('  hello world  ')).toBe(2)
+  })
+  it('returns the correct count for a 400-word boundary', () => {
+    const text = Array(400).fill('word').join(' ')
+    expect(countWords(text)).toBe(400)
+  })
+  it('returns over 400 for a 401-word string', () => {
+    const text = Array(401).fill('word').join(' ')
+    expect(countWords(text)).toBe(401)
   })
 })
 
@@ -185,6 +220,30 @@ describe('parseDeviceCodeResponse', () => {
     const incomplete = { ...valid }
     delete incomplete.interval
     expect(() => parseDeviceCodeResponse(incomplete)).toThrow('interval')
+  })
+})
+
+describe('revealFormFields', () => {
+  it('removes hidden from all form field groups', () => {
+    const elements = Object.fromEntries(
+      FORM_FIELD_GROUP_IDS.map((id) => [id, { removeAttribute: vi.fn() }])
+    )
+    const mockDoc = { getElementById: (id) => elements[id] || null }
+
+    revealFormFields(mockDoc)
+
+    for (const id of FORM_FIELD_GROUP_IDS) {
+      expect(elements[id].removeAttribute).toHaveBeenCalledWith('hidden')
+    }
+  })
+
+  it('skips elements that do not exist in the document', () => {
+    const mockDoc = { getElementById: () => null }
+    expect(() => revealFormFields(mockDoc)).not.toThrow()
+  })
+
+  it('covers all four expected field groups', () => {
+    expect(FORM_FIELD_GROUP_IDS).toEqual(['name-group', 'department-group', 'story-group', 'link-group'])
   })
 })
 

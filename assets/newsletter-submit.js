@@ -36,6 +36,16 @@ export function validateLink(url) {
 }
 
 /**
+ * Counts the number of words in a string.
+ * @param {string} text
+ * @returns {number}
+ */
+export function countWords(text) {
+  if (!text || !text.trim()) return 0
+  return text.trim().split(/\s+/).length
+}
+
+/**
  * Builds a GitHub issue title for a newsletter submission.
  * @param {Date|string} date
  * @returns {string}
@@ -128,6 +138,19 @@ export function isMemberResponse(status) {
 
 // ─── Browser-only progressive enhancement ───────────────────────────────────
 
+export const FORM_FIELD_GROUP_IDS = ['name-group', 'department-group', 'story-group', 'link-group']
+
+/**
+ * Removes the `hidden` attribute from each form field group so they are visible when JS runs.
+ * @param {Document} doc
+ */
+export function revealFormFields(doc) {
+  for (const id of FORM_FIELD_GROUP_IDS) {
+    const el = doc.getElementById(id)
+    if (el) el.removeAttribute('hidden')
+  }
+}
+
 if (typeof document !== 'undefined') {
   initForm()
 }
@@ -143,8 +166,25 @@ function initForm() {
   const nameInput = document.getElementById('name')
   const departmentInput = document.getElementById('department')
   const linkInput = document.getElementById('link')
+  const storyInput = document.getElementById('story')
+  const storyWordCount = document.getElementById('story-word-count')
 
   if (!form) return
+
+  revealFormFields(document)
+
+  if (storyInput && storyWordCount) {
+    const updateStoryCount = () => {
+      const count = countWords(storyInput.value)
+      const over = count > 400
+      storyWordCount.textContent = over ? `${count} words — must be 400 or fewer` : `${count} / 400 words`
+      storyWordCount.className = over
+        ? 'govuk-error-message govuk-!-margin-top-1'
+        : 'govuk-hint govuk-!-margin-top-1'
+    }
+    storyInput.addEventListener('input', updateStoryCount)
+    updateStoryCount()
+  }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -167,6 +207,12 @@ function initForm() {
     const linkValue = linkInput ? linkInput.value : ''
     if (!validateLink(linkValue)) {
       showFieldError('link-group', 'link', 'link-hint', 'Enter a valid URL, for example https://example.gov.uk')
+      hasErrors = true
+    }
+
+    const storyValue = storyInput ? storyInput.value : ''
+    if (countWords(storyValue) > 400) {
+      showFieldError('story-group', 'story', 'story-hint', 'Your story must be 400 words or fewer')
       hasErrors = true
     }
 
@@ -276,7 +322,8 @@ function initForm() {
     for (const [groupId, input] of [
       ['name-group', nameInput],
       ['department-group', departmentInput],
-      ['link-group', linkInput]
+      ['link-group', linkInput],
+      ['story-group', storyInput]
     ]) {
       const group = document.getElementById(groupId)
       if (group) {
@@ -285,7 +332,7 @@ function initForm() {
         if (existing) existing.remove()
       }
       if (input) {
-        input.classList.remove('govuk-input--error')
+        input.classList.remove('govuk-input--error', 'govuk-textarea--error')
         input.removeAttribute('aria-describedby')
       }
     }
@@ -305,7 +352,7 @@ function initForm() {
     const label = group.querySelector('label')
     if (label) label.after(errMsg)
 
-    input.classList.add('govuk-input--error')
+    input.classList.add(input.tagName === 'TEXTAREA' ? 'govuk-textarea--error' : 'govuk-input--error')
     const hint = document.getElementById(hintId)
     const describedBy = [hint ? hintId : null, `${inputId}-error`].filter(Boolean).join(' ')
     input.setAttribute('aria-describedby', describedBy)

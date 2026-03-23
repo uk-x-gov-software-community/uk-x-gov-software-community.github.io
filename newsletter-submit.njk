@@ -16,10 +16,34 @@ description: Share a story or link for inclusion in the next community newslette
 </p>
 
 <noscript>
-  <div class="govuk-inset-text">
-    JavaScript is not available in your browser. You can still fill in the form above and click
-    <strong>Submit to newsletter</strong> — you will be taken to a page with the formatted content
-    ready to copy and paste into a GitHub Issue.
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      JavaScript is not available so your details could not be pre-filled. Copy the template below,
+      fill in your details, then paste it into a new GitHub Issue.
+    </strong>
+  </div>
+  <h2 class="govuk-heading-m">Preformatted GitHub Issue</h2>
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--s" for="issue-body-noscript">Issue content</label>
+    <textarea class="govuk-textarea govuk-!-font-size-16" id="issue-body-noscript" rows="18" readonly
+      style="font-family: monospace;">## Newsletter Submission
+
+### Name
+(your name)
+
+### Department / Organisation
+(your department or organisation)
+
+### Story / Update
+(your short story or link description — leave blank if not applicable)
+
+### Link
+(your link — leave blank if not applicable)
+
+---
+*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*</textarea>
   </div>
 </noscript>
 
@@ -30,33 +54,36 @@ description: Share a story or link for inclusion in the next community newslette
   </div>
 </div>
 
-<form id="newsletter-form" action="/newsletter-submit/preview/" method="GET" novalidate>
+<form id="newsletter-form" action="https://github.com/uk-x-gov-software-community/newsletter-submissions/issues/new" method="GET" novalidate>
+  <input type="hidden" name="title" value="Newsletter Submission">
+  <input type="hidden" name="body" value="## Newsletter Submission&#10;&#10;### Name&#10;(your name)&#10;&#10;### Department / Organisation&#10;(your department or organisation)&#10;&#10;### Story / Update&#10;(your short story or link description — leave blank if not applicable)&#10;&#10;### Link&#10;(your link — leave blank if not applicable)&#10;&#10;---&#10;*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*">
 
-  <div class="govuk-form-group" id="name-group">
+  <div class="govuk-form-group" id="name-group" hidden>
     <label class="govuk-label govuk-label--s" for="name">
       Your name
     </label>
     <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text" autocomplete="name" required>
   </div>
 
-  <div class="govuk-form-group" id="department-group">
+  <div class="govuk-form-group" id="department-group" hidden>
     <label class="govuk-label govuk-label--s" for="department">
       Your department or organisation
     </label>
     <input class="govuk-input govuk-input--width-20" id="department" name="department" type="text" autocomplete="organization" required>
   </div>
 
-  <div class="govuk-form-group" id="story-group">
+  <div class="govuk-form-group" id="story-group" hidden>
     <label class="govuk-label govuk-label--s" for="story">
-      Your story or update (optional)
+      Your short story or link description (optional)
     </label>
     <div id="story-hint" class="govuk-hint">
-      Describe something interesting from your team, project or the wider community.
+      Describe something interesting from your team, project or the wider community. Maximum 400 words.
     </div>
-    <textarea class="govuk-textarea" id="story" name="story" rows="6" aria-describedby="story-hint"></textarea>
+    <textarea class="govuk-textarea" id="story" name="story" rows="6" aria-describedby="story-hint story-word-count"></textarea>
+    <p class="govuk-hint govuk-!-margin-top-1" id="story-word-count" aria-live="polite"></p>
   </div>
 
-  <div class="govuk-form-group" id="link-group">
+  <div class="govuk-form-group" id="link-group" hidden>
     <label class="govuk-label govuk-label--s" for="link">
       A relevant link (optional)
     </label>
