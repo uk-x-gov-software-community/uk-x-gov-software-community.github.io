@@ -189,9 +189,19 @@ jobs:
   create-issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v7
+      - name: Generate GitHub App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
         with:
-          github-token: ${{ secrets.NEWSLETTER_BOT_TOKEN }}
+          app-id: ${{ secrets.NEWSLETTER_APP_ID }}
+          private-key: ${{ secrets.NEWSLETTER_APP_PRIVATE_KEY }}
+          owner: uk-x-gov-software-community
+          repositories: newsletter-submissions
+
+      - name: Create issue in private repo
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const { name, story, link, github_username, submitted_at } = context.payload.client_payload
             await github.rest.issues.create({
@@ -203,20 +213,27 @@ jobs:
             })
 ```
 
-`NEWSLETTER_BOT_TOKEN` is a fine-grained PAT (or GitHub App installation token)
-that has **Issues: write** permission scoped solely to the `newsletter-submissions`
-repository. It is stored as a repository secret and never exposed to the browser.
+The workflow uses a **GitHub App** to obtain a short-lived installation token at
+runtime. The App's private key and App ID are stored as repository secrets; no
+long-lived credential is ever used.
 
-### Bot token options
+### GitHub App setup (one-time, manual)
 
-| Option | Pros | Cons |
-|--------|------|------|
-| Fine-grained PAT (bot account) | Simple to set up | Needs a service account; expires |
-| GitHub App installation token | Short-lived, auditable, no expiry concern | More setup steps |
+1. Create a new GitHub App under the `uk-x-gov-software-community` org:
+   - **Name**: "cgov-newsletter-bot"
+   - **Homepage URL**: `https://uk-x-gov-software-community.github.io`
+   - **Webhook**: disabled
+   - **Repository permissions**: `Issues: write` only
+   - **Where can this app be installed**: "Only on this account"
+2. Generate and download a private key (PEM file).
+3. Install the App on the `newsletter-submissions` repository only.
+4. Add two secrets to the **public site repo**:
+   - `NEWSLETTER_APP_ID` — the App's numeric ID (shown on the App settings page)
+   - `NEWSLETTER_APP_PRIVATE_KEY` — the full contents of the downloaded PEM file
 
-Recommend starting with a fine-grained PAT from a `cgov-newsletter-bot` service
-account, scoped to `Issues: write` on `newsletter-submissions` only. Migrate to a
-GitHub App if the team prefers.
+The workflow uses `actions/create-github-app-token` to exchange these for a
+short-lived installation token at job start. The token is scoped to
+`newsletter-submissions`, expires after 1 hour, and is never logged or exposed.
 
 ---
 
@@ -315,9 +332,11 @@ before the build step, so every push is validated.
 
 - [ ] Create private `newsletter-submissions` repository in the org
 - [ ] Create `newsletter-submission` label in `newsletter-submissions`
-- [ ] Create `cgov-newsletter-bot` service account (or GitHub App)
-- [ ] Generate fine-grained PAT scoped to `Issues: write` on `newsletter-submissions`
-- [ ] Add PAT as `NEWSLETTER_BOT_TOKEN` secret on the public site repo
+- [ ] Create GitHub App "cgov-newsletter-bot" in the org (Issues: write, webhook disabled)
+- [ ] Install the App on `newsletter-submissions` repository only
+- [ ] Download App private key (PEM)
+- [ ] Add `NEWSLETTER_APP_ID` secret to the public site repo
+- [ ] Add `NEWSLETTER_APP_PRIVATE_KEY` secret to the public site repo
 - [ ] Register GitHub OAuth App in the org; record `client_id`
 - [ ] Add `client_id` to `assets/newsletter-submit.js`
 - [ ] Deploy Cloudflare Worker; add proxy URL constant to `newsletter-submit.js`
