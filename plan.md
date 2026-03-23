@@ -4,9 +4,11 @@
 
 A new static Eleventy page providing a GOV.UK-styled HTML form for community members
 to submit content (stories and links) for the newsletter. Submissions are persisted
-as labelled GitHub Issues. On submit, users authenticate via GitHub OAuth Device Flow
-to prove they are a member of the `uk-x-gov-software-community` GitHub organisation.
-The page runs on GitHub Pages with no server-side component.
+as labelled GitHub Issues in a **separate private repository**
+(`uk-x-gov-software-community/newsletter-submissions`). On submit, users authenticate
+via GitHub OAuth Device Flow to prove they are a member of the
+`uk-x-gov-software-community` GitHub organisation. The page runs on GitHub Pages
+with no server-side component.
 
 ---
 
@@ -85,7 +87,7 @@ token polling step.
 
 1. User fills in optional fields and clicks **Submit to newsletter**.
 2. JS `POST`s to `https://github.com/login/device/code` with the OAuth App's
-   `client_id` and scopes `read:org public_repo`.
+   `client_id` and scopes `read:org repo`.
 3. GitHub returns `device_code`, `user_code`, `verification_uri`, `expires_in`,
    `interval`.
 4. The page displays the `user_code` in a prominent GOV.UK-styled panel and opens
@@ -97,9 +99,11 @@ token polling step.
 8. `GET https://api.github.com/orgs/uk-x-gov-software-community/members/{username}`
    using the token. HTTP 204 = member; HTTP 404 = not a member (show rejection
    message); HTTP 302 = requester is not themselves a member (treat as 404).
-9. If member: `POST https://api.github.com/repos/uk-x-gov-software-community/uk-x-gov-software-community.github.io/issues`
+9. If member: `POST https://api.github.com/repos/uk-x-gov-software-community/newsletter-submissions/issues`
    with the formatted submission body and label `newsletter-submission`.
-10. Show a GOV.UK confirmation panel with a link to the created issue.
+10. Show a GOV.UK confirmation panel. Because the target repository is **private**,
+    no direct link to the issue is shown to the submitter; the panel simply confirms
+    the submission was received.
 
 ### CORS considerations
 
@@ -129,7 +133,10 @@ An OAuth App must be registered in the `uk-x-gov-software-community` organisatio
 - **Application name**: "Cross-Gov Software Community – Newsletter Submissions"
 - **Homepage URL**: `https://uk-x-gov-software-community.github.io`
 - **Callback URL**: not required for Device Flow (can be set to the page URL)
-- **Scopes requested at runtime**: `read:org public_repo`
+- **Scopes requested at runtime**: `read:org repo`
+  - `read:org` — verify the user is a member of the org
+  - `repo` — required to create issues on a **private** repository; `public_repo`
+    is insufficient for private repos
 
 The resulting `client_id` (safe to embed publicly) is hardcoded in
 `newsletter-submit.js`. There is **no** `client_secret` in any file.
@@ -159,6 +166,9 @@ Body:
 
   ---
   *Submitted via the newsletter form at https://uk-x-gov-software-community.github.io/newsletter-submit/*
+
+> **Note:** Issues are created in the private `newsletter-submissions` repository.
+> Submitters will not be shown a link to the issue after submission.
 ```
 
 ---
@@ -234,7 +244,8 @@ are validated on every push.
 - [ ] Register GitHub OAuth App in the org; record `client_id`
 - [ ] Add `client_id` to `assets/newsletter-submit.js`
 - [ ] Deploy Cloudflare Worker and add proxy URL to `newsletter-submit.js`
-- [ ] Create `newsletter-submission` label in the repository Issues
+- [ ] Create private `newsletter-submissions` repository in the org
+- [ ] Create `newsletter-submission` label in the `newsletter-submissions` Issues
 - [ ] Verify org membership check works with a test account
 - [ ] Test the full flow end-to-end in a browser
 
