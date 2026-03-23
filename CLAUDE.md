@@ -35,6 +35,6 @@ This is a static site built with [Eleventy (11ty)](https://www.11ty.dev/) using 
 - `blog/YYYY/MM/post.md` — Blog posts organised by date; `blog/index.njk` renders the listing
 - `special-interest/` — Special interest group content with sub-pages and presentation slides
 
-**Deployment:** Push to `main` triggers a GitHub Actions workflow (`.github/workflows/build.yaml`) that runs `npm ci && npm run build`, copies favicons into `_site/assets/images/`, then deploys to GitHub Pages via the `gh-pages` branch.
+**Deployment:** The site is hosted on GitHub Pages at https://uk-x-gov-software-community.github.io. Push to `main` triggers a GitHub Actions workflow (`.github/workflows/build.yaml`) that runs `npm ci && npm run build`, copies favicons into `_site/assets/images/`, then deploys to GitHub Pages via the `gh-pages` branch.
 
 **Node version:** 22.22.0 (see `.node-version`).
