@@ -62,7 +62,6 @@ secret — it is never exposed to the browser.
 | `eslint.config.js` | Create | ESLint flat config for linting JS assets |
 | `vitest.config.js` | Create | Vitest configuration |
 | `package.json` | Modify | Add test, lint scripts and dev dependencies |
-| `menu.njk` | Modify | Add "Submit newsletter content" nav link |
 | `.github/workflows/newsletter-dispatch.yaml` | Create | Receives dispatch, creates private issue |
 | `.github/workflows/build.yaml` | Modify | Add lint + test step before build |
 
@@ -351,3 +350,4 @@ before the build step, so every push is validated.
 - An admin UI for submissions (GitHub Issues UI in the private repo is sufficient)
 - Server-side rendering or a persistent backend
 - Storing form data outside of GitHub Issues
+- Adding the page to the site navigation menu (to be decided separately)
