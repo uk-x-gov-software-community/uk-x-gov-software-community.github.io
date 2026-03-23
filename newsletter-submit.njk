@@ -6,7 +6,7 @@ description: Share a story or link for inclusion in the next community newslette
 
 <p class="govuk-body">
   Use this form to share a story, update or link for the next newsletter.
-  All fields are optional — submit as little or as much as you like.
+  Your name and department are required; all other fields are optional.
 </p>
 <p class="govuk-body">
   When you submit, you will be asked to authorise with GitHub to confirm you are a
@@ -38,9 +38,16 @@ description: Share a story or link for inclusion in the next community newslette
 
   <div class="govuk-form-group" id="name-group">
     <label class="govuk-label govuk-label--s" for="name">
-      Your name (optional)
+      Your name
     </label>
-    <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text" autocomplete="name">
+    <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text" autocomplete="name" required>
+  </div>
+
+  <div class="govuk-form-group" id="department-group">
+    <label class="govuk-label govuk-label--s" for="department">
+      Your department or organisation
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="department" name="department" type="text" autocomplete="organization" required>
   </div>
 
   <div class="govuk-form-group" id="story-group">

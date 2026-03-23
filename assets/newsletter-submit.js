@@ -11,6 +11,15 @@ const OAUTH_SCOPE = 'read:org public_repo'
 // ─── Pure utility functions (exported for testing) ──────────────────────────
 
 /**
+ * Validates that a required field is not empty or blank.
+ * @param {string} value
+ * @returns {boolean}
+ */
+export function validateRequired(value) {
+  return typeof value === 'string' && value.trim() !== ''
+}
+
+/**
  * Validates a URL string. Empty/blank string is treated as valid (field is optional).
  * Only http: and https: protocols are accepted.
  * @param {string} url
@@ -38,10 +47,10 @@ export function buildIssueTitle(date) {
 
 /**
  * Formats the GitHub issue body markdown from submission data.
- * @param {{ name: string, story: string, link: string, github_username: string, submitted_at: string }} data
+ * @param {{ name: string, department: string, story: string, link: string, github_username: string, submitted_at: string }} data
  * @returns {string}
  */
-export function formatIssueBody({ name, story, link, github_username, submitted_at }) {
+export function formatIssueBody({ name, department, story, link, github_username, submitted_at }) {
   const safe = (v) => (v && v.trim()) ? v.trim() : '(not provided)'
   return [
     '## Newsletter Submission',
@@ -50,6 +59,9 @@ export function formatIssueBody({ name, story, link, github_username, submitted_
     '',
     '### Name',
     safe(name),
+    '',
+    '### Department / Organisation',
+    safe(department),
     '',
     '### Story / Update',
     safe(story),
@@ -64,14 +76,15 @@ export function formatIssueBody({ name, story, link, github_username, submitted_
 
 /**
  * Builds the client_payload object for the repository_dispatch event.
- * @param {{ name?: string, story?: string, link?: string }} formData
+ * @param {{ name?: string, department?: string, story?: string, link?: string }} formData
  * @param {string} github_username
  * @param {string} submitted_at  ISO date string (YYYY-MM-DD)
- * @returns {{ name: string, story: string, link: string, github_username: string, submitted_at: string }}
+ * @returns {{ name: string, department: string, story: string, link: string, github_username: string, submitted_at: string }}
  */
 export function buildDispatchPayload(formData, github_username, submitted_at) {
   return {
     name: (formData.name || '').trim(),
+    department: (formData.department || '').trim(),
     story: (formData.story || '').trim(),
     link: (formData.link || '').trim(),
     github_username,
@@ -127,6 +140,8 @@ function initForm() {
   const confirmationPanel = document.getElementById('confirmation-panel')
   const errorSummary = document.getElementById('error-summary')
   const errorList = document.getElementById('error-list')
+  const nameInput = document.getElementById('name')
+  const departmentInput = document.getElementById('department')
   const linkInput = document.getElementById('link')
 
   if (!form) return
@@ -135,11 +150,27 @@ function initForm() {
     event.preventDefault()
     clearErrors()
 
+    let hasErrors = false
+
+    const nameValue = nameInput ? nameInput.value : ''
+    if (!validateRequired(nameValue)) {
+      showFieldError('name-group', 'name', null, 'Enter your name')
+      hasErrors = true
+    }
+
+    const departmentValue = departmentInput ? departmentInput.value : ''
+    if (!validateRequired(departmentValue)) {
+      showFieldError('department-group', 'department', null, 'Enter your department or organisation')
+      hasErrors = true
+    }
+
     const linkValue = linkInput ? linkInput.value : ''
     if (!validateLink(linkValue)) {
       showFieldError('link-group', 'link', 'link-hint', 'Enter a valid URL, for example https://example.gov.uk')
-      return
+      hasErrors = true
     }
+
+    if (hasErrors) return
 
     form.hidden = true
     authPanel.hidden = false
@@ -216,7 +247,8 @@ function initForm() {
     const submittedAt = new Date().toISOString().slice(0, 10)
     const payload = buildDispatchPayload(
       {
-        name: document.getElementById('name') ? document.getElementById('name').value : '',
+        name: nameValue,
+        department: departmentValue,
         story: document.getElementById('story') ? document.getElementById('story').value : '',
         link: linkValue
       },
@@ -241,15 +273,21 @@ function initForm() {
   function clearErrors() {
     if (errorSummary) errorSummary.hidden = true
     if (errorList) errorList.innerHTML = ''
-    const linkGroup = document.getElementById('link-group')
-    if (linkGroup) {
-      linkGroup.classList.remove('govuk-form-group--error')
-      const existing = linkGroup.querySelector('.govuk-error-message')
-      if (existing) existing.remove()
-    }
-    if (linkInput) {
-      linkInput.classList.remove('govuk-input--error')
-      linkInput.removeAttribute('aria-describedby')
+    for (const [groupId, input] of [
+      ['name-group', nameInput],
+      ['department-group', departmentInput],
+      ['link-group', linkInput]
+    ]) {
+      const group = document.getElementById(groupId)
+      if (group) {
+        group.classList.remove('govuk-form-group--error')
+        const existing = group.querySelector('.govuk-error-message')
+        if (existing) existing.remove()
+      }
+      if (input) {
+        input.classList.remove('govuk-input--error')
+        input.removeAttribute('aria-describedby')
+      }
     }
   }
 

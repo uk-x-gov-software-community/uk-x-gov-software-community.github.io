@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
+  validateRequired,
   validateLink,
   buildIssueTitle,
   formatIssueBody,
@@ -7,6 +8,24 @@ import {
   parseDeviceCodeResponse,
   isMemberResponse
 } from '../assets/newsletter-submit.js'
+
+describe('validateRequired', () => {
+  it('returns true for a non-empty string', () => {
+    expect(validateRequired('Alice')).toBe(true)
+  })
+  it('returns true for a string with only internal spaces', () => {
+    expect(validateRequired('Cabinet Office')).toBe(true)
+  })
+  it('returns false for an empty string', () => {
+    expect(validateRequired('')).toBe(false)
+  })
+  it('returns false for a whitespace-only string', () => {
+    expect(validateRequired('   ')).toBe(false)
+  })
+  it('returns false for undefined', () => {
+    expect(validateRequired(undefined)).toBe(false)
+  })
+})
 
 describe('validateLink', () => {
   it('accepts an empty string (field is optional)', () => {
@@ -42,12 +61,14 @@ describe('formatIssueBody', () => {
   it('includes all provided fields in the output', () => {
     const body = formatIssueBody({
       name: 'Alice',
+      department: 'Cabinet Office',
       story: 'We shipped a thing',
       link: 'https://example.gov.uk',
       github_username: 'alice',
       submitted_at: '2026-03-23'
     })
     expect(body).toContain('### Name\nAlice')
+    expect(body).toContain('### Department / Organisation\nCabinet Office')
     expect(body).toContain('### Story / Update\nWe shipped a thing')
     expect(body).toContain('### Link\nhttps://example.gov.uk')
     expect(body).toContain('@alice')
@@ -57,12 +78,14 @@ describe('formatIssueBody', () => {
   it('uses "(not provided)" for empty fields', () => {
     const body = formatIssueBody({
       name: '',
+      department: '',
       story: '',
       link: '',
       github_username: 'bob',
       submitted_at: '2026-03-23'
     })
     expect(body).toContain('### Name\n(not provided)')
+    expect(body).toContain('### Department / Organisation\n(not provided)')
     expect(body).toContain('### Story / Update\n(not provided)')
     expect(body).toContain('### Link\n(not provided)')
   })
@@ -70,12 +93,14 @@ describe('formatIssueBody', () => {
   it('trims leading and trailing whitespace from fields', () => {
     const body = formatIssueBody({
       name: '  Alice  ',
+      department: '  Cabinet Office  ',
       story: '  a story  ',
       link: '  https://example.gov.uk  ',
       github_username: 'alice',
       submitted_at: '2026-03-23'
     })
     expect(body).toContain('### Name\nAlice')
+    expect(body).toContain('### Department / Organisation\nCabinet Office')
     expect(body).toContain('### Story / Update\na story')
     expect(body).toContain('### Link\nhttps://example.gov.uk')
   })
@@ -83,6 +108,7 @@ describe('formatIssueBody', () => {
   it('stores user input as-is (GitHub renders Markdown safely)', () => {
     const body = formatIssueBody({
       name: '<script>alert(1)</script>',
+      department: 'HMRC',
       story: '',
       link: '',
       github_username: 'eve',
@@ -95,12 +121,13 @@ describe('formatIssueBody', () => {
 describe('buildDispatchPayload', () => {
   it('returns the expected shape with all fields provided', () => {
     const payload = buildDispatchPayload(
-      { name: 'Alice', story: 'A story', link: 'https://example.gov.uk' },
+      { name: 'Alice', department: 'Cabinet Office', story: 'A story', link: 'https://example.gov.uk' },
       'alice',
       '2026-03-23'
     )
     expect(payload).toEqual({
       name: 'Alice',
+      department: 'Cabinet Office',
       story: 'A story',
       link: 'https://example.gov.uk',
       github_username: 'alice',
@@ -110,18 +137,20 @@ describe('buildDispatchPayload', () => {
 
   it('trims whitespace from all form fields', () => {
     const payload = buildDispatchPayload(
-      { name: '  Alice  ', story: '  story  ', link: '  https://x.gov.uk  ' },
+      { name: '  Alice  ', department: '  Cabinet Office  ', story: '  story  ', link: '  https://x.gov.uk  ' },
       'alice',
       '2026-03-23'
     )
     expect(payload.name).toBe('Alice')
+    expect(payload.department).toBe('Cabinet Office')
     expect(payload.story).toBe('story')
     expect(payload.link).toBe('https://x.gov.uk')
   })
 
-  it('handles missing optional fields gracefully', () => {
+  it('defaults missing fields to empty string', () => {
     const payload = buildDispatchPayload({}, 'alice', '2026-03-23')
     expect(payload.name).toBe('')
+    expect(payload.department).toBe('')
     expect(payload.story).toBe('')
     expect(payload.link).toBe('')
   })
