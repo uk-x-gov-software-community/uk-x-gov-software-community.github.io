@@ -18,7 +18,7 @@ npx @11ty/eleventy --serve --port=8081
 npm run build:local:docker
 ```
 
-There is no test or lint runner currently configured.
+There is no test or lint runner currently configured. When working as an agent in this repository, all code changes must be correctly linted and have unit tests before committing.
 
 ## Architecture
 
