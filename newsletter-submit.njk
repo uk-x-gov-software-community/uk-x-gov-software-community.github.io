@@ -16,14 +16,10 @@ description: Share a story or link for inclusion in the next community newslette
 </p>
 
 <noscript>
-  <div class="govuk-warning-text">
-    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">Warning</span>
-      JavaScript must be enabled to submit this form.
-      Alternatively, <a class="govuk-link" href="https://github.com/uk-x-gov-software-community/newsletter-submissions/issues/new">open a GitHub Issue</a>
-      in the newsletter-submissions repository, or email the committee directly.
-    </strong>
+  <div class="govuk-inset-text">
+    JavaScript is not available in your browser. You can still fill in the form above and click
+    <strong>Submit to newsletter</strong> — you will be taken to a page with the formatted content
+    ready to copy and paste into a GitHub Issue.
   </div>
 </noscript>
 
@@ -34,7 +30,7 @@ description: Share a story or link for inclusion in the next community newslette
   </div>
 </div>
 
-<form id="newsletter-form" novalidate>
+<form id="newsletter-form" action="/newsletter-submit/preview/" method="GET" novalidate>
 
   <div class="govuk-form-group" id="name-group">
     <label class="govuk-label govuk-label--s" for="name">
