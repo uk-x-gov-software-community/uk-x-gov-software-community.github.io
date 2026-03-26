@@ -16,42 +16,46 @@ Here's a concrete proposal for how you could build exactly that.
 
 ## What the scraper gives you
 
-The scraper publishes a JSON file containing an array of repository objects. Each one looks roughly like this:
+The scraper publishes a single JSON file — `repos.json` — updated every night via GitHub Actions. It is a plain array of repository objects, no authentication required:
 
 ```json
 {
+  "owner": "alphagov",
   "name": "govuk-frontend",
-  "full_name": "alphagov/govuk-frontend",
-  "html_url": "https://github.com/alphagov/govuk-frontend",
   "description": "The GOV.UK Design System Frontend",
+  "url": "https://github.com/alphagov/govuk-frontend",
+  "archived": false,
+  "isFork": false,
   "language": "JavaScript",
-  "topics": ["design-system", "frontend", "govuk", "accessibility"],
-  "stargazers_count": 1423,
-  "forks_count": 312,
-  "license": { "spdx_id": "MIT" },
-  "pushed_at": "2026-03-20T14:30:00Z",
-  "owner": { "login": "alphagov" }
+  "stargazersCount": 1423,
+  "forksCount": 312,
+  "openIssuesCount": 47,
+  "license": { "key": "mit", "name": "MIT License", "spdxId": "MIT" },
+  "createdAt": "2017-08-09T08:49:00Z",
+  "updatedAt": "2026-03-24T10:00:00Z",
+  "pushedAt": "2026-03-20T14:30:00Z",
+  "sbom": "sbom/alphagov/govuk-frontend.json.gz"
 }
 ```
 
-Every field you need to filter, rank, and compare repositories is already there. There is no API to call or authentication to manage — it is just a JSON file you can fetch with a single HTTP request.
+The scraper covers organisations from three source lists: UK Central government, UK Councils, and UK Research organisations. The `sbom` field — where present — is a bonus: a link to a gzip-compressed SPDX Software Bill of Materials for that repo, giving you the full dependency graph, not just the primary language.
 
 ---
 
 ## Step 1: Ingest the data
 
-Start by pulling the JSON. In Python:
+Fetch `repos.json` from the scraper's GitHub Pages site:
 
 ```python
 import httpx
 
-SCRAPER_DATA_URL = (
+REPOS_URL = (
     "https://uk-x-gov-software-community.github.io"
-    "/xgov-opensource-repo-scraper/data.json"
+    "/xgov-opensource-repo-scraper/repos.json"
 )
 
 def fetch_repos() -> list[dict]:
-    response = httpx.get(SCRAPER_DATA_URL, timeout=30)
+    response = httpx.get(REPOS_URL, timeout=60)
     response.raise_for_status()
     return response.json()
 ```
@@ -59,51 +63,58 @@ def fetch_repos() -> list[dict]:
 Or in TypeScript:
 
 ```typescript
-const SCRAPER_DATA_URL =
-  "https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/data.json";
+const REPOS_URL =
+  "https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/repos.json";
 
 async function fetchRepos(): Promise<Repo[]> {
-  const response = await fetch(SCRAPER_DATA_URL);
+  const response = await fetch(REPOS_URL);
   return response.json();
 }
 ```
 
-Cache the result locally — the file is updated nightly so there is no need to re-fetch it more than once per session.
+Cache the result locally — there is no point fetching it more than once per session as it only updates overnight.
 
 ---
 
 ## Step 2: Filter by tech stack
 
-Let users specify which languages and topics they care about, then filter the list down:
+The primary language field lets you narrow down immediately. Because the data does not include topic tags, you have two approaches for more precise filtering: name/description keyword matching, and SBOM dependency analysis for repos that have one.
 
 ```python
+from datetime import datetime, timezone, timedelta
+
 def filter_by_stack(
     repos: list[dict],
     languages: list[str] | None = None,
-    topics: list[str] | None = None,
-    min_activity_days: int = 365,
+    keywords: list[str] | None = None,
+    exclude_archived: bool = True,
+    exclude_forks: bool = True,
+    active_within_days: int = 365,
 ) -> list[dict]:
-    from datetime import datetime, timezone, timedelta
-
-    cutoff = datetime.now(timezone.utc) - timedelta(days=min_activity_days)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=active_within_days)
     results = []
 
     for repo in repos:
-        # Skip stale repos
-        pushed = datetime.fromisoformat(repo["pushed_at"].replace("Z", "+00:00"))
+        if exclude_archived and repo.get("archived"):
+            continue
+        if exclude_forks and repo.get("isFork"):
+            continue
+
+        pushed = datetime.fromisoformat(repo["pushedAt"].replace("Z", "+00:00"))
         if pushed < cutoff:
             continue
 
-        # Match language (case-insensitive)
         if languages:
-            repo_lang = (repo.get("language") or "").lower()
-            if repo_lang not in [l.lower() for l in languages]:
+            lang = (repo.get("language") or "").lower()
+            if lang not in [l.lower() for l in languages]:
                 continue
 
-        # Match topics (any overlap)
-        if topics:
-            repo_topics = set(repo.get("topics") or [])
-            if not repo_topics.intersection(t.lower() for t in topics):
+        if keywords:
+            haystack = (
+                (repo.get("name") or "") + " " +
+                (repo.get("description") or "")
+            ).lower()
+            if not any(kw.lower() in haystack for kw in keywords):
                 continue
 
         results.append(repo)
@@ -111,27 +122,52 @@ def filter_by_stack(
     return results
 ```
 
-Example usage — find all actively-maintained Python repos that deal with APIs or data pipelines:
+Example — find actively maintained Python repos related to APIs or data pipelines:
 
 ```python
 repos = fetch_repos()
 filtered = filter_by_stack(
     repos,
     languages=["Python"],
-    topics=["api", "data-pipeline", "etl", "fastapi", "django"],
-    min_activity_days=365,
+    keywords=["api", "pipeline", "etl", "fastapi", "django", "flask"],
 )
 ```
 
-You could extend this with a simple CLI or a small web interface with checkboxes for common stacks (Java / Spring, TypeScript / Node, Python / Django, Ruby / Rails, Go, etc.) so non-technical users can explore it without touching code.
+### Going deeper with SBOMs
+
+For repos that include an `sbom` field, you can fetch the full dependency graph and filter far more precisely — checking whether a repo actually uses FastAPI, Spring Boot, Rails, or any other specific framework:
+
+```python
+import gzip, json, httpx
+
+SBOM_BASE = "https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/"
+
+def get_dependencies(repo: dict) -> list[str]:
+    """Return a flat list of dependency names from a repo's SPDX SBOM."""
+    sbom_path = repo.get("sbom")
+    if not sbom_path:
+        return []
+    response = httpx.get(SBOM_BASE + sbom_path, timeout=30)
+    data = json.loads(gzip.decompress(response.content))
+    return [
+        pkg.get("name", "")
+        for pkg in data.get("packages", [])
+    ]
+
+def uses_framework(repo: dict, framework: str) -> bool:
+    deps = get_dependencies(repo)
+    return any(framework.lower() in dep.lower() for dep in deps)
+```
+
+This turns a vague "Python repos" search into "Python repos that actually depend on FastAPI" — a much more useful shortlist.
 
 ---
 
 ## Step 3: Use AI to analyse the filtered repos
 
-Once you have a shortlist of relevant repos, the interesting question is: *what patterns inside those repos are worth borrowing?* This is where AI comes in.
+Once you have a shortlist, the interesting question is: *what patterns inside those repos are worth borrowing?* This is where AI comes in.
 
-GitHub provides a models API at `https://models.inference.ai.azure.com` that is OpenAI-compatible and works with the standard SDKs. You can access it with a GitHub personal access token — no separate subscription needed. The same endpoint is used by GitHub Copilot Extensions.
+GitHub provides a models API at `https://models.inference.ai.azure.com` that is OpenAI-compatible and works with a standard GitHub personal access token — no separate subscription needed. It is the same endpoint used by GitHub Copilot Extensions.
 
 ```python
 from openai import OpenAI
@@ -141,23 +177,24 @@ client = OpenAI(
     api_key="<your-github-pat>",
 )
 
-def analyse_repo(repo: dict) -> str:
-    prompt = f"""
-You are a senior software engineer reviewing an open source government repository.
-Given the following repository metadata, describe in 2-3 sentences what patterns,
-architectural decisions, or reusable components this repository might contain that
-would be valuable to a government software team building similar services.
-Focus on practical value: testing strategies, CI/CD patterns, accessibility
-approaches, security configurations, API design, or infrastructure-as-code.
+def analyse_repo(repo: dict, dependencies: list[str] | None = None) -> str:
+    deps_line = ""
+    if dependencies:
+        deps_line = f"- Key dependencies: {', '.join(dependencies[:20])}\n"
+
+    prompt = f"""You are a senior software engineer reviewing a UK government open source repository.
+Based on the metadata below, describe in 2-3 sentences what patterns, architectural decisions,
+or reusable components this repo likely contains that would help a government team building
+similar services. Focus on practical value: testing strategies, CI/CD patterns, accessibility
+tooling, security configurations, API design, or infrastructure-as-code.
 
 Repository:
-- Name: {repo['full_name']}
-- Description: {repo.get('description', 'No description')}
-- Language: {repo.get('language', 'Unknown')}
-- Topics: {', '.join(repo.get('topics') or [])}
-- Stars: {repo.get('stargazers_count', 0)}
-- Last pushed: {repo.get('pushed_at', 'Unknown')}
-- URL: {repo['html_url']}
+- Name: {repo['owner']}/{repo['name']}
+- Description: {repo.get('description') or 'No description'}
+- Language: {repo.get('language') or 'Unknown'}
+{deps_line}- Stars: {repo.get('stargazersCount', 0)}
+- Last pushed: {repo['pushedAt']}
+- URL: {repo['url']}
 """
 
     response = client.chat.completions.create(
@@ -168,52 +205,51 @@ Repository:
     return response.choices[0].message.content
 ```
 
-For a shortlist of 20–50 repos you can run this affordably in a batch. The model can identify likely patterns from the repo's name, description, language, and topics without needing to read the full source code.
+Passing in the actual dependencies makes the summaries significantly more accurate — the model can identify Spring Boot patterns, pytest fixtures, or Terraform module structures rather than guessing from the repo name alone.
 
 ---
 
 ## Step 4: Go deeper with code search
 
-For repos that look particularly promising, go further by using the GitHub Search API to look for specific patterns inside them:
+For repos that look particularly promising, use the GitHub Search API to look for specific patterns in the source:
 
 ```python
-import httpx
-
 def search_patterns_in_repo(
-    repo_full_name: str,
+    owner: str,
+    name: str,
     pattern: str,
     github_token: str,
 ) -> list[dict]:
-    """Search for a code pattern within a specific repo."""
     url = "https://api.github.com/search/code"
     headers = {
         "Authorization": f"Bearer {github_token}",
         "Accept": "application/vnd.github+json",
     }
-    params = {"q": f"{pattern} repo:{repo_full_name}", "per_page": 10}
-    response = httpx.get(url, headers=headers, params=params)
+    params = {"q": f"{pattern} repo:{owner}/{name}", "per_page": 5}
+    response = httpx.get(url, headers=headers, params=params, timeout=15)
     return response.json().get("items", [])
 ```
 
-For example, you could search for:
-- `Dockerfile` patterns to find good containerisation examples
-- `terraform` or `bicep` for infrastructure-as-code approaches
-- `pytest` or `rspec` for testing conventions
-- `openapi` or `swagger` for API specifications
-- `DAST` or `SAST` for security tooling in CI pipelines
+Useful patterns to search for:
+- `Dockerfile` — containerisation approaches
+- `terraform` or `bicep` — infrastructure-as-code
+- `pytest` or `rspec` — testing conventions
+- `openapi` or `swagger` — API specifications
+- `trivy` or `snyk` — security scanning in CI
+- `axe` or `pa11y` — accessibility testing
 
-Then pass those file URLs back to the AI for a more targeted summary.
+Pass the resulting file URLs back to the AI for a targeted follow-up summary of exactly those files.
 
 ---
 
 ## Putting it all together
 
-A minimal end-to-end flow looks like this:
+A minimal end-to-end pipeline:
 
 ```python
 def explore_government_repos(
     languages: list[str],
-    topics: list[str],
+    keywords: list[str],
     patterns_to_search: list[str],
     github_token: str,
 ) -> list[dict]:
@@ -221,26 +257,36 @@ def explore_government_repos(
     repos = fetch_repos()
 
     print(f"Filtering {len(repos)} repos by stack...")
-    filtered = filter_by_stack(repos, languages=languages, topics=topics)
-    print(f"Found {len(filtered)} matching repos.")
+    shortlist = filter_by_stack(repos, languages=languages, keywords=keywords)
+    print(f"Found {len(shortlist)} matching repos.")
 
     results = []
-    for repo in filtered[:20]:  # Cap at 20 for API rate limits
-        summary = analyse_repo(repo)
+    for repo in shortlist[:20]:  # cap at 20 to stay within API rate limits
+        deps = get_dependencies(repo)
+        summary = analyse_repo(repo, dependencies=deps)
+
         code_hits = []
         for pattern in patterns_to_search:
             hits = search_patterns_in_repo(
-                repo["full_name"], pattern, github_token
+                repo["owner"], repo["name"], pattern, github_token
             )
-            code_hits.extend(hits[:3])
+            code_hits.extend(h["html_url"] for h in hits[:2])
 
         results.append({
-            "repo": repo["html_url"],
+            "repo": repo["url"],
             "ai_summary": summary,
-            "code_examples": [h["html_url"] for h in code_hits],
+            "code_examples": code_hits,
         })
 
     return results
+
+# Example call
+results = explore_government_repos(
+    languages=["Python"],
+    keywords=["api", "django", "fastapi"],
+    patterns_to_search=["pytest", "Dockerfile", "openapi"],
+    github_token="ghp_...",
+)
 ```
 
 ---
@@ -250,20 +296,18 @@ def explore_government_repos(
 A tool like this would let any government software team answer questions like:
 
 - "Which other teams are building REST APIs in Java and what does their error handling look like?"
-- "Are there any government Go services with well-structured Terraform modules we could adapt?"
-- "Which Python data pipeline repos have good test coverage patterns we could follow?"
+- "Are there any government Go services using Terraform modules we could adapt?"
+- "Which Python data pipeline repos have a testing approach we could follow?"
 
-The value isn't just in finding code to copy — it is in knowing that a pattern has already been validated in a government service context, with all the constraints (accessibility, security, procurement) that implies.
+The value isn't just finding code to copy — it is knowing a pattern has already been validated in a government service context, with all the constraints (accessibility, security, procurement) that implies.
 
 ---
 
 ## Next steps
 
-If this idea interests you, here is how to get involved:
-
-1. **Start small** — build a local script using the steps above and share what you find in the community Slack
-2. **Contribute to the scraper** — add richer metadata (detected frameworks, CI system, test coverage signals) to make filtering more precise
-3. **Build a shared tool** — if several teams find this useful independently, it is worth building a hosted version for the whole community
+1. **Start small** — build the script above locally and share what you find in the community Slack
+2. **Exploit the SBOMs** — the scraper already collects Software Bills of Materials for thousands of repos; richer dependency-based filtering is there to be built
+3. **Build a shared tool** — if several teams build this independently it is worth making a hosted version for the whole community
 
 The data is already there. The APIs are free to use. This is a weekend project waiting to happen.
 
