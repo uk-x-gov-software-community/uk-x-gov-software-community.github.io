@@ -55,23 +55,44 @@ account or write access to any repository.
 
 ## Architecture
 
-```
-Browser (GitHub Pages)                GitHub Infrastructure
-──────────────────────                ────────────────────────────────────────────
-1. User fills form
-2. Device Flow OAuth ──────────────►  github.com/login/device/code
-   (read:org + public_repo scopes)     (via Cloudflare CORS proxy)
-3. Poll for access token ───────────► github.com/login/oauth/access_token
-                                       (via CORS proxy)
-4. Verify org membership ───────────► api.github.com/orgs/.../members/{user}
-5. Fire repository_dispatch ────────► api.github.com/repos/.../dispatches
-   (public site repo only)            (public site repo)
-                                              │
-                                       GitHub Actions workflow
-                                       (newsletter-dispatch.yaml)
-                                              │
-                                       Creates issue ──────────────► newsletter-submissions
-                                       via GitHub App token           (private repo)
+```mermaid
+sequenceDiagram
+    actor User as User (browser)
+    participant CF as Cloudflare<br/>CORS Proxy
+    participant GHDevice as github.com<br/>/login/device
+    participant GHAPI as api.github.com
+    participant Dispatch as repository_dispatch<br/>(public site repo)
+    participant Actions as GitHub Actions<br/>newsletter-dispatch.yaml
+    participant App as GitHub App<br/>cgov-newsletter-bot
+    participant Submissions as newsletter-submissions<br/>(private repo)
+
+    Note over User: JS path — OAuth Device Flow
+    User->>CF: POST /login/device/code<br/>(client_id, scopes: read:org public_repo)
+    CF->>GHDevice: forward request
+    GHDevice-->>CF: device_code, user_code, interval
+    CF-->>User: user_code displayed in page
+
+    User->>GHDevice: enters user_code at github.com/login/device
+
+    loop Poll every interval seconds
+        User->>CF: POST /login/oauth/access_token
+        CF->>GHDevice: forward request
+        GHDevice-->>User: authorization_pending / access_token
+    end
+
+    User->>GHAPI: GET /orgs/{org}/members/{username}<br/>(read:org token)
+    GHAPI-->>User: 204 Member ✓ / 404 Not a member ✗
+
+    User->>Dispatch: POST /repos/{site-repo}/dispatches<br/>(event_type: newsletter-submission,<br/>client_payload: form fields + username)
+    Dispatch->>Actions: trigger workflow
+
+    Actions->>App: exchange App ID + private key<br/>for installation token
+    App-->>Actions: short-lived token (1 hr, scoped to submissions repo)
+    Actions->>Submissions: create issue<br/>(title, body, label: newsletter-submission)
+
+    Note over User: No-JS path — plain GET form
+    User->>User: form GET → /newsletter-submit/preview/<br/>(fields in URL params)
+    User->>Submissions: opens github.com/…/issues/new?title=…&body=…<br/>(pre-filled via Clipboard API copy)
 ```
 
 The user's OAuth token only ever reads org membership and triggers a dispatch on the
