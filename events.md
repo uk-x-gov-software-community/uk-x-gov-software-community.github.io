@@ -4,7 +4,7 @@ title: Events
 ---
 
 # Upcoming Events  
-
+Join us for La Suite Numerique Tech Talk, a technical deep dive into the French Government open source project May 7th 11am (get tickets)[https://www.eventbrite.co.uk/e/la-suite-numerique-tech-talk-tickets-1985703135532?aff=oddtdtcreator]
 
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
