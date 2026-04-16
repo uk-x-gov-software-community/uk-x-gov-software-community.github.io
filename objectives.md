@@ -4,82 +4,123 @@ title: Our Objectives
 ---
 
 
-### 1. Connect development teams across government
+# Community Objectives
 
-The primary aim of the group is to connect teams through a series of mechanisms:-
+## Overview
 
-* **Lean Coffee**
-* **Facilitated Events**
-* **Mailing List**
-* **X-Gov Slack**
- 
+These objectives define how the community will grow, engage members, communicate effectively, and improve diversity and inclusion across government software engineering teams. We aim to act as a facilitator to represent the views of the community and influence the Government Digital and Data (GDaD) capability framework.
 
-### 2. Learning and development
+We have aligned our objectives with cross-government priorities including learning & development, standards adoption, and representation in GDaD conversations.
 
-One aim of the group is to understand and faciliate Learning and development within teams and understand and share what are we doing to progress our careers. 
+---
 
-Addressing questions and sharing information such as 
+## 1. Grow the Community
 
-**What Learning resources are being used ?**
+### Objective
+Grow a strong, representative cross-government software engineering community.
 
-e.g. we know 
-
-Several teams have Pluralsight accounts
-
-O'Reilly Online Learning is also a popular subscription
-
-**What Learning techniques are adopted ?**
-
-e.g.
-
-* Learning techniques
-* Pair programming
-* Hack days
-* Code retreats
-
-**How are Apprenticeships used ?**
-
-e.g. Some departments have used an [apprenticeship scheme](https://digitalpeople.blog.gov.uk/2020/02/03/how-do-you-attract-more-software-developers-into-your-department/) 
-
-**How are we Finding time for learning ?**
-
-Finding enough time to keep skills up to date is an issue. Developers are sometimes allocated a percentage of time from their working week for self-learning. Others are too busy and learn during evenings and weekends. 
+### Key Outcomes
+- Broaden eligibility so membership reflects the **wider software engineering ecosystem**, not only self-identified software developers
 
 
-### 3. Championing standards
+---
 
-An aim of the group is to champion x-government standards to do this we aim to understand
+## 2. Engagement
 
-**What standards are in place within government software engineering communities?**
+### Objective
+Increase both active and passive engagement across the community.
 
-For 
+### 2.1 Active Engagement
 
-* Technology choices
-* Techniques
- 
+Increase the number of members who actively participate in at least one community activity per year.
 
-**What Developer standards are there ?** 
+**Examples**
+- Lean Coffee sessions  
+- Facilitated events  
+- Conferences and meetups  
+- Special Interest Groups (SIGs)  
+- Working groups  
 
-Like 
-[Defra's developer standards](https://github.com/DEFRA/software-development-standards)
+### 2.2 Passive Engagement
 
- 
-**How are standards communicated within departments?**
+Increase the number of members who are aware of and follow community activity.
+
+**Channels**
+- Newsletter readership  
+- Social media engagement  
+- X-Gov Slack participation  
+- Event recordings and write-ups 
 
 
+---
+
+## 3. Comms & Social Media
+
+### Objective
+Ensure consistent, multi-channel communication so community activity is visible and accessible.
+
+### Channels
+- **LinkedIn** – professional reach and cross-government visibility  
+- **Bluesky** – informal engagement and community discussion  
+- **Newsletter** – core updates, events, standards, and learning resources  
+- **X-Gov Slack** – day-to-day discussion and quick engagement  
+
+---
 ### 4. Promoting diversity and inclusion
+
+### Objective
+The make up of the software engineering profession should reflect the society we serve in all aspects of diversity. 
+
 An aim of the group is to understand 
-how can we improve diversity and inclusion within our government software engineering community? and promote greater diversity and understand :-
+how can we improve diversity and inclusion within our government software engineering community? and promote greater diversity and understand.
+
+Actively improve gender diversity within the software engineering community.
 
 **What are departments already doing?**
 
-An aim of the group is to understand what departments and bodies are doing in this area.
+An aim of the group is to understand what departments and bodies are doing in this area. 
 
 **Sharing recruitment experience**
 
 An aim of the group is to understand and share recruitment experience.  
 
+### Key Outcomes
+- Establish a **baseline** for current representation of under represented groups in the community specifically women in engineering
+- Track participation and representation over time
+- Increase participation of women in community events and leadership roles
+ 
+---
+## 5. Learning, Standards & DDaT Representation (Cross-Cutting)
 
-### 5. Represent the software engineering community in DDAT conversations
+These priorities are embedded across all objectives.
+
+### Learning & Development
+- Share learning resources and techniques, including:
+  - Apprenticeships
+  - Pair programming
+  - Hack days and code retreats
+
+### Championing Standards
+- Promote cross-government software engineering standards
+- Share departmental standards and good practice
+- Improve how standards are communicated and adopted within teams
+
+### DDaT Representation
+- Represent the software engineering community in DDaT discussions
+- Provide feedback on the DDaT Framework
+- Surface community insights, gaps, and emerging needs
 
 An aim of the group is to discuss and represent the community in relation to the [DDAT Framework](https://www.gov.uk/guidance/software-developer)
+
+
+---
+
+## Review and Iteration
+
+These objectives will be reviewed periodically to:
+- Track progress against outcomes
+- Ratify with the community 
+- Refresh ownership where needed
+- Respond to changes in cross-government priorities
+
+
