@@ -24,5 +24,6 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir:  _site 
           publish_branch: gh-pages
+          cname:www.uk-x-gov-software-community.org.uk
         
          
