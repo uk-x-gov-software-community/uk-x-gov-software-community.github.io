@@ -1,0 +1,59 @@
+name: Create newsletter submission issue
+
+on:
+  repository_dispatch:
+    types: [newsletter-submission]
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate GitHub App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.NEWSLETTER_APP_ID }}
+          private-key: ${{ secrets.NEWSLETTER_APP_PRIVATE_KEY }}
+          owner: uk-x-gov-software-community
+          repositories: newsletter-submissions
+
+      - name: Create issue in private newsletter-submissions repo
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const {
+              name,
+              story,
+              link,
+              github_username,
+              submitted_at
+            } = context.payload.client_payload
+
+            const safe = v => (v && v.trim()) ? v.trim() : '(not provided)'
+
+            const body = [
+              '## Newsletter Submission',
+              '',
+              `**Submitted by:** @${github_username} on ${submitted_at}`,
+              '',
+              '### Name',
+              safe(name),
+              '',
+              '### Story / Update',
+              safe(story),
+              '',
+              '### Link',
+              safe(link),
+              '',
+              '---',
+              '*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*'
+            ].join('\n')
+
+            await github.rest.issues.create({
+              owner: 'uk-x-gov-software-community',
+              repo: 'newsletter-submissions',
+              title: `Newsletter Submission \u2013 ${submitted_at}`,
+              labels: ['newsletter-submission'],
+              body
+            })

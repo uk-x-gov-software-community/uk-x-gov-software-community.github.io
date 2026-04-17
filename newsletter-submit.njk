@@ -1,0 +1,98 @@
+---
+layout: page.njk
+title: Submit content for the newsletter
+description: Share a story or link for inclusion in the next community newsletter. You will need a GitHub account that is a member of the uk-x-gov-software-community organisation.
+---
+
+<p class="govuk-body">
+  Use this form to share a story, update or link for the next newsletter.
+  Your name and department are required; all other fields are optional.
+</p>
+<p class="govuk-body">
+  When you submit, you will be asked to authorise with GitHub to confirm you are a
+  member of the community. You will need a GitHub account that belongs to the
+  <a class="govuk-link" href="https://github.com/uk-x-gov-software-community">uk-x-gov-software-community</a>
+  organisation.
+</p>
+
+<noscript>
+  <div class="govuk-inset-text">
+    JavaScript is not available in your browser. You can still fill in the form above and click
+    <strong>Submit to newsletter</strong> — you will be taken to a page with the formatted content
+    ready to copy and paste into a GitHub Issue.
+  </div>
+</noscript>
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" id="error-summary" hidden tabindex="-1">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list" id="error-list"></ul>
+  </div>
+</div>
+
+<form id="newsletter-form" action="/newsletter-submit/preview/" method="GET" novalidate>
+
+  <div class="govuk-form-group" id="name-group">
+    <label class="govuk-label govuk-label--s" for="name">
+      Your name
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text" autocomplete="name" required>
+  </div>
+
+  <div class="govuk-form-group" id="department-group">
+    <label class="govuk-label govuk-label--s" for="department">
+      Your department or organisation
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="department" name="department" type="text" autocomplete="organization" required>
+  </div>
+
+  <div class="govuk-form-group" id="story-group">
+    <label class="govuk-label govuk-label--s" for="story">
+      Your story or update (optional)
+    </label>
+    <div id="story-hint" class="govuk-hint">
+      Describe something interesting from your team, project or the wider community.
+    </div>
+    <textarea class="govuk-textarea" id="story" name="story" rows="6" aria-describedby="story-hint"></textarea>
+  </div>
+
+  <div class="govuk-form-group" id="link-group">
+    <label class="govuk-label govuk-label--s" for="link">
+      A relevant link (optional)
+    </label>
+    <div id="link-hint" class="govuk-hint">
+      For example, https://example.gov.uk/blog-post
+    </div>
+    <input class="govuk-input" id="link" name="link" type="url" aria-describedby="link-hint" spellcheck="false" autocomplete="url">
+  </div>
+
+  <button type="submit" class="govuk-button">Submit to newsletter</button>
+
+</form>
+
+<section id="auth-panel" hidden aria-label="GitHub authorisation">
+  <div class="govuk-inset-text">
+    <p class="govuk-body">To verify your community membership, enter this code on GitHub:</p>
+    <p class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold" id="user-code" aria-live="polite"></p>
+    <p class="govuk-body">
+      <a class="govuk-link" id="device-link" href="https://github.com/login/device" target="_blank" rel="noopener noreferrer">
+        Open GitHub to enter the code (opens in a new tab)
+      </a>
+    </p>
+  </div>
+  <p class="govuk-body" id="auth-status" role="status" aria-live="polite"></p>
+</section>
+
+<div id="confirmation-panel" hidden tabindex="-1">
+  <div class="govuk-panel govuk-panel--confirmation" role="alert">
+    <h2 class="govuk-panel__title">Submission received</h2>
+    <div class="govuk-panel__body">
+      Thank you — your content has been added to the newsletter inbox.
+    </div>
+  </div>
+  <p class="govuk-body govuk-!-margin-top-6">
+    The newsletter committee will review submissions before the next edition is published.
+  </p>
+</div>
+
+<script type="module" src="/assets/newsletter-submit.js"></script>
