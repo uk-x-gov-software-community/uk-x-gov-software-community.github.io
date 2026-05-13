@@ -18,6 +18,7 @@ title: Resources
 - [NHS Business Services Authority playbook](https://nhsbsa.github.io/nhsbsa-digital-playbook/)
 - [HMCTS](https://hmcts.github.io)
 - [The MHCLG Way](https://communitiesuk.github.io/mhclg-way/)
+- [HMRC](https://engineering.hmrc.gov.uk)
 
 ---
 ### Colleagues outside of UK Government
