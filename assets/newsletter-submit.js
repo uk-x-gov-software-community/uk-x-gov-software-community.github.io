@@ -5,7 +5,6 @@ const GITHUB_CLIENT_ID = 'Iv23lipKTvYMFhOuItLt'
 const CORS_PROXY = 'https://github-oauth-proxy.shaun-dvsa.workers.dev'
 
 const ORG = 'uk-x-gov-software-community'
-const SITE_REPO = 'uk-x-gov-software-community.github.io'
 const OAUTH_SCOPE = 'read:org'
 
 // ─── Pure utility functions (exported for testing) ──────────────────────────
