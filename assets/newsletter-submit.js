@@ -1,12 +1,12 @@
 // ─── Configuration ─────────────────────────────────────────────────────────
 // TODO: Fill in after registering the GitHub OAuth App in the org
-const GITHUB_CLIENT_ID = 'YOUR_OAUTH_APP_CLIENT_ID'
+const GITHUB_CLIENT_ID = 'Iv23lipKTvYMFhOuItLt'
 // TODO: Fill in after deploying the Cloudflare Worker (see cloudflare-worker/)
-const CORS_PROXY = 'YOUR_CLOUDFLARE_WORKER_URL'
+const CORS_PROXY = 'https://github-oauth-proxy.shaun-dvsa.workers.dev'
 
 const ORG = 'uk-x-gov-software-community'
 const SITE_REPO = 'uk-x-gov-software-community.github.io'
-const OAUTH_SCOPE = 'read:org public_repo'
+const OAUTH_SCOPE = 'read:org'
 
 // ─── Pure utility functions (exported for testing) ──────────────────────────
 
@@ -132,7 +132,7 @@ export function parseDeviceCodeResponse(json) {
  */
 export function isMemberResponse(status) {
   if (status === 204) return true
-  if (status === 404 || status === 302) return false
+  if (status === 302 || status === 403 || status === 404) return false
   throw new Error(`Unexpected membership check status: ${status}`)
 }
 
@@ -348,7 +348,11 @@ function initForm() {
     const errMsg = document.createElement('p')
     errMsg.className = 'govuk-error-message'
     errMsg.id = `${inputId}-error`
-    errMsg.innerHTML = `<span class="govuk-visually-hidden">Error:</span> ${message}`
+    const hidden = document.createElement('span')
+    hidden.className = 'govuk-visually-hidden'
+    hidden.textContent = 'Error:'
+    errMsg.appendChild(hidden)
+    errMsg.appendChild(document.createTextNode(` ${message}`))
     const label = group.querySelector('label')
     if (label) label.after(errMsg)
 
@@ -359,7 +363,10 @@ function initForm() {
 
     if (errorSummary && errorList) {
       const li = document.createElement('li')
-      li.innerHTML = `<a href="#${inputId}">${message}</a>`
+      const a = document.createElement('a')
+      a.href = `#${inputId}`
+      a.textContent = message
+      li.appendChild(a)
       errorList.appendChild(li)
       errorSummary.hidden = false
       errorSummary.focus()
@@ -368,7 +375,9 @@ function initForm() {
 
   function showTopError(message) {
     if (errorSummary && errorList) {
-      errorList.innerHTML = `<li>${message}</li>`
+      const li = document.createElement('li')
+      li.textContent = message
+      errorList.replaceChildren(li)
       errorSummary.hidden = false
       errorSummary.focus()
     }
@@ -454,18 +463,17 @@ async function checkOrgMembershipStatus(token, username) {
 }
 
 async function fireDispatch(token, payload) {
-  const resp = await fetch(
-    `https://api.github.com/repos/${ORG}/${SITE_REPO}/dispatches`,
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github+json',
-        'Content-Type': 'application/json',
-        'X-GitHub-Api-Version': '2022-11-28'
-      },
-      body: JSON.stringify({ event_type: 'newsletter-submission', client_payload: payload })
-    }
-  )
-  if (resp.status !== 204) throw new Error(`Dispatch returned HTTP ${resp.status}`)
+  const resp = await fetch(`${CORS_PROXY}/dispatch`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({ token, payload })
+  })
+  if (resp.status !== 204) {
+    let msg = `HTTP ${resp.status}`
+    try {
+      const data = await resp.json()
+      if (data.error) msg = data.error
+    } catch { /* ignore */ }
+    throw new Error(msg)
+  }
 }

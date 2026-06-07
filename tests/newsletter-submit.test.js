@@ -260,6 +260,10 @@ describe('isMemberResponse', () => {
     expect(isMemberResponse(302)).toBe(false)
   })
 
+  it('returns false for HTTP 403 (public-only org, user not a member)', () => {
+    expect(isMemberResponse(403)).toBe(false)
+  })
+
   it('throws for unexpected status codes', () => {
     expect(() => isMemberResponse(500)).toThrow('500')
     expect(() => isMemberResponse(401)).toThrow('401')

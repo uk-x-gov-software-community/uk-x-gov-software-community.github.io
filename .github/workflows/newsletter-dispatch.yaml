@@ -24,13 +24,18 @@ jobs:
           script: |
             const {
               name,
+              department,
               story,
               link,
               github_username,
               submitted_at
             } = context.payload.client_payload
 
-            const safe = v => (v && v.trim()) ? v.trim() : '(not provided)'
+            const sanitise = v =>
+              typeof v === 'string'
+                ? v.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '').trim().slice(0, 4000)
+                : ''
+            const safe = v => sanitise(v) || '(not provided)'
 
             const body = [
               '## Newsletter Submission',
@@ -39,6 +44,9 @@ jobs:
               '',
               '### Name',
               safe(name),
+              '',
+              '### Department / Organisation',
+              safe(department),
               '',
               '### Story / Update',
               safe(story),
