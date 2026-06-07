@@ -12,12 +12,17 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
     "gulp": "^5.0.0",
     "gulp-minify": "^3.0.0",
-    "gulp-sass": "^5.0.0"
+    "gulp-sass": "^5.0.0",
+    "vitest": "^4.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "lint": "eslint assets/newsletter-submit.js tests/",
     "build": "eleventy",
     "build:local:docker": "docker build -t uk-xgov-software-community . && docker run -dp 127.0.0.1:8081:8081 uk-xgov-software-community"
   },
