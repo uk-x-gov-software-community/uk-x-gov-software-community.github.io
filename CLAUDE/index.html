@@ -1,0 +1,34 @@
+<h1 id="claude.md" tabindex="-1" class="govuk-heading-xl"><a class="app-link--heading govuk-link" href="#claude.md"><span>CLAUDE.md</span></a></h1>
+<p class="govuk-body">This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+<h2 id="commands" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#commands"><span>Commands</span></a></h2>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--bash" tabindex="0"><code><span class="x-govuk-code__comment"># Install dependencies</span>
+npm install
+
+<span class="x-govuk-code__comment"># Build the static site</span>
+npm run build
+
+<span class="x-govuk-code__comment"># Run local development server (port 8081)</span>
+npx @11ty/eleventy --serve --port=8081
+
+<span class="x-govuk-code__comment"># Build and run via Docker</span>
+npm run build:<span class="x-govuk-code__built_in">local</span>:docker
+</code></pre>
+
+<p class="govuk-body">There is no test or lint runner currently configured. When working as an agent in this repository, all code changes must be correctly linted and have unit tests before committing.</p>
+<h2 id="architecture" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#architecture"><span>Architecture</span></a></h2>
+<p class="govuk-body">This is a static site built with <a href="https://www.11ty.dev/" class="govuk-link">Eleventy (11ty)</a> using the <a href="https://x-govuk.github.io/govuk-eleventy-plugin/" class="govuk-link">govuk-eleventy-plugin</a> for GOV.UK Design System styling and layout. Content is written in Markdown with Nunjucks (<code class="x-govuk-code x-govuk-code--inline">.njk</code>) for templates and includes.</p>
+<p class="govuk-body"><strong>Key files:</strong></p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="x-govuk-code x-govuk-code--inline">.eleventy.js</code> — Eleventy config; sets up the govuk plugin, pass-through asset copies, and Nunjucks templating</li>
+<li><code class="x-govuk-code x-govuk-code--inline">_includes/</code> — Reusable Nunjucks components (cookie banner, nomination form, etc.) and SCSS/JS assets</li>
+<li><code class="x-govuk-code x-govuk-code--inline">sass/_settings.scss</code> — GOVUK frontend Sass overrides</li>
+<li><code class="x-govuk-code x-govuk-code--inline">assets/</code> — Static assets (images, logos, pre-built JS/CSS)</li>
+</ul>
+<p class="govuk-body"><strong>Content structure:</strong></p>
+<ul class="govuk-list govuk-list--bullet">
+<li>Root-level <code class="x-govuk-code x-govuk-code--inline">.md</code> files are top-level pages (e.g. <code class="x-govuk-code x-govuk-code--inline">events.md</code>, <code class="x-govuk-code x-govuk-code--inline">resources.md</code>)</li>
+<li><code class="x-govuk-code x-govuk-code--inline">blog/YYYY/MM/post.md</code> — Blog posts organised by date; <code class="x-govuk-code x-govuk-code--inline">blog/index.njk</code> renders the listing</li>
+<li><code class="x-govuk-code x-govuk-code--inline">special-interest/</code> — Special interest group content with sub-pages and presentation slides</li>
+</ul>
+<p class="govuk-body"><strong>Deployment:</strong> The site is hosted on GitHub Pages at https://uk-x-gov-software-community.github.io. Push to <code class="x-govuk-code x-govuk-code--inline">main</code> triggers a GitHub Actions workflow (<code class="x-govuk-code x-govuk-code--inline">.github/workflows/build.yaml</code>) that runs <code class="x-govuk-code x-govuk-code--inline">npm ci &amp;&amp; npm run build</code>, copies favicons into <code class="x-govuk-code x-govuk-code--inline">_site/assets/images/</code>, then deploys to GitHub Pages via the <code class="x-govuk-code x-govuk-code--inline">gh-pages</code> branch.</p>
+<p class="govuk-body"><strong>Node version:</strong> 22.22.0 (see <code class="x-govuk-code x-govuk-code--inline">.node-version</code>).</p>

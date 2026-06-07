@@ -1,0 +1,429 @@
+<h1 id="newsletter-submission-form" tabindex="-1" class="govuk-heading-xl"><a class="app-link--heading govuk-link" href="#newsletter-submission-form"><span>Newsletter Submission Form</span></a></h1>
+<p class="govuk-body">Documentation for the <code class="x-govuk-code x-govuk-code--inline">/newsletter-submit/</code> feature — a GOV.UK-styled form that lets<br>
+community members submit stories and links for the newsletter without needing a GitHub<br>
+account or write access to any repository.</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="contents" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#contents"><span>Contents</span></a></h2>
+<ul class="govuk-list govuk-list--bullet">
+<li><a href="#user-journeys" class="govuk-link">User journeys</a></li>
+<li><a href="#architecture" class="govuk-link">Architecture</a></li>
+<li><a href="#pages" class="govuk-link">Pages</a></li>
+<li><a href="#authentication-github-oauth-device-flow" class="govuk-link">Authentication: GitHub OAuth Device Flow</a></li>
+<li><a href="#no-javascript-path" class="govuk-link">No-JavaScript path</a></li>
+<li><a href="#github-actions-dispatch-workflow" class="govuk-link">GitHub Actions dispatch workflow</a></li>
+<li><a href="#github-app-setup" class="govuk-link">GitHub App setup</a></li>
+<li><a href="#oauth-app-setup" class="govuk-link">OAuth App setup</a></li>
+<li><a href="#issue-schema" class="govuk-link">Issue schema</a></li>
+<li><a href="#cloudflare-cors-proxy" class="govuk-link">Cloudflare CORS proxy</a></li>
+<li><a href="#accessibility" class="govuk-link">Accessibility</a></li>
+<li><a href="#testing-and-linting" class="govuk-link">Testing and linting</a></li>
+<li><a href="#setup-checklist" class="govuk-link">Setup checklist</a></li>
+<li><a href="#screenshots" class="govuk-link">Screenshots</a></li>
+</ul>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="user-journeys" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#user-journeys"><span>User journeys</span></a></h2>
+<h3 id="with-javascript-(primary-path)" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#with-javascript-(primary-path)"><span>With JavaScript (primary path)</span></a></h3>
+<ol class="govuk-list govuk-list--number">
+<li>User visits <code class="x-govuk-code x-govuk-code--inline">/newsletter-submit/</code>, fills in the optional fields.</li>
+<li>Clicks <strong>Submit to newsletter</strong>.</li>
+<li>Page drives the GitHub OAuth Device Flow — displays a short code and opens<br>
+<code class="x-govuk-code x-govuk-code--inline">https://github.com/login/device</code> in a new tab.</li>
+<li>User enters the code on GitHub and authorises the app.</li>
+<li>Page polls for the access token, then verifies the user is an org member.</li>
+<li>If verified: fires a <code class="x-govuk-code x-govuk-code--inline">repository_dispatch</code> event on the public site repo.</li>
+<li>GitHub Actions workflow picks up the event and creates an issue in the private<br>
+<code class="x-govuk-code x-govuk-code--inline">newsletter-submissions</code> repository using a short-lived GitHub App token.</li>
+<li>Page shows a GOV.UK green confirmation panel. No link to the private issue is shown.</li>
+</ol>
+<h3 id="without-javascript-(fallback-path)" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#without-javascript-(fallback-path)"><span>Without JavaScript (fallback path)</span></a></h3>
+<ol class="govuk-list govuk-list--number">
+<li>User visits <code class="x-govuk-code x-govuk-code--inline">/newsletter-submit/</code>, fills in the fields, and clicks <strong>Submit to newsletter</strong>.</li>
+<li>Browser performs a plain HTML GET to <code class="x-govuk-code x-govuk-code--inline">/newsletter-submit/preview/</code>.</li>
+<li>The preview page reads the URL params, formats the issue body markdown, and displays<br>
+it in a read-only text area.</li>
+<li>A <strong>Copy to clipboard</strong> button (native Clipboard API — no library) copies the content.</li>
+<li>An <strong>Open GitHub</strong> link pre-fills the title and body on the GitHub new-issue page via<br>
+<code class="x-govuk-code x-govuk-code--inline">?title=...&amp;body=...</code> query params.</li>
+<li>User submits the GitHub Issue directly.</li>
+</ol>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="architecture" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#architecture"><span>Architecture</span></a></h2>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--mermaid" tabindex="0"><code>sequenceDiagram
+    actor <span class="x-govuk-code__keyword">User</span> <span class="x-govuk-code__keyword">as</span> <span class="x-govuk-code__keyword">User</span> (browser)
+    participant CF <span class="x-govuk-code__keyword">as</span> Cloudflare&lt;br/&gt;CORS Proxy
+    participant GHDevice <span class="x-govuk-code__keyword">as</span> github.com&lt;br/&gt;/<span class="x-govuk-code__keyword">login</span>/device
+    participant GHAPI <span class="x-govuk-code__keyword">as</span> api.github.com
+    participant Dispatch <span class="x-govuk-code__keyword">as</span> repository_dispatch&lt;br/&gt;(<span class="x-govuk-code__built_in">public</span> site repo)
+    participant Actions <span class="x-govuk-code__keyword">as</span> GitHub Actions&lt;br/&gt;newsletter-dispatch.yaml
+    participant App <span class="x-govuk-code__keyword">as</span> GitHub App&lt;br/&gt;cgov-newsletter-bot
+    participant Submissions <span class="x-govuk-code__keyword">as</span> newsletter-submissions&lt;br/&gt;(private repo)
+
+    Note <span class="x-govuk-code__keyword">over</span> <span class="x-govuk-code__keyword">User</span>: JS <span class="x-govuk-code__type">path</span> — OAuth Device Flow
+    <span class="x-govuk-code__keyword">User</span>-&gt;&gt;CF: POST /<span class="x-govuk-code__keyword">login</span>/device/code&lt;br/&gt;(client_id, scopes: <span class="x-govuk-code__keyword">read</span>:org public_repo)
+    CF-&gt;&gt;GHDevice: forward request
+    GHDevice<span class="x-govuk-code__comment">--&gt;&gt;CF: device_code, user_code, interval</span>
+    CF<span class="x-govuk-code__comment">--&gt;&gt;User: user_code displayed in page</span>
+
+    <span class="x-govuk-code__keyword">User</span>-&gt;&gt;GHDevice: enters user_code at github.com/<span class="x-govuk-code__keyword">login</span>/device
+
+    <span class="x-govuk-code__keyword">loop</span> Poll every <span class="x-govuk-code__type">interval</span> seconds
+        <span class="x-govuk-code__keyword">User</span>-&gt;&gt;CF: POST /<span class="x-govuk-code__keyword">login</span>/oauth/access_token
+        CF-&gt;&gt;GHDevice: forward request
+        GHDevice<span class="x-govuk-code__comment">--&gt;&gt;User: authorization_pending / access_token</span>
+    <span class="x-govuk-code__keyword">end</span>
+
+    <span class="x-govuk-code__keyword">User</span>-&gt;&gt;GHAPI: <span class="x-govuk-code__keyword">GET</span> /orgs/{org}/members/{username}&lt;br/&gt;(<span class="x-govuk-code__keyword">read</span>:org token)
+    GHAPI<span class="x-govuk-code__comment">--&gt;&gt;User: 204 Member ✓ / 404 Not a member ✗</span>
+
+    <span class="x-govuk-code__keyword">User</span>-&gt;&gt;Dispatch: POST /repos/{site-repo}/dispatches&lt;br/&gt;(event_type: newsletter-submission,&lt;br/&gt;client_payload: form fields + username)
+    Dispatch-&gt;&gt;Actions: <span class="x-govuk-code__keyword">trigger</span> workflow
+
+    Actions-&gt;&gt;App: exchange App ID + private key&lt;br/&gt;<span class="x-govuk-code__keyword">for</span> installation token
+    App<span class="x-govuk-code__comment">--&gt;&gt;Actions: short-lived token (1 hr, scoped to submissions repo)</span>
+    Actions-&gt;&gt;Submissions: <span class="x-govuk-code__keyword">create</span> issue&lt;br/&gt;(title, body, label: newsletter-submission)
+
+    Note <span class="x-govuk-code__keyword">over</span> <span class="x-govuk-code__keyword">User</span>: <span class="x-govuk-code__keyword">No</span>-JS <span class="x-govuk-code__type">path</span> — plain <span class="x-govuk-code__keyword">GET</span> form
+    <span class="x-govuk-code__keyword">User</span>-&gt;&gt;<span class="x-govuk-code__keyword">User</span>: form <span class="x-govuk-code__keyword">GET</span> → /newsletter-submit/preview/&lt;br/&gt;(fields <span class="x-govuk-code__keyword">in</span> URL params)
+    <span class="x-govuk-code__keyword">User</span>-&gt;&gt;Submissions: opens github.com/…/issues/<span class="x-govuk-code__built_in">new</span>?title=…&amp;body=…&lt;br/&gt;(pre-filled via Clipboard API <span class="x-govuk-code__keyword">copy</span>)
+</code></pre>
+
+<p class="govuk-body">The user’s OAuth token only ever reads org membership and triggers a dispatch on the<br>
+<strong>public</strong> site repo (requiring <code class="x-govuk-code x-govuk-code--inline">public_repo</code>, not <code class="x-govuk-code x-govuk-code--inline">repo</code>). Writing to the private<br>
+repository is done exclusively by a short-lived GitHub App installation token that is<br>
+never exposed to the browser and expires after one hour.</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="pages" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#pages"><span>Pages</span></a></h2>
+<h3 id="%2Fnewsletter-submit%2F" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#%2Fnewsletter-submit%2F"><span><code class="x-govuk-code x-govuk-code--inline">/newsletter-submit/</code></span></a></h3>
+<p class="govuk-body">Source: <code class="x-govuk-code x-govuk-code--inline">newsletter-submit.njk</code></p>
+<p class="govuk-body">The main submission form. Fields:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Field</th>
+<th class="govuk-table__header">Component</th>
+<th class="govuk-table__header">Autocomplete</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Your name</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">govuk-input</code></td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">name</code></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Your department or organisation</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">govuk-input</code></td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">organization</code></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Your story or update</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">govuk-textarea</code></td>
+<td class="govuk-table__cell">—</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">A relevant link</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">govuk-input</code></td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">url</code></td>
+</tr>
+</tbody>
+</table>
+<p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">&lt;form&gt;</code> element has <code class="x-govuk-code x-govuk-code--inline">action=&quot;/newsletter-submit/preview/&quot; method=&quot;GET&quot;</code> so it<br>
+degrades cleanly to the preview page when JavaScript is unavailable. JavaScript<br>
+intercepts <code class="x-govuk-code x-govuk-code--inline">submit</code> and runs the OAuth flow instead.</p>
+<h3 id="%2Fnewsletter-submit%2Fpreview%2F" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#%2Fnewsletter-submit%2Fpreview%2F"><span><code class="x-govuk-code x-govuk-code--inline">/newsletter-submit/preview/</code></span></a></h3>
+<p class="govuk-body">Source: <code class="x-govuk-code x-govuk-code--inline">newsletter-submit-preview.njk</code></p>
+<p class="govuk-body">The no-JavaScript review page. When reached via GET form submission, URL params<br>
+(<code class="x-govuk-code x-govuk-code--inline">name</code>, <code class="x-govuk-code x-govuk-code--inline">department</code>, <code class="x-govuk-code x-govuk-code--inline">story</code>, <code class="x-govuk-code x-govuk-code--inline">link</code>) are read by a small inline script that:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>Formats the issue body markdown and populates a <code class="x-govuk-code x-govuk-code--inline">readonly</code> textarea.</li>
+<li>Updates the <strong>Open GitHub</strong> link to include <code class="x-govuk-code x-govuk-code--inline">?title=...&amp;body=...</code> so the issue is<br>
+pre-filled on GitHub.</li>
+<li>Enables the <strong>Copy to clipboard</strong> button using <code class="x-govuk-code x-govuk-code--inline">navigator.clipboard.writeText()</code><br>
+(Clipboard API) with a <code class="x-govuk-code x-govuk-code--inline">document.execCommand('copy')</code> fallback for older browsers.</li>
+</ul>
+<p class="govuk-body">If JavaScript is also disabled on the preview page, a static markdown template is<br>
+shown in the textarea and the GitHub link opens a blank new-issue form.</p>
+<figure><img src="./newsletter-submit-preview-screenshot.png" alt="Preview page with pre-filled issue content"></figure>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="authentication%3A-github-oauth-device-flow" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#authentication%3A-github-oauth-device-flow"><span>Authentication: GitHub OAuth Device Flow</span></a></h2>
+<p class="govuk-body">The Device Flow requires no <code class="x-govuk-code x-govuk-code--inline">client_secret</code> in the browser, making it the only viable<br>
+OAuth flow for a purely static site.</p>
+<h3 id="scopes" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#scopes"><span>Scopes</span></a></h3>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Scope</th>
+<th class="govuk-table__header">Purpose</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">read:org</code></td>
+<td class="govuk-table__cell">Verify the user is a member of <code class="x-govuk-code x-govuk-code--inline">uk-x-gov-software-community</code></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">public_repo</code></td>
+<td class="govuk-table__cell">Trigger <code class="x-govuk-code x-govuk-code--inline">repository_dispatch</code> on the public site repo</td>
+</tr>
+</tbody>
+</table>
+<p class="govuk-body">This is a deliberate security choice. <code class="x-govuk-code x-govuk-code--inline">public_repo</code> is much narrower than the full<br>
+<code class="x-govuk-code x-govuk-code--inline">repo</code> scope (which would grant write access to all private repositories).</p>
+<h3 id="flow" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#flow"><span>Flow</span></a></h3>
+<ol class="govuk-list govuk-list--number">
+<li>User submits the form; JS <code class="x-govuk-code x-govuk-code--inline">POST</code>s to the CORS proxy → <code class="x-govuk-code x-govuk-code--inline">github.com/login/device/code</code><br>
+with <code class="x-govuk-code x-govuk-code--inline">client_id</code> and scopes.</li>
+<li>GitHub returns <code class="x-govuk-code x-govuk-code--inline">device_code</code>, <code class="x-govuk-code x-govuk-code--inline">user_code</code>, <code class="x-govuk-code x-govuk-code--inline">verification_uri</code>, <code class="x-govuk-code x-govuk-code--inline">expires_in</code>,<br>
+<code class="x-govuk-code x-govuk-code--inline">interval</code>.</li>
+<li>Page displays the <code class="x-govuk-code x-govuk-code--inline">user_code</code> in a GOV.UK inset panel and opens<br>
+<code class="x-govuk-code x-govuk-code--inline">https://github.com/login/device</code> in a new tab.</li>
+<li>An <code class="x-govuk-code x-govuk-code--inline">aria-live=&quot;polite&quot;</code> region announces “Waiting for you to authorise on GitHub…”.</li>
+<li>JS polls the proxy → <code class="x-govuk-code x-govuk-code--inline">github.com/login/oauth/access_token</code> every <code class="x-govuk-code x-govuk-code--inline">interval</code> seconds.</li>
+<li>On success: verify org membership via <code class="x-govuk-code x-govuk-code--inline">api.github.com</code>.
+<ul class="govuk-list govuk-list--bullet">
+<li>HTTP 204 → member, proceed to dispatch.</li>
+<li>HTTP 404 / 302 → not a member, display GOV.UK error panel.</li>
+</ul>
+</li>
+<li>If member: <code class="x-govuk-code x-govuk-code--inline">POST</code> to <code class="x-govuk-code x-govuk-code--inline">api.github.com/repos/.../dispatches</code> with<br>
+<code class="x-govuk-code x-govuk-code--inline">event_type: &quot;newsletter-submission&quot;</code> and sanitised form fields in <code class="x-govuk-code x-govuk-code--inline">client_payload</code>.</li>
+<li>Show GOV.UK green confirmation panel.</li>
+</ol>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="no-javascript-path" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#no-javascript-path"><span>No-JavaScript path</span></a></h2>
+<p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">&lt;form&gt;</code> element carries <code class="x-govuk-code x-govuk-code--inline">action=&quot;/newsletter-submit/preview/&quot; method=&quot;GET&quot;</code> and<br>
+<code class="x-govuk-code x-govuk-code--inline">novalidate</code> (custom GOV.UK-style client-side validation runs in JS). When JS is absent:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>The form submits as a standard browser GET.</li>
+<li>All field values appear in the URL query string.</li>
+<li>The preview page reads them, formats the markdown, and guides the user to create a<br>
+GitHub Issue manually.</li>
+</ul>
+<p class="govuk-body">A <code class="x-govuk-code x-govuk-code--inline">&lt;noscript&gt;</code> inset on the form page informs users of this fallback path rather than<br>
+blocking them with a warning.</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="github-actions-dispatch-workflow" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#github-actions-dispatch-workflow"><span>GitHub Actions dispatch workflow</span></a></h2>
+<p class="govuk-body">File: <code class="x-govuk-code x-govuk-code--inline">.github/workflows/newsletter-dispatch.yaml</code></p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--yaml" tabindex="0"><code><span class="x-govuk-code__attr">on:</span>
+  <span class="x-govuk-code__attr">repository_dispatch:</span>
+    <span class="x-govuk-code__attr">types:</span> [<span class="x-govuk-code__string">newsletter-submission</span>]
+
+<span class="x-govuk-code__attr">jobs:</span>
+  <span class="x-govuk-code__attr">create-issue:</span>
+    <span class="x-govuk-code__attr">runs-on:</span> <span class="x-govuk-code__string">ubuntu-latest</span>
+    <span class="x-govuk-code__attr">steps:</span>
+      <span class="x-govuk-code__bullet">-</span> <span class="x-govuk-code__attr">name:</span> <span class="x-govuk-code__string">Generate</span> <span class="x-govuk-code__string">GitHub</span> <span class="x-govuk-code__string">App</span> <span class="x-govuk-code__string">installation</span> <span class="x-govuk-code__string">token</span>
+        <span class="x-govuk-code__attr">id:</span> <span class="x-govuk-code__string">app-token</span>
+        <span class="x-govuk-code__attr">uses:</span> <span class="x-govuk-code__string">actions/create-github-app-token@v1</span>
+        <span class="x-govuk-code__attr">with:</span>
+          <span class="x-govuk-code__attr">app-id:</span> <span class="x-govuk-code__string">$</span>
+          <span class="x-govuk-code__attr">private-key:</span> <span class="x-govuk-code__string">$</span>
+          <span class="x-govuk-code__attr">owner:</span> <span class="x-govuk-code__string">uk-x-gov-software-community</span>
+          <span class="x-govuk-code__attr">repositories:</span> <span class="x-govuk-code__string">newsletter-submissions</span>
+
+      <span class="x-govuk-code__bullet">-</span> <span class="x-govuk-code__attr">name:</span> <span class="x-govuk-code__string">Create</span> <span class="x-govuk-code__string">issue</span> <span class="x-govuk-code__string">in</span> <span class="x-govuk-code__string">private</span> <span class="x-govuk-code__string">repo</span>
+        <span class="x-govuk-code__attr">uses:</span> <span class="x-govuk-code__string">actions/github-script@v7</span>
+        <span class="x-govuk-code__attr">with:</span>
+          <span class="x-govuk-code__attr">github-token:</span> <span class="x-govuk-code__string">$NaN</span>
+          <span class="x-govuk-code__attr">script:</span> <span class="x-govuk-code__string">|
+            const { name, department, story, link, github_username, submitted_at } =
+              context.payload.client_payload
+            await github.rest.issues.create({
+              owner: &#x27;uk-x-gov-software-community&#x27;,
+              repo:  &#x27;newsletter-submissions&#x27;,
+              title: `Newsletter Submission – ${submitted_at}`,
+              labels: [&#x27;newsletter-submission&#x27;],
+              body:   formatBody({ name, department, story, link, github_username, submitted_at })
+            })
+</span></code></pre>
+
+<p class="govuk-body">The workflow uses a <strong>GitHub App</strong> (not a PAT) so the credential is short-lived,<br>
+scoped to a single repository, and automatically rotated. No long-lived token is<br>
+ever stored or logged.</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="github-app-setup" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#github-app-setup"><span>GitHub App setup</span></a></h2>
+<p class="govuk-body">One-time manual steps to configure the bot:</p>
+<ol class="govuk-list govuk-list--number">
+<li>Create a new GitHub App in the <code class="x-govuk-code x-govuk-code--inline">uk-x-gov-software-community</code> org:
+<ul class="govuk-list govuk-list--bullet">
+<li><strong>Name</strong>: <code class="x-govuk-code x-govuk-code--inline">cgov-newsletter-bot</code></li>
+<li><strong>Homepage URL</strong>: <code class="x-govuk-code x-govuk-code--inline">https://uk-x-gov-software-community.github.io</code></li>
+<li><strong>Webhook</strong>: disabled</li>
+<li><strong>Repository permissions</strong>: <code class="x-govuk-code x-govuk-code--inline">Issues: write</code> only</li>
+<li><strong>Where can this app be installed</strong>: “Only on this account”</li>
+</ul>
+</li>
+<li>Generate and download the private key (PEM file).</li>
+<li>Install the App on the <code class="x-govuk-code x-govuk-code--inline">newsletter-submissions</code> repository <strong>only</strong>.</li>
+<li>Add two secrets to the <strong>public site repo</strong>:
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="x-govuk-code x-govuk-code--inline">NEWSLETTER_APP_ID</code> — numeric App ID (shown on the App settings page)</li>
+<li><code class="x-govuk-code x-govuk-code--inline">NEWSLETTER_APP_PRIVATE_KEY</code> — full contents of the downloaded PEM file</li>
+</ul>
+</li>
+</ol>
+<p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">actions/create-github-app-token</code> action exchanges these for a scoped,<br>
+short-lived installation token at job start. The token expires after one hour and<br>
+is never echoed in logs.</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="oauth-app-setup" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#oauth-app-setup"><span>OAuth App setup</span></a></h2>
+<p class="govuk-body">One-time manual steps:</p>
+<ol class="govuk-list govuk-list--number">
+<li>Register an OAuth App under the <code class="x-govuk-code x-govuk-code--inline">uk-x-gov-software-community</code> org:
+<ul class="govuk-list govuk-list--bullet">
+<li><strong>Application name</strong>: “Cross-Gov Software Community – Newsletter Submissions”</li>
+<li><strong>Homepage URL</strong>: <code class="x-govuk-code x-govuk-code--inline">https://uk-x-gov-software-community.github.io</code></li>
+<li><strong>Device Flow</strong>: enabled (checkbox in app settings)</li>
+<li><strong>Callback URL</strong>: <code class="x-govuk-code x-govuk-code--inline">https://uk-x-gov-software-community.github.io/newsletter-submit/</code><br>
+(unused by Device Flow but required by GitHub)</li>
+</ul>
+</li>
+<li>Copy the <code class="x-govuk-code x-govuk-code--inline">client_id</code> (safe to expose publicly — there is no <code class="x-govuk-code x-govuk-code--inline">client_secret</code> in any file).</li>
+<li>Set the <code class="x-govuk-code x-govuk-code--inline">CLIENT_ID</code> constant at the top of <code class="x-govuk-code x-govuk-code--inline">assets/newsletter-submit.js</code>.</li>
+</ol>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="issue-schema" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#issue-schema"><span>Issue schema</span></a></h2>
+<p class="govuk-body">Issues created in <code class="x-govuk-code x-govuk-code--inline">uk-x-gov-software-community/newsletter-submissions</code>:</p>
+<pre class="x-govuk-code x-govuk-code--block" tabindex="0">Title:  Newsletter Submission – YYYY-MM-DD
+Labels: newsletter-submission
+
+## Newsletter Submission
+
+**Submitted by:** @{github_username} on {date}
+
+### Name
+{name or "(not provided)"}
+
+### Department / Organisation
+{department or "(not provided)"}
+
+### Story / Update
+{story or "(not provided)"}
+
+### Link
+{link or "(not provided)"}
+
+---
+*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*
+</pre>
+
+<p class="govuk-body">For manually created issues (no-JS path), the body follows the same structure.<br>
+An issue template matching this schema is stored in<br>
+<code class="x-govuk-code x-govuk-code--inline">.github/ISSUE_TEMPLATE/newsletter-submission.yml</code> — copy it to the<br>
+<code class="x-govuk-code x-govuk-code--inline">newsletter-submissions</code> repository so GitHub pre-fills the form when issues<br>
+are opened there manually.</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="cloudflare-cors-proxy" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#cloudflare-cors-proxy"><span>Cloudflare CORS proxy</span></a></h2>
+<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">github.com/login/device/code</code> and <code class="x-govuk-code x-govuk-code--inline">github.com/login/oauth/access_token</code> do not send<br>
+CORS headers. A minimal Cloudflare Worker (free tier) proxies only these two endpoints,<br>
+adding <code class="x-govuk-code x-govuk-code--inline">Access-Control-Allow-Origin: *</code>. No secrets pass through the proxy — it<br>
+forwards the request body verbatim.</p>
+<p class="govuk-body">Source (~15 lines): <code class="x-govuk-code x-govuk-code--inline">cloudflare-worker/</code></p>
+<p class="govuk-body">The proxy URL is a single constant at the top of <code class="x-govuk-code x-govuk-code--inline">assets/newsletter-submit.js</code>. If the<br>
+proxy is unavailable, the JS catches the error and the user is directed to the no-JS<br>
+path.</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="accessibility" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#accessibility"><span>Accessibility</span></a></h2>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Requirement</th>
+<th class="govuk-table__header">Implementation</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">All form fields labelled</td>
+<td class="govuk-table__cell">Visible <code class="x-govuk-code x-govuk-code--inline">&lt;label&gt;</code> associated via <code class="x-govuk-code x-govuk-code--inline">for</code>/<code class="x-govuk-code x-govuk-code--inline">id</code></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Errors announced</td>
+<td class="govuk-table__cell">GOV.UK error-summary + inline error pattern</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Live polling status</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">aria-live=&quot;polite&quot;</code> region on the device-code panel</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Confirmation panel</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">role=&quot;alert&quot;</code> (assertive) — replaces the form entirely</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">GOV.UK Design System</td>
+<td class="govuk-table__cell">All components use govuk-frontend classes</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">WCAG 2.2 AA</td>
+<td class="govuk-table__cell">Meets GOV.UK accessibility checklist</td>
+</tr>
+</tbody>
+</table>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="testing-and-linting" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#testing-and-linting"><span>Testing and linting</span></a></h2>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--bash" tabindex="0"><code>npm <span class="x-govuk-code__built_in">test</span>       <span class="x-govuk-code__comment"># Vitest unit tests</span>
+npm run lint   <span class="x-govuk-code__comment"># ESLint over assets/ and tests/</span>
+</code></pre>
+
+<p class="govuk-body">Unit tests in <code class="x-govuk-code x-govuk-code--inline">tests/newsletter-submit.test.js</code> cover the pure functions exported<br>
+from <code class="x-govuk-code x-govuk-code--inline">assets/newsletter-submit.js</code>:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Function</th>
+<th class="govuk-table__header">Scenarios tested</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">formatIssueBody(data)</code></td>
+<td class="govuk-table__cell">All fields; all empty; partial; XSS-safe output</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">validateLink(url)</code></td>
+<td class="govuk-table__cell">Valid https/http; empty string; non-URL string</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">buildIssueTitle(date)</code></td>
+<td class="govuk-table__cell">Expected title string</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">buildDispatchPayload(formData, username, date)</code></td>
+<td class="govuk-table__cell">Correct shape; fields sanitised</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">parseDeviceCodeResponse(json)</code></td>
+<td class="govuk-table__cell">Valid response; missing fields</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">isMemberResponse(status)</code></td>
+<td class="govuk-table__cell">204 → true; 404 → false; 302 → false</td>
+</tr>
+</tbody>
+</table>
+<p class="govuk-body">CI runs <code class="x-govuk-code x-govuk-code--inline">npm run lint &amp;&amp; npm test</code> before the Eleventy build step on every push<br>
+(<code class="x-govuk-code x-govuk-code--inline">.github/workflows/build.yaml</code>).</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="setup-checklist" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#setup-checklist"><span>Setup checklist</span></a></h2>
+<p class="govuk-body">Before the feature goes live, complete the following:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>[ ] Create private <code class="x-govuk-code x-govuk-code--inline">newsletter-submissions</code> repository in the org</li>
+<li>[ ] Create <code class="x-govuk-code x-govuk-code--inline">newsletter-submission</code> label in <code class="x-govuk-code x-govuk-code--inline">newsletter-submissions</code></li>
+<li>[ ] Copy <code class="x-govuk-code x-govuk-code--inline">.github/ISSUE_TEMPLATE/newsletter-submission.yml</code> to <code class="x-govuk-code x-govuk-code--inline">newsletter-submissions</code></li>
+<li>[ ] Create GitHub App <code class="x-govuk-code x-govuk-code--inline">cgov-newsletter-bot</code> in the org (Issues: write, webhook off)</li>
+<li>[ ] Install the App on <code class="x-govuk-code x-govuk-code--inline">newsletter-submissions</code> only</li>
+<li>[ ] Download App private key (PEM)</li>
+<li>[ ] Add <code class="x-govuk-code x-govuk-code--inline">NEWSLETTER_APP_ID</code> secret to the public site repo</li>
+<li>[ ] Add <code class="x-govuk-code x-govuk-code--inline">NEWSLETTER_APP_PRIVATE_KEY</code> secret to the public site repo</li>
+<li>[ ] Register GitHub OAuth App in the org; enable Device Flow</li>
+<li>[ ] Add <code class="x-govuk-code x-govuk-code--inline">client_id</code> constant to <code class="x-govuk-code x-govuk-code--inline">assets/newsletter-submit.js</code></li>
+<li>[ ] Deploy Cloudflare Worker; set proxy URL constant in <code class="x-govuk-code x-govuk-code--inline">newsletter-submit.js</code></li>
+<li>[ ] Verify org membership check with a test account</li>
+<li>[ ] Test full end-to-end flow (JS path) in a browser</li>
+<li>[ ] Test no-JS path: disable JS, submit form, verify preview page, copy, open GitHub</li>
+</ul>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="screenshots" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#screenshots"><span>Screenshots</span></a></h2>
+<h3 id="submission-form" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#submission-form"><span>Submission form</span></a></h3>
+<figure><img src="./newsletter-submit-screenshot.png" alt="Newsletter submission form"></figure>
+<h3 id="preview-page-(no-javascript-path)" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#preview-page-(no-javascript-path)"><span>Preview page (no-JavaScript path)</span></a></h3>
+<figure><img src="./newsletter-submit-preview-screenshot.png" alt="Preview page with formatted issue content ready to copy"></figure>

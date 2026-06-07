@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template">
+  <head>
+    <meta charset="utf-8">
+    <title>Submit content for the newsletter - GOV.UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c">
+
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/govuk.css">
+
+
+  <meta property="og:title" content="Submit content for the newsletter">
+<meta property="og:description" name="description" content="Share a story or link for inclusion in the next community newsletter. You will need a GitHub account that is a member of the uk-x-gov-software-community organisation.">
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <img id="xgov-logo" src="/../../../assets/logo/cgov-logo-2.svg" alt="Cross Government Software Engineering Community">
+        <span class="govuk-header__product-name">
+          Cross Government Software Engineering Community
+        </span>
+      </a>
+    </div>
+    
+  </div>
+</header>
+
+  
+
+      <div class="govuk-width-container">
+  <nav class="govuk-breadcrumbs govuk-!-display-none-print" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">Home</a>
+    </li>
+  </ol>
+</nav>
+
+        <main class="govuk-main-wrapper" id="main-content">
+  <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Submit content for the newsletter
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      Share a story or link for inclusion in the next community newsletter. You will need a GitHub account that is a member of the uk-x-gov-software-community organisation.
+    </p>
+
+</header>
+
+
+
+  <div class="app-prose-scope">
+<p class="govuk-body">
+  Use this form to share a story, update or link for the next newsletter.
+  Your name and department are required; all other fields are optional.
+</p>
+<p class="govuk-body">
+  When you submit, you will be asked to authorise with GitHub to confirm you are a
+  member of the community. You will need a GitHub account that belongs to the
+  <a class="govuk-link" href="https://github.com/uk-x-gov-software-community">uk-x-gov-software-community</a>
+  organisation.
+</p>
+
+<noscript>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      JavaScript is not available so your details could not be pre-filled. Copy the template below,
+      fill in your details, then paste it into a new GitHub Issue.
+    </strong>
+  </div>
+  <h2 class="govuk-heading-m">Preformatted GitHub Issue</h2>
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--s" for="issue-body-noscript">Issue content</label>
+    <textarea class="govuk-textarea govuk-!-font-size-16" id="issue-body-noscript" rows="18" readonly
+      style="font-family: monospace;">## Newsletter Submission
+
+### Name
+(your name)
+
+### Department / Organisation
+(your department or organisation)
+
+### Story / Update
+(your short story or link description — leave blank if not applicable)
+
+### Link
+(your link — leave blank if not applicable)
+
+---
+*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*</textarea>
+  </div>
+</noscript>
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" id="error-summary" hidden tabindex="-1">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list" id="error-list"></ul>
+  </div>
+</div>
+
+<form id="newsletter-form" action="https://github.com/uk-x-gov-software-community/newsletter-submissions/issues/new" method="GET" novalidate>
+  <input type="hidden" name="title" value="Newsletter Submission">
+  <input type="hidden" name="body" value="## Newsletter Submission&#10;&#10;### Name&#10;(your name)&#10;&#10;### Department / Organisation&#10;(your department or organisation)&#10;&#10;### Story / Update&#10;(your short story or link description — leave blank if not applicable)&#10;&#10;### Link&#10;(your link — leave blank if not applicable)&#10;&#10;---&#10;*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*">
+
+  <div class="govuk-form-group" id="name-group" hidden>
+    <label class="govuk-label govuk-label--s" for="name">
+      Your name
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text" autocomplete="name" required>
+  </div>
+
+  <div class="govuk-form-group" id="department-group" hidden>
+    <label class="govuk-label govuk-label--s" for="department">
+      Your department or organisation
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="department" name="department" type="text" autocomplete="organization" required>
+  </div>
+
+  <div class="govuk-form-group" id="story-group" hidden>
+    <label class="govuk-label govuk-label--s" for="story">
+      Your short story or link description (optional)
+    </label>
+    <div id="story-hint" class="govuk-hint">
+      Describe something interesting from your team, project or the wider community. Maximum 400 words.
+    </div>
+    <textarea class="govuk-textarea" id="story" name="story" rows="6" aria-describedby="story-hint story-word-count"></textarea>
+    <p class="govuk-hint govuk-!-margin-top-1" id="story-word-count" aria-live="polite"></p>
+  </div>
+
+  <div class="govuk-form-group" id="link-group" hidden>
+    <label class="govuk-label govuk-label--s" for="link">
+      A relevant link (optional)
+    </label>
+    <div id="link-hint" class="govuk-hint">
+      For example, https://example.gov.uk/blog-post
+    </div>
+    <input class="govuk-input" id="link" name="link" type="url" aria-describedby="link-hint" spellcheck="false" autocomplete="url">
+  </div>
+
+  <button type="submit" class="govuk-button">Submit to newsletter</button>
+
+</form>
+
+<section id="auth-panel" hidden aria-label="GitHub authorisation">
+  <div class="govuk-inset-text">
+    <p class="govuk-body">To verify your community membership, enter this code on GitHub:</p>
+    <p class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold" id="user-code" aria-live="polite"></p>
+    <p class="govuk-body">
+      <a class="govuk-link" id="device-link" href="https://github.com/login/device" target="_blank" rel="noopener noreferrer">
+        Open GitHub to enter the code (opens in a new tab)
+      </a>
+    </p>
+  </div>
+  <p class="govuk-body" id="auth-status" role="status" aria-live="polite"></p>
+</section>
+
+<div id="confirmation-panel" hidden tabindex="-1">
+  <div class="govuk-panel govuk-panel--confirmation" role="alert">
+    <h2 class="govuk-panel__title">Submission received</h2>
+    <div class="govuk-panel__body">
+      Thank you — your content has been added to the newsletter inbox.
+    </div>
+  </div>
+  <p class="govuk-body govuk-!-margin-top-6">
+    The newsletter committee will review submissions before the next edition is published.
+  </p>
+</div>
+
+<script type="module" src="/assets/newsletter-submit.js"></script>
+</div>
+
+
+
+        </main>
+      </div>
+
+  <footer class="govuk-footer app-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <span class="govuk-footer__licence-description">
+            A community project. <a class="govuk-footer__link" href="https://github.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io">GitHub source</a>.<br /> Thanks to <a href="https://x-govuk.github.io/govuk-eleventy-plugin/" class="govuk-link" >X-GOVUK projects</a> for the template
+          </span>
+      </div><div class="govuk-footer__meta-item">Responsibility &#9745; Pragmatism  &#9745; Public Service  &#9745; <br /> © Cross Government Software Engineering Community
+        </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/govuk.js" type="module"></script>
+  </body>
+</html>
