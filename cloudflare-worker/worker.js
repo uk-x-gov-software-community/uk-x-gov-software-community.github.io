@@ -18,7 +18,10 @@
  * All routes reject requests from origins other than ALLOWED_ORIGIN.
  */
 
-const ALLOWED_ORIGIN = 'https://uk-x-gov-software-community.github.io'
+const ALLOWED_ORIGINS = new Set([
+  'https://uk-x-gov-software-community.github.io',
+  'https://www.uk-x-gov-software-community.org.uk'
+])
 const ORG = 'uk-x-gov-software-community'
 const SITE_REPO = 'uk-x-gov-software-community.github.io'
 
@@ -32,12 +35,12 @@ export default {
     const origin = request.headers.get('Origin')
 
     // Reject all cross-origin requests from unexpected origins.
-    if (origin !== ALLOWED_ORIGIN) {
+    if (!ALLOWED_ORIGINS.has(origin)) {
       return new Response('Forbidden', { status: 403 })
     }
 
     const corsHeaders = {
-      'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+      'Access-Control-Allow-Origin': origin,
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Accept'
     }
