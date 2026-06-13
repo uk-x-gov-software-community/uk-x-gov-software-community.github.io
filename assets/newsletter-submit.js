@@ -419,21 +419,6 @@ async function getAuthenticatedUser(token) {
   return data.login
 }
 
-async function checkOrgMembershipStatus(token, username) {
-  const resp = await fetch(
-    `https://api.github.com/orgs/${ORG}/members/${encodeURIComponent(username)}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
-      },
-      redirect: 'manual'
-    }
-  )
-  return resp.status
-}
-
 async function fireDispatch(token, payload) {
   const resp = await fetch(`${CORS_PROXY}/dispatch`, {
     method: 'POST',
