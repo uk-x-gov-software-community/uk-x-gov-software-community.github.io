@@ -4,7 +4,6 @@ const GITHUB_CLIENT_ID = 'Iv23lipKTvYMFhOuItLt'
 // TODO: Fill in after deploying the Cloudflare Worker (see cloudflare-worker/)
 const CORS_PROXY = 'https://github-oauth-proxy.shaun-dvsa.workers.dev'
 
-const ORG = 'uk-x-gov-software-community'
 const OAUTH_SCOPE = 'read:org'
 
 // ─── Pure utility functions (exported for testing) ──────────────────────────
@@ -245,7 +244,7 @@ function initForm() {
       return
     }
 
-    authStatus.textContent = 'Authorised. Verifying community membership\u2026'
+    authStatus.textContent = 'Authorised. Retrieving your GitHub username\u2026'
 
     let username
     try {
@@ -257,37 +256,7 @@ function initForm() {
       return
     }
 
-    let memberStatus
-    try {
-      memberStatus = await checkOrgMembershipStatus(token, username)
-    } catch (e) {
-      showTopError(`Membership check failed: ${e.message}`)
-      form.hidden = false
-      authPanel.hidden = true
-      return
-    }
-
-    let isMember
-    try {
-      isMember = isMemberResponse(memberStatus)
-    } catch (err) {
-      showTopError(`Membership check returned an unexpected response: ${err.message}`)
-      form.hidden = false
-      authPanel.hidden = true
-      return
-    }
-
-    if (!isMember) {
-      showTopError(
-        'You do not appear to be a member of the uk-x-gov-software-community organisation on GitHub. ' +
-        'Only community members can submit newsletter content.'
-      )
-      form.hidden = false
-      authPanel.hidden = true
-      return
-    }
-
-    authStatus.textContent = 'Membership confirmed. Submitting\u2026'
+    authStatus.textContent = 'Submitting\u2026'
 
     const submittedAt = new Date().toISOString().slice(0, 10)
     const payload = buildDispatchPayload(
@@ -304,7 +273,10 @@ function initForm() {
     try {
       await fireDispatch(token, payload)
     } catch (err) {
-      showTopError(`Submission failed: ${err.message}`)
+      const msg = err.message === 'Not a member of the organisation'
+        ? 'You do not appear to be a member of the uk-x-gov-software-community organisation on GitHub. Only community members can submit newsletter content.'
+        : `Submission failed: ${err.message}`
+      showTopError(msg)
       form.hidden = false
       authPanel.hidden = true
       return
@@ -444,21 +416,6 @@ async function getAuthenticatedUser(token) {
   if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
   const data = await resp.json()
   return data.login
-}
-
-async function checkOrgMembershipStatus(token, username) {
-  const resp = await fetch(
-    `https://api.github.com/orgs/${ORG}/members/${encodeURIComponent(username)}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
-      },
-      redirect: 'manual'
-    }
-  )
-  return resp.status
 }
 
 async function fireDispatch(token, payload) {
