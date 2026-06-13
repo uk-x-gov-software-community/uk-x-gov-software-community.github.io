@@ -4,7 +4,6 @@ const GITHUB_CLIENT_ID = 'Iv23lipKTvYMFhOuItLt'
 // TODO: Fill in after deploying the Cloudflare Worker (see cloudflare-worker/)
 const CORS_PROXY = 'https://github-oauth-proxy.shaun-dvsa.workers.dev'
 
-const ORG = 'uk-x-gov-software-community'
 const OAUTH_SCOPE = 'read:org'
 
 // ─── Pure utility functions (exported for testing) ──────────────────────────
