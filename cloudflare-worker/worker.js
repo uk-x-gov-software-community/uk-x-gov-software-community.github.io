@@ -6,16 +6,17 @@
  * endpoints needed for the Device Flow and provides a server-side /dispatch
  * endpoint so the newsletter submission never requires public_repo scope.
  *
- * Required secret (set via `wrangler secret put GITHUB_DISPATCH_TOKEN`):
- *   GITHUB_DISPATCH_TOKEN — a fine-grained PAT or GitHub App installation token
- *   with `contents: write` on the site repo (needed to fire repository_dispatch).
+ * Required secrets (set via `wrangler secret put <NAME>`):
+ *   GITHUB_APP_ID              — the GitHub App's numeric ID
+ *   GITHUB_APP_PRIVATE_KEY     — the GitHub App's PEM private key
+ *   GITHUB_APP_INSTALLATION_ID — the installation ID on the org
  *
  * Routes:
  *   POST /device/code          → https://github.com/login/device/code
  *   POST /oauth/access_token   → https://github.com/login/oauth/access_token
  *   POST /dispatch             → verifies org membership, then fires repository_dispatch
  *
- * All routes reject requests from origins other than ALLOWED_ORIGIN.
+ * All routes reject requests from origins other than ALLOWED_ORIGINS.
  */
 
 const ALLOWED_ORIGINS = new Set([
@@ -84,9 +85,71 @@ export default {
 }
 
 /**
+ * Generates a GitHub App JWT, valid for 60 seconds, using the app's private key.
+ * Uses the Web Crypto API (available in Cloudflare Workers).
+ */
+async function generateAppJwt(appId, pemKey) {
+  const now = Math.floor(Date.now() / 1000)
+  const payload = { iat: now - 10, exp: now + 60, iss: String(appId) }
+
+  const header = { alg: 'RS256', typ: 'JWT' }
+  const encode = obj => btoa(JSON.stringify(obj)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_')
+  const signingInput = `${encode(header)}.${encode(payload)}`
+
+  // Strip PEM headers/footers and decode the raw DER bytes
+  const pemBody = pemKey
+    .replace(/-----BEGIN RSA PRIVATE KEY-----|-----END RSA PRIVATE KEY-----|-----BEGIN PRIVATE KEY-----|-----END PRIVATE KEY-----|\n|\r/g, '')
+  const keyBytes = Uint8Array.from(atob(pemBody), c => c.charCodeAt(0))
+
+  const cryptoKey = await crypto.subtle.importKey(
+    'pkcs8',
+    keyBytes,
+    { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' },
+    false,
+    ['sign']
+  )
+
+  const signature = await crypto.subtle.sign(
+    'RSASSA-PKCS1-v1_5',
+    cryptoKey,
+    new TextEncoder().encode(signingInput)
+  )
+
+  const sigB64 = btoa(String.fromCharCode(...new Uint8Array(signature)))
+    .replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_')
+
+  return `${signingInput}.${sigB64}`
+}
+
+/**
+ * Exchanges a GitHub App JWT for a short-lived installation access token.
+ */
+async function getInstallationToken(appId, pemKey, installationId) {
+  const jwt = await generateAppJwt(appId, pemKey)
+  const resp = await fetch(
+    `https://api.github.com/app/installations/${installationId}/access_tokens`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+        Accept: 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+        'User-Agent': 'uk-x-gov-software-community-newsletter'
+      }
+    }
+  )
+  if (!resp.ok) {
+    const detail = await resp.text().catch(() => '')
+    throw new Error(`Failed to get installation token: ${resp.status} ${detail}`)
+  }
+  const data = await resp.json()
+  return data.token
+}
+
+/**
  * Verifies the user's OAuth token, checks org membership, sanitises the
- * payload, then fires the repository_dispatch using the worker's own
- * stored GITHUB_DISPATCH_TOKEN (so the user never needs public_repo scope).
+ * payload, then fires the repository_dispatch using a GitHub App installation
+ * token (so the user never needs public_repo scope).
  */
 async function handleDispatch(request, env, corsHeaders) {
   const jsonHeaders = { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -106,22 +169,46 @@ async function handleDispatch(request, env, corsHeaders) {
   const ghHeaders = {
     Authorization: `Bearer ${token}`,
     Accept: 'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28'
+    'X-GitHub-Api-Version': '2022-11-28',
+    'User-Agent': 'uk-x-gov-software-community-newsletter'
   }
 
   // Resolve the authenticated user's login from the token — don't trust the client.
   const userResp = await fetch('https://api.github.com/user', { headers: ghHeaders })
   if (!userResp.ok) {
-    return new Response(JSON.stringify({ error: 'Invalid or expired token' }), { status: 401, headers: jsonHeaders })
+    const detail = await userResp.text().catch(() => '')
+    return new Response(JSON.stringify({ error: `Invalid or expired token (GitHub ${userResp.status}: ${detail})` }), { status: 401, headers: jsonHeaders })
   }
   const { login: github_username } = await userResp.json()
 
-  // Authoritatively check org membership server-side.
+  // Generate a fresh GitHub App installation token for privileged API calls.
+  let appToken
+  try {
+    appToken = await getInstallationToken(
+      env.GITHUB_APP_ID,
+      env.GITHUB_APP_PRIVATE_KEY,
+      env.GITHUB_APP_INSTALLATION_ID
+    )
+  } catch (err) {
+    console.error(`Failed to get app installation token: ${err.message}`)
+    return new Response(JSON.stringify({ error: 'Server configuration error' }), { status: 500, headers: jsonHeaders })
+  }
+
+  const appHeaders = {
+    Authorization: `Bearer ${appToken}`,
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'User-Agent': 'uk-x-gov-software-community-newsletter'
+  }
+
+  // Authoritatively check org membership using the app installation token.
   const memberResp = await fetch(
     `https://api.github.com/orgs/${ORG}/members/${encodeURIComponent(github_username)}`,
-    { headers: ghHeaders, redirect: 'manual' }
+    { headers: appHeaders }
   )
   if (memberResp.status !== 204) {
+    const detail = await memberResp.text().catch(() => '')
+    console.error(`Membership check failed for ${github_username}: HTTP ${memberResp.status} — ${detail}`)
     return new Response(JSON.stringify({ error: 'Not a member of the organisation' }), { status: 403, headers: jsonHeaders })
   }
 
@@ -132,17 +219,14 @@ async function handleDispatch(request, env, corsHeaders) {
     `https://api.github.com/repos/${ORG}/${SITE_REPO}/dispatches`,
     {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${env.GITHUB_DISPATCH_TOKEN}`,
-        Accept: 'application/vnd.github+json',
-        'Content-Type': 'application/json',
-        'X-GitHub-Api-Version': '2022-11-28'
-      },
+      headers: { ...appHeaders, 'Content-Type': 'application/json' },
       body: JSON.stringify({ event_type: 'newsletter-submission', client_payload: sanitised })
     }
   )
 
   if (dispatchResp.status !== 204) {
+    const detail = await dispatchResp.text().catch(() => '')
+    console.error(`Dispatch failed: ${dispatchResp.status} — ${detail}`)
     return new Response(JSON.stringify({ error: 'Dispatch failed' }), { status: 502, headers: jsonHeaders })
   }
 
