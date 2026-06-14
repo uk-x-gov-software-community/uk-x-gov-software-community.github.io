@@ -15,7 +15,7 @@ jobs:
           app-id: ${{ secrets.NEWSLETTER_APP_ID }}
           private-key: ${{ secrets.NEWSLETTER_APP_PRIVATE_KEY }}
           owner: uk-x-gov-software-community
-          repositories: newsletter-submissions
+          repositories: community-space
 
       - name: Create issue in private newsletter-submissions repo
         uses: actions/github-script@v7
@@ -60,7 +60,7 @@ jobs:
 
             await github.rest.issues.create({
               owner: 'uk-x-gov-software-community',
-              repo: 'newsletter-submissions',
+              repo: 'community-space',
               title: `Newsletter Submission \u2013 ${submitted_at}`,
               labels: ['newsletter-submission'],
               body
