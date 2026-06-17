@@ -19,9 +19,6 @@ We have aligned our objectives with cross-government priorities including learni
 ### Objective
 Grow a strong, representative cross-government software engineering community.
 
-### Key Outcomes
-- Broaden eligibility so membership reflects the **wider software engineering ecosystem**, not only self-identified software developers
-
 
 ---
 
@@ -71,23 +68,7 @@ Ensure consistent, multi-channel communication so community activity is visible 
 ### Objective
 The make up of the software engineering profession should reflect the society we serve in all aspects of diversity. 
 
-An aim of the group is to understand 
-how can we improve diversity and inclusion within our government software engineering community? and promote greater diversity and understand.
-
-Actively improve gender diversity within the software engineering community.
-
-**What are departments already doing?**
-
-An aim of the group is to understand what departments and bodies are doing in this area. 
-
-**Sharing recruitment experience**
-
-An aim of the group is to understand and share recruitment experience.  
-
-### Key Outcomes
-- Establish a **baseline** for current representation of under represented groups in the community specifically women in engineering
-- Track participation and representation over time
-- Increase participation of women in community events and leadership roles
+We aim to improve diversity and inclusion within our government software engineering community with a particular focus on gender diversity  
  
 ---
 ## 5. Learning, Standards & DDaT Representation (Cross-Cutting)
