@@ -8,7 +8,7 @@ title: Our Objectives
 
 ## Overview
 
-These objectives define how the community will grow, engage members, communicate effectively, and improve diversity and inclusion across government software engineering teams. We aim to act as a facilitator to represent the views of the community and influence the Government Digital and Data (GDaD) capability framework.
+These objectives define how the community will grow, engage members, communicate effectively, and improve diversity and inclusion across government software engineering teams. We aim to act as a facilitator to represent the views of the community and influence the [Government Digital and Data (GDaD) capability framework](https://www.gov.uk/guidance/software-developer).
 
 We have aligned our objectives with cross-government priorities including learning & development, standards adoption, and representation in GDaD conversations.
 
@@ -70,30 +70,6 @@ The make up of the software engineering profession should reflect the society we
 
 We aim to improve diversity and inclusion within our government software engineering community with a particular focus on gender diversity  
  
----
-## 5. Learning, Standards & DDaT Representation (Cross-Cutting)
-
-These priorities are embedded across all objectives.
-
-### Learning & Development
-- Share learning resources and techniques, including:
-  - Apprenticeships
-  - Pair programming
-  - Hack days and code retreats
-
-### Championing Standards
-- Promote cross-government software engineering standards
-- Share departmental standards and good practice
-- Improve how standards are communicated and adopted within teams
-
-### DDaT Representation
-- Represent the software engineering community in DDaT discussions
-- Provide feedback on the DDaT Framework
-- Surface community insights, gaps, and emerging needs
-
-An aim of the group is to discuss and represent the community in relation to the [DDAT Framework](https://www.gov.uk/guidance/software-developer)
-
-
 ---
 
 ## Review and Iteration
