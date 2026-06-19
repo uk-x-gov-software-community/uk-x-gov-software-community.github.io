@@ -57,10 +57,10 @@ Increase the number of members who are aware of and follow community activity.
 Ensure consistent, multi-channel communication so community activity is visible and accessible.
 
 ### Channels
-- **LinkedIn** – professional reach and cross-government visibility  
-- **Bluesky** – informal engagement and community discussion  
-- **Newsletter** – core updates, events, standards, and learning resources  
-- **X-Gov Slack** – day-to-day discussion and quick engagement  
+- [**LinkedIn**](https://www.linkedin.com/groups/13008358/) – professional reach and cross-government visibility  
+- [**Bluesky**](https://bsky.social/about) – informal engagement and community discussion  
+- [**Newsletter**](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) – core updates, events, standards, and learning resources  
+- [**X-Gov Slack**](https://x-govuk.org/posts/how-to-use-cross-government-slack/) – day-to-day discussion and quick engagement #software-development 
 
 ---
 ### 4. Promoting diversity and inclusion
