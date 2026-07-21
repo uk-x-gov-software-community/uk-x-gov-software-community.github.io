@@ -41,6 +41,11 @@ If you wish to join this interest group, please [contact us](/special-interest/#
 
 # Past Events
 
+## 2026
+
+* 7th May 2026 - Virtual - 11:00 - La Suite Numerique Tech Talk - a technical deep dive into the French Government open source project [get tickets](https://www.eventbrite.co.uk/e/la-suite-numerique-tech-talk-tickets-1985703135532)
+* June 2026 - Virtual - DEFRA - Interactive maps virtual Talk
+
 ## 2025
 
 * 31st July 2025 - Virtual - 11:00 - 12:00 - Lean Coffee
