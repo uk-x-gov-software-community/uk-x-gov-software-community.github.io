@@ -29,7 +29,7 @@ related:
 ---
 
 {% include "menu.njk" %}
-
+{% include "banner.njk" %}
 
 ## Our Vision
 To provide a forum for collaboration for software engineers across government
