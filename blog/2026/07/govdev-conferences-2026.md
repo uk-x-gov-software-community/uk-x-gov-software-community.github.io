@@ -72,7 +72,7 @@ We're including a **lightning talk track** in both conference schedules — a 10
 
 If you have a story worth telling, submit a talk title and brief description via our form. Submissions will be reviewed by the conference organising committee, and if your talk is accepted **you are guaranteed a ticket**.
 
-**[Submit your lightning talk](https://example.com/lightning-talk-submission)**
+**[Submit your lightning talk](https://docs.google.com/forms/d/e/1FAIpQLScfAEoMjp96et3qKxpQi6m1EOUd2d0lG1IEXgE85_67hVAFOQ/viewform)**
 
 ---
 
