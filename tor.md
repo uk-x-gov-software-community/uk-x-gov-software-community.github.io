@@ -1,20 +1,20 @@
 ---
 layout: product
 title: Terms of Reference
-description: Draft Terms of Reference for the UK Cross Government Software Engineering Community
+description: Terms of Reference for the UK Cross Government Software Engineering Community
 ---
 
 # Introduction
 
-This page shows our draft terms of reference. 
+This page shows our terms of reference. 
 
 If you wish to comment on the TOR, you can comment on the [open pull request](https://github.com/uk-x-gov-software-community/community-space/pull/49) in our [community space](https://uk-x-gov-software-community.github.io/community-space/). 
 
-The TOR will be adopted at our first AGM in Aug/Sept 2025 (Date TBC). 
+The TOR was adopted at our first AGM in August 2025. 
 
 ----------
 
-# Cross Government Software Engineering Community - Terms of Reference (DRAFT)
+# Cross Government Software Engineering Community - Terms of Reference
 
 ## Purpose and authority
 
@@ -50,7 +50,11 @@ To be a **member** of the community you:
    3. local government  
    4. the NHS  
    5. the Police  
-2. must be either a civil servant, interim/contractor or from a service provider  
+   6. UK Armed Forces
+   7. UK Intelligence Community
+   8. Royal Household
+   9. Houses of Parliament
+2. must be either a crown servant, civil servant, interim/contractor or from a service provider  
 3. agree to support the aims and objectives of the community  
 4. agree not to use the community to promote your commercial interests, without prior written agreement from the management committee
 
@@ -58,7 +62,7 @@ Anyone who has been an approved member of our email list for at least six weeks 
 
 ## Code of Conduct
 
-The Cross Government Software Engineering Community is committed to fostering a welcoming, inclusive, and professional environment for all members regardless of gender, sexual orientation, disability, preferred programming language, technical experience, ethnicity, socioeconomic status, and religion (or lack thereof). We invite all who participate in the community to help us create safe and positive experiences for everyone. 
+The Cross Government Software Engineering Community is committed to fostering a welcoming, inclusive, and professional environment for all members regardless of gender, gender reassignment, sexual orientation, disability, age, preferred programming language, technical experience, ethnicity, socioeconomic status, and religion (or lack thereof). We invite all who participate in the community to help us create safe and positive experiences for everyone. 
 
 This Code of Conduct outlines the expected behavior and standards for all participants.
 

@@ -1,0 +1,67 @@
+name: Newsletter Submission
+description: >
+  Submit a story, update, or link for inclusion in the next Cross-Government
+  Software Engineering Community newsletter. All fields are optional.
+title: "Newsletter Submission – "
+labels:
+  - newsletter-submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the newsletter! Fill in as much or as little
+        as you like — all fields are optional.
+
+        You can also submit via the web form at
+        [uk-x-gov-software-community.github.io/newsletter-submit/](https://uk-x-gov-software-community.github.io/newsletter-submit/)
+        which will guide you through the process.
+
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+      description: How you would like to be credited (or leave blank to be anonymous).
+      placeholder: e.g. Sarah Johnson
+    validations:
+      required: false
+
+  - type: input
+    id: department
+    attributes:
+      label: Department or organisation
+      description: The government department or organisation you work for.
+      placeholder: e.g. Department for Education
+    validations:
+      required: false
+
+  - type: textarea
+    id: story
+    attributes:
+      label: Story or update
+      description: >
+        Share something your team has been working on, a lesson learnt, an event
+        you attended, or anything else the community might find interesting.
+      placeholder: |
+        We recently shipped a new open-source tool that…
+      render: markdown
+    validations:
+      required: false
+
+  - type: input
+    id: link
+    attributes:
+      label: Relevant link
+      description: A blog post, GitHub repository, video, or any other relevant URL.
+      placeholder: https://
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: >
+            I am happy for this submission to be included in the newsletter and
+            shared with the community.
+          required: true

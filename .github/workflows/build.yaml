@@ -13,16 +13,19 @@ jobs:
       - name: Build
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - run: npm ci
+      - run: npm run lint
+      - run: npm test
       - run: npm run build
       - run: cp  _site/assets/favicon.*  _site/assets/images/. # fix for  favicon
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.7.3
+        uses: peaceiris/actions-gh-pages@v4.0.0
         if: github.ref == 'refs/heads/main'
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir:  _site 
           publish_branch: gh-pages
+          cname: www.uk-x-gov-software-community.org.uk
         
          

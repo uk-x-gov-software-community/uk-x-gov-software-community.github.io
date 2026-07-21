@@ -1,0 +1,146 @@
+---
+layout: page.njk
+title: Review your newsletter submission
+permalink: /newsletter-submit/preview/
+---
+
+<p class="govuk-body">
+  Your submission has been formatted as a GitHub Issue. Copy the content, then follow the steps below to submit it.
+</p>
+
+<noscript>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      JavaScript is not available so your details could not be pre-filled. Copy the template below,
+      fill in your details, then paste it into a new GitHub Issue.
+    </strong>
+  </div>
+</noscript>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="issue-body">
+    Issue content
+  </label>
+  <textarea class="govuk-textarea govuk-!-font-size-16" id="issue-body" name="issue-body" rows="18" readonly
+    style="font-family: monospace;">## Newsletter Submission
+
+### Name
+(your name)
+
+### Department / Organisation
+(your department or organisation)
+
+### Story / Update
+(your story or update — leave blank if not applicable)
+
+### Link
+(your link — leave blank if not applicable)
+
+---
+*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*</textarea>
+</div>
+
+<button type="button" class="govuk-button govuk-button--secondary" id="copy-btn">
+  Copy to clipboard
+</button>
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">How to create the GitHub Issue</h2>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Copy the issue content using the button above.</li>
+  <li>
+    <a class="govuk-link"
+       href="https://github.com/uk-x-gov-software-community/newsletter-submissions/issues/new"
+       id="github-link"
+       target="_blank"
+       rel="noopener noreferrer">Open GitHub to create a new issue (opens in a new tab)</a>.
+    The issue body will be pre-filled if your browser supports it.
+  </li>
+  <li>Set the issue title to something like <strong>Newsletter Submission &ndash; [your name]</strong>.</li>
+  <li>Paste the copied content into the issue body if it is not already there.</li>
+  <li>Click <strong>Submit new issue</strong>.</li>
+</ol>
+
+<p class="govuk-body">
+  <a class="govuk-link" href="/newsletter-submit/">Go back to the form</a>
+</p>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search)
+  var name = (params.get('name') || '').trim()
+  var department = (params.get('department') || '').trim()
+  var story = (params.get('story') || '').trim()
+  var link = (params.get('link') || '').trim()
+
+  // Only pre-fill if at least one field was submitted
+  if (!name && !department && !story && !link) return
+
+  var safe = function (v) { return v || '(not provided)' }
+
+  var issueBody = [
+    '## Newsletter Submission',
+    '',
+    '### Name',
+    safe(name),
+    '',
+    '### Department / Organisation',
+    safe(department),
+    '',
+    '### Story / Update',
+    safe(story),
+    '',
+    '### Link',
+    safe(link),
+    '',
+    '---',
+    '*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*'
+  ].join('\n')
+
+  var textarea = document.getElementById('issue-body')
+  if (textarea) textarea.value = issueBody
+
+  var githubBase = 'https://github.com/uk-x-gov-software-community/newsletter-submissions/issues/new'
+  var githubTitle = 'Newsletter Submission \u2013 ' + (name || 'submission')
+  var githubLink = document.getElementById('github-link')
+  if (githubLink) {
+    githubLink.href = githubBase +
+      '?title=' + encodeURIComponent(githubTitle) +
+      '&body=' + encodeURIComponent(issueBody)
+  }
+
+  var copyBtn = document.getElementById('copy-btn')
+  if (!copyBtn) return
+
+  copyBtn.addEventListener('click', function () {
+    var text = textarea ? textarea.value : issueBody
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        copyBtn.textContent = 'Copied!'
+        setTimeout(function () { copyBtn.textContent = 'Copy to clipboard' }, 2000)
+      }).catch(function () {
+        fallbackCopy(text)
+      })
+    } else {
+      fallbackCopy(text)
+    }
+  })
+
+  function fallbackCopy(text) {
+    if (textarea) {
+      textarea.select()
+      textarea.setSelectionRange(0, text.length)
+      try {
+        document.execCommand('copy')
+        copyBtn.textContent = 'Copied!'
+        setTimeout(function () { copyBtn.textContent = 'Copy to clipboard' }, 2000)
+      } catch (e) {
+        copyBtn.textContent = 'Select and copy manually'
+      }
+    }
+  }
+})()
+</script>

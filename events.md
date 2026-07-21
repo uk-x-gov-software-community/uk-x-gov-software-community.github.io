@@ -4,7 +4,7 @@ title: Events
 ---
 
 # Upcoming Events  
-
+Join us for La Suite Numerique Tech Talk, a technical deep dive into the French Government open source project May 7th 11am [get tickets](https://www.eventbrite.co.uk/e/la-suite-numerique-tech-talk-tickets-1985703135532)
 
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
@@ -13,14 +13,28 @@ Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-
 * 30th September 2026 - In Person - Newcastle - [GovDev North 2026](https://www.eventbrite.co.uk/e/govdev-north-2026-tickets-1990481756516)
 * 21st October 2026 - In Person - Nottingham - [GovDev Midlands 2026](https://www.eventbrite.co.uk/e/govdev-midlands-2026-tickets-1992339250330)
 
+* Thursday 18th December 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Thursday 4th December 2025 - Green Software Community meeting - 1 PM - 2 PM - Virtual
+* Thursday 27th November 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Thursday 30th October 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Wednesday 22nd October 2025 - Inclusive Recruitment SIG catch up - 10:30am - 11:30am - Virtual - Contact [Kulwant Lall](mailto:Kulwant.Lall@Justice.gov.uk)
+* Thursday 25th September 2025 - Lean Coffee - 11am - 11:50am  - Virtual
 
 ## Special Interest Groups
 
 Here are the next meetings for the special interest groups.
 
-Green Software Community meeting - tbc
+## Green Software Community meeting
 
-Head of Engineering SIG - tbc
+Thursday 4th December, 13:00-14:00 via Microsoft Teams
+* Julien Noche (GDSA): How GreenOps extends FinOps principles to measure, attribute, and reduce the environmental impact of cloud usage
+* Ishmael Burdeau (DWP): Review of CI/CD tools with a focus on Carbon Runner
+
+Email SIG lead to register: [sidney.debaque@dsit.gov.uk](mailto:sidney.debaque@dsit.gov.uk)
+
+## Head of Engineering SIG 
+
+TBC
 
 
 If you wish to join this interest group, please [contact us](/special-interest/#heads-of-engineering) 
