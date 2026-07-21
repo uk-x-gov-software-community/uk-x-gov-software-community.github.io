@@ -8,8 +8,10 @@ title: Events
 
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
 
-## 2025
-* 31st July 2025 - Virtual - 11:00 - 12:00 - Lean Coffee
+## 2026
+* 23rd July 2026 - Virtual - 11:00 - 12:00 - Lean Coffee
+* 30th September 2026 - In Person - Newcastle - [GovDev North 2026](https://www.eventbrite.co.uk/e/govdev-north-2026-tickets-1990481756516)
+* 21st October 2026 - In Person - Nottingham - [GovDev Midlands 2026](https://www.eventbrite.co.uk/e/govdev-midlands-2026-tickets-1992339250330)
 
 
 ## Special Interest Groups
@@ -26,6 +28,8 @@ If you wish to join this interest group, please [contact us](/special-interest/#
 # Past Events
 
 ## 2025
+
+* 31st July 2025 - Virtual - 11:00 - 12:00 - Lean Coffee
 
 We just ran * 29th January 2025 - In Person Conference  - 9:00 - 17:00 - [Cross Government Software Engineering Conference 2025 see details ](/conference-2025-01-29/)!
 
