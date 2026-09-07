@@ -21,6 +21,7 @@
     "vitest": "^4.1.0"
   },
   "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
     "test": "vitest run",
     "lint": "eslint assets/newsletter-submit.js tests/",
     "build": "eleventy",
