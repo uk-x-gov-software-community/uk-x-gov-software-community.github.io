@@ -108,6 +108,11 @@ dist
 # Eleventy build output
 _site
 
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+
 # macOS system files
 .DS_Store
 .DS_Store?

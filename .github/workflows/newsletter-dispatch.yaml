@@ -1,0 +1,67 @@
+name: Create newsletter submission issue
+
+on:
+  repository_dispatch:
+    types: [newsletter-submission]
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate GitHub App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.NEWSLETTER_APP_ID }}
+          private-key: ${{ secrets.NEWSLETTER_APP_PRIVATE_KEY }}
+          owner: uk-x-gov-software-community
+          repositories: community-space
+
+      - name: Create issue in private newsletter-submissions repo
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const {
+              name,
+              department,
+              story,
+              link,
+              github_username,
+              submitted_at
+            } = context.payload.client_payload
+
+            const sanitise = v =>
+              typeof v === 'string'
+                ? v.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '').trim().slice(0, 4000)
+                : ''
+            const safe = v => sanitise(v) || '(not provided)'
+
+            const body = [
+              '## Newsletter Submission',
+              '',
+              `**Submitted by:** @${github_username} on ${submitted_at}`,
+              '',
+              '### Name',
+              safe(name),
+              '',
+              '### Department / Organisation',
+              safe(department),
+              '',
+              '### Story / Update',
+              safe(story),
+              '',
+              '### Link',
+              safe(link),
+              '',
+              '---',
+              '*Submitted via https://uk-x-gov-software-community.github.io/newsletter-submit/*'
+            ].join('\n')
+
+            await github.rest.issues.create({
+              owner: 'uk-x-gov-software-community',
+              repo: 'community-space',
+              title: `Newsletter Submission \u2013 ${submitted_at}`,
+              labels: ['newsletter-submission'],
+              body
+            })
