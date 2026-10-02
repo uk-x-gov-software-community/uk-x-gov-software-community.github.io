@@ -16,19 +16,16 @@ Our chair, Nayyab Naqvi, summed it up in her LinkedIn post: "As Chair of the com
 
 
 ## A conference in the North East
+
 After listening to feedback from our conference in 2025 we are so happy we decided on taking the community beyond London!, it gave colleagues in and around the North East an opportunity to meet in person and connect with the wider cross-government engineering community. Newcastle and Opencast you did us proud.
 
-<!-- Add photo caption Conference photo. -->
-
-
+![GovDev North conference photo at Tapyard, Opencast, Newcastle](../../../assets/images/conference-2026/300926-Opencast_GovDev-95-X5.png)
 
 ## Talks and conversations
 
 The day brought together talks, discussions and time to connect. More detail will follow on the sessions and ideas attendees took away.
 
-<!-- Add confirmed session titles, speakers and a short description of each. Check names, roles and preferred links with the speakers. -->
-
-<!-- Add selected event photos here when the image folder is shared. Use concise, descriptive alt text and captions where useful. -->
+There was an amazing keynote by Michael Brunton Spall 
 
 ## Thank you
 
