@@ -53,6 +53,10 @@ A special thank you to all our volunteers, whose time, energy and hard work help
 
 ## Stay connected
 
+We have an obvious opportunity for you to do that as we have another conference coming up.
+
+[Join us at GovDev Midlands](../../../../conferences/2026-10-21)
+
 The Cross Government Software Engineering Community brings together people working on software across government to share experience and learn from one another. [Find out how to join the community](https://uk-cross-government-software-engineering-community.mailchimpsites.com/).
 
 
