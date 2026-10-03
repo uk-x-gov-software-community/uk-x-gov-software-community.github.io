@@ -29,7 +29,7 @@ There was an amazing keynote by Michael Brunton Spall sharing some of the most s
 
 Chris and Adam from HMRC showed us the Multi-channel Digital Tax Platform and how it powers teams throughout the department. Inspiring stuff for developer experience nerds.
 
-Fahad, shared some work ONS are doing with AI coding assistants really embedding those and running hackathons, and events across the department with speckit and copilot powering fast iterative development.
+Fahad shared some work ONS is doing with AI coding assistants, embedding them through hackathons and events across the department, with Spec Kit and GitHub Copilot powering fast iterative development.
 
 Our very own David Heath - inspired us with a vision for an Engineering Academy, passionate about using tools and techniques to keep the software craft alive ... including sharing details of the upcoming CodeRetreat in London ... see our blog about that soon. 
 
