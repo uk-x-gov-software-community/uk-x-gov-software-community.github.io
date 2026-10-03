@@ -27,7 +27,7 @@ The day brought together talks, discussions and time to connect. More detail wil
 
 There was an amazing keynote by Michael Brunton Spall sharing some of the most serious cyber incidents he was made aware of (that he could talk about) and cautioning us to ensure we safeguard our toolchains and supply chains.
 
-Chris and Adam from HMRC - showed us the multi digital tax platform and how it powers teams throughout the department. Inspiring stuff for developer experience nerds. 
+Chris and Adam from HMRC showed us the Multi-channel Digital Tax Platform and how it powers teams throughout the department. Inspiring stuff for developer experience nerds.
 
 Fahad, shared some work ONS are doing with AI coding assistants really embedding those and running hackathons, and events across the department with speckit and copilot powering fast iterative development.
 
