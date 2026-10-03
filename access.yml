@@ -1,0 +1,23 @@
+# Who can use the X-Gov Software Community stats in Umami.
+#
+# Change this file by pull request. Once it is merged, an Umami admin runs
+#   npm run access:sync            # shows what would change
+#   npm run access:sync -- --apply # makes the changes
+# See docs/access.md for what each role can do.
+#
+# Usernames are Umami usernames (lower case). Use GitHub handles so it is
+# obvious who each one is. A person can appear in only one list.
+
+# The Umami team that owns the community website(s).
+team: X-Gov Software Community
+
+# Global Umami admins: manage every user, team, website and setting.
+# Keep this to 2-3 trusted maintainers so access never depends on one person.
+admins:
+  - sdh100shaun
+
+# Team managers: add/edit websites, add and remove team members, see all stats.
+managers: []
+
+# View-only: see the dashboards, change nothing.
+viewers: []

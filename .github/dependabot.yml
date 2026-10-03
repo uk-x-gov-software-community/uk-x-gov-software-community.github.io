@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+  # Umami itself is pinned in UMAMI_VERSION and docker-compose.yml; upgrade by hand (docs/runbook.md).

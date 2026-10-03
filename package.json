@@ -1,0 +1,26 @@
+{
+  "name": "umami-analytics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-hosted Umami web analytics for the X-Gov Software Community site",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint .",
+    "access:check": "node scripts/sync-access.mjs --check",
+    "access:sync": "node scripts/sync-access.mjs"
+  },
+  "dependencies": {
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
+    "vitest": "^4.1.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,37 @@
+# Local trial of Umami, pinned to the same version as production (see UMAMI_VERSION).
+#   docker compose up -d   then open http://localhost:3000 (admin / umami - change it)
+# Not for production: secrets below are throwaway values.
+services:
+  umami:
+    image: umamisoftware/umami:3.4.0
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://umami:umami@db:5432/umami
+      APP_SECRET: local-only-not-a-secret
+      TWO_FACTOR_ENCRYPTION_KEY: 0000000000000000000000000000000000000000000000000000000000000000
+      DISABLE_TELEMETRY: 1
+    depends_on:
+      db:
+        condition: service_healthy
+    init: true
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:3000/api/heartbeat"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: umami
+    volumes:
+      - umami-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  umami-db-data:

@@ -1,0 +1,76 @@
+name: deploy
+
+# Builds the Umami release named in UMAMI_VERSION and deploys it to Vercel.
+# Runs when UMAMI_VERSION changes on main, or by hand from the Actions tab.
+# Database migrations run during the build, against the production database.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - UMAMI_VERSION
+      - .github/workflows/deploy.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Add required reviewers to this environment so deploys need a second pair of eyes.
+    environment: production
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_CLI: vercel@62
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read pinned Umami version
+        id: version
+        run: |
+          tag="$(tr -d '[:space:]' < UMAMI_VERSION)"
+          [[ "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "UMAMI_VERSION must look like v1.2.3, got '$tag'"; exit 1; }
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Check out Umami ${{ steps.version.outputs.tag }}
+        uses: actions/checkout@v4
+        with:
+          repository: umami-software/umami
+          ref: ${{ steps.version.outputs.tag }}
+          path: umami
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Pull Vercel project settings and environment variables
+        working-directory: umami
+        run: npx --yes "$VERCEL_CLI" pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build
+        working-directory: umami
+        run: npx --yes "$VERCEL_CLI" build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy
+        working-directory: umami
+        run: |
+          url="$(npx --yes "$VERCEL_CLI" deploy --prebuilt --prod --token="$VERCEL_TOKEN")"
+          echo "Deployed Umami ${{ steps.version.outputs.tag }} to $url" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Smoke test
+        if: vars.UMAMI_URL != ''
+        run: |
+          for _ in 1 2 3 4 5 6; do
+            curl -fsS "${{ vars.UMAMI_URL }}/api/heartbeat" && exit 0
+            sleep 10
+          done
+          echo "Umami did not answer at ${{ vars.UMAMI_URL }}/api/heartbeat"
+          exit 1

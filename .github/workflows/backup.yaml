@@ -1,0 +1,46 @@
+name: backup
+
+# Weekly encrypted dump of the Umami database, kept as a workflow artifact for 90 days.
+# Restore steps: docs/runbook.md
+
+on:
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Install PostgreSQL 17 client
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y -qq postgresql-client-17
+
+      - name: Dump and encrypt
+        env:
+          DATABASE_URL: ${{ secrets.BACKUP_DATABASE_URL }}
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          set -euo pipefail
+          [ -n "$DATABASE_URL" ] && [ -n "$BACKUP_PASSPHRASE" ] || { echo "Set BACKUP_DATABASE_URL and BACKUP_PASSPHRASE"; exit 1; }
+          file="umami-$(date -u +%Y-%m-%d).dump"
+          /usr/lib/postgresql/17/bin/pg_dump --format=custom --no-owner --no-acl "$DATABASE_URL" > "$file"
+          gpg --batch --yes --pinentry-mode loopback --passphrase-fd 3 --symmetric --cipher-algo AES256 \
+            --output "$file.gpg" "$file" 3<<<"$BACKUP_PASSPHRASE"
+          rm "$file"
+          echo "FILE=$file.gpg" >> "$GITHUB_ENV"
+          ls -lh "$file.gpg"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FILE }}
+          path: ${{ env.FILE }}
+          retention-days: 90
+          if-no-files-found: error
