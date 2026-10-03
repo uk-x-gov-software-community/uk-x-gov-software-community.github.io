@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-title: GovDev North 2026: bringing government software engineers together in Newcastle
+title: "GovDev North 2026: bringing government software engineers together in Newcastle"
 tags: post
 categories: ["conference", "2026", "govdev-north"]
 date: 2026-10-01
@@ -17,20 +17,38 @@ Our chair, Nayyab Naqvi, summed it up in her LinkedIn post: "As Chair of the com
 
 ## A conference in the North East
 
-After listening to feedback from our conference in 2025 we are so happy we decided on taking the community beyond London!, it gave colleagues in and around the North East an opportunity to meet in person and connect with the wider cross-government engineering community. Newcastle and Opencast you did us proud.
+After listening to feedback from our conference in 2025 we are so happy we decided to take the community beyond London, it gave colleagues in and around the North East an opportunity to meet in person and connect with the wider cross-government engineering community. Newcastle and Opencast you did us proud.
 
-![GovDev North conference photo at Tapyard, Opencast, Newcastle](../../../assets/images/conference-2026/300926-Opencast_GovDev-95-X5.png)
+![GovDev North conference photo at Tapyard, Opencast, Newcastle](/assets/images/conference-2026/300926-Opencast_GovDev-95-X5.png)
 
 ## Talks and conversations
 
-The day brought together talks, discussions and time to connect. More detail will follow on the sessions and ideas attendees took away.
+The day brought together talks, discussions and time to connect. More detail will follow on the sessions and ideas attendees took away but this is a snippet. If you can see our community space you can get slides there.
 
-There was an amazing keynote by Michael Brunton Spall 
+There was an amazing keynote by Michael Brunton Spall sharing some of the most serious cyber incidents he was made aware of (that he could talk about) and cautioning us to ensure we safeguard our toolchains and supplier chains. 
+
+Chris and Adam from HMRC - showed us the multi digital tax platform and how it powers teams throughout the department. Inspiring stuff for developer experience nerds. 
+
+Fahad, shared some work ONS are doing with AI coding assistants really embedding those and running hackathons, and events across the department with speckit and copilot powering fast iterative development.
+
+Our very own David Heath - inspired us with a vision for an Engineering Academy, passionate about using tools and techniques to keep the software craft alive ... including sharing details of the upcoming CodeRetreat in London ... see our blog about that soon. 
+
+Lightning talks were equally as inspiring covering AI and collaboration and GitHub from MLHCG and UKHA and UKHAS and DVSA.
+
+Overall a great day and lots of networking driving collaboration across government. 
+
+![113 people at GovDevNorth in Newcastle](/assets/images/conference-2026/crowd.png)
+
 
 ## Thank you
 
+113 of you came and we are so happy you showed up.
+
 Thank you to everyone who spoke, attended and helped organise GovDev North, and to Opencast for supporting the event. Events like this depend on people across the community giving their time and sharing what they have learned.
 
+A special thank you to all our volunteers, whose time, energy and hard work helped make the day possible.
+
+![GovDev North volunteers at Tapyard in Newcastle](/assets/images/conference-2026/volunteers-newcastle.png)
 
 
 ## Stay connected
