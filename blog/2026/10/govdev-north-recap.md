@@ -33,7 +33,7 @@ Fahad shared some work ONS is doing with AI coding assistants, embedding them th
 
 Our very own David Heath - inspired us with a vision for an Engineering Academy, passionate about using tools and techniques to keep the software craft alive ... including sharing details of the upcoming CodeRetreat in London ... see our blog about that soon. 
 
-Lightning talks were equally as inspiring covering AI and collaboration and GitHub from MLHCG and UKHA and UKHAS and DVSA.
+Lightning talks were equally as inspiring covering AI and collaboration and GitHub from MHCLG, UK Hydrographic Office, UK Health Security Agency, DVSA, HMRC and the Office of the Chief Technology Office.
 
 Overall a great day and lots of networking driving collaboration across government. 
 
