@@ -17,7 +17,7 @@ Our chair, Nayyab Naqvi, summed it up in her LinkedIn post: "As Chair of the com
 
 ## A conference in the North East
 
-After listening to feedback from our 2025 conference, we are so happy that we decided to take the community beyond London. It gave colleagues in and around the North East an opportunity to meet in person and connect with the wider cross-government engineering community. Newcastle and Opencast, you did us proud.
+After listening to feedback from our 2025 conference, we worked to take our conference beyond London. It gave colleagues in and around the North East an opportunity to meet in person and connect with the wider cross-government engineering community. Newcastle and Opencast, you did us proud.
 
 ![GovDev North conference photo at Tapyard, Opencast, Newcastle](/assets/images/conference-2026/300926-Opencast_GovDev-95-X5.png)
 
