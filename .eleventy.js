@@ -16,7 +16,7 @@ module.exports = function(eleventyConfig) {
 
  module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
-  eleventyConfig.addPassthroughCopy('open-source-presentation/*.png')
+  eleventyConfig.addPassthroughCopy('special-interest/open-source/open-source-presentation/*.png')
  
    // Register the plugin
    eleventyConfig.addPlugin(govukEleventyPlugin,{
