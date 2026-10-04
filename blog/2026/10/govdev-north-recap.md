@@ -25,7 +25,7 @@ After listening to feedback from our 2025 conference, we worked to take our conf
 
 The day brought together talks, discussions and time to connect. More detail will follow on the sessions and ideas attendees took away but this is a snippet. If you can see our community space you can get slides there.
 
-There was an amazing keynote by Michael Brunton Spall sharing some of the most serious cyber incidents he was made aware of (that he could talk about) and cautioning us to ensure we safeguard our toolchains and supply chains.
+There was an amazing keynote by Michael Brunton-Spall sharing some of the most serious cyber incidents he was made aware of (that he could talk about) and cautioning us to ensure we safeguard our toolchains and supply chains.
 
 Chris and Adam from HMRC showed us the Multi-channel Digital Tax Platform and how it powers teams throughout the department. Inspiring stuff for developer experience nerds.
 
