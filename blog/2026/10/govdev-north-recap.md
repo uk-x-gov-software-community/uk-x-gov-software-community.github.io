@@ -53,11 +53,13 @@ A special thank you to all our volunteers, whose time, energy and hard work help
 
 ## Stay connected
 
-We have an obvious opportunity for you to do that as we have another conference coming up.
 
-[Join us at GovDev Midlands](../../../../conferences/2026-10-21)
+You can stay involved with the community in the following ways.
 
-The Cross Government Software Engineering Community brings together people working on software across government to share experience and learn from one another. [Find out how to join the community](https://uk-cross-government-software-engineering-community.mailchimpsites.com/).
+* [Sign up to attend our Nottingham conference in October](https://www.eventbrite.co.uk/e/govdev-midlands-2026-tickets-1992339250330)
+* [Sign up to our mailing list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/)
+* Chat with us in [`#software-development`](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L) in [cross-gov slack](https://x-govuk.github.io/posts/how-to-use-cross-government-slack/). 
+* Members can access our [private community space](community-space) where you'll find notes from our past meetings/conferences
 
 
 *Shaun Hare, Cross Government Software Engineering Community*
