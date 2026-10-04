@@ -37,7 +37,7 @@ Lightning talks were equally as inspiring covering AI and collaboration and GitH
 
 Overall a great day and lots of networking driving collaboration across government. 
 
-![113 people at GovDevNorth in Newcastle](/assets/images/conference-2026/crowd.png)
+![113 people at GovDev North in Newcastle](/assets/images/conference-2026/crowd.png)
 
 
 ## Thank you
