@@ -21,6 +21,7 @@ module.exports = function(eleventyConfig) {
    // Register the plugin
    eleventyConfig.addPlugin(govukEleventyPlugin,{
     fontFamily: 'arial, sans-serif',
+     titleSuffix: false,
     header: {
       logotype: {
         html: '<img id="xgov-logo" src="/../../../assets/logo/cgov-logo-2.svg" alt="Cross Government Software Engineering Community">',
