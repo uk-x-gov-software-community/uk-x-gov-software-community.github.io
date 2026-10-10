@@ -2,6 +2,9 @@ $govuk-brand-colour:#09233b;
 $govuk-link-colour:#062D56;
 $govuk-link-hover-colour:#1d70b8;
 $xgov-font-family: 'Helvetica', 'Arial', sans-serif;
+
+$govuk-font-family: $xgov-font-family;
+
 #xgov-logo {
     background-color: transparent;
     width: 35px;
