@@ -19,8 +19,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('special-interest/open-source/open-source-presentation/*.png')
  
    // Register the plugin
-   eleventyConfig.addPlugin(govukEleventyPlugin,{
-    fontFamily: 'arial, sans-serif',
+   eleventyConfig.addPlugin(govukEleventyPlugin, {
      titleSuffix: false,
     header: {
       logotype: {
