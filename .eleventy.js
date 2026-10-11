@@ -1,6 +1,6 @@
-const govukEleventyPlugin = require("@x-govuk/govuk-eleventy-plugin");
+import { govukEleventyPlugin } from "@x-govuk/govuk-eleventy-plugin";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: false,
     strictFilters: false,
@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
   // Register the plugin
   eleventyConfig.addPlugin(govukEleventyPlugin, {
     titleSuffix: false,
+    rebrand: false,
     header: {
       logotype: {
         html: '<img id="xgov-logo" src="/../../../assets/logo/cgov-logo-2.svg" alt="Cross Government Software Engineering Community">',
@@ -29,15 +30,12 @@ module.exports = function (eleventyConfig) {
         html: "Responsibility &#9745; Pragmatism  &#9745; Public Service  &#9745; <br /> © Cross Government Software Engineering Community",
       },
     },
+    stylesheets: ["/assets/application.css"],
   });
 
   return {
     dataTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    dir: {
-      // Use layouts from the plugin
-      layouts: "node_modules/@x-govuk/govuk-eleventy-plugin/layouts",
-    },
   };
-};
+}
