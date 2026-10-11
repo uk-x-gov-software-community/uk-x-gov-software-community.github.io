@@ -5,14 +5,6 @@ module.exports = function (eleventyConfig) {
     dynamicPartials: false,
     strictFilters: false,
   });
-  return {
-    addPassthroughCopy: function (dir) {
-      eleventyConfig.addPassthroughCopy(dir);
-    },
-  };
-};
-
-module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy(
     "special-interest/open-source/open-source-presentation/*.png",
