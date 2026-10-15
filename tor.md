@@ -131,7 +131,7 @@ Additional officers can be co-opted at any time by decision of the management co
 
 ### Minutes
 
-Minutes of the Management Committee will be posted by the secretary in our github community space. 
+Minutes of the Management Committee will be posted by the secretary in our GitHub community space. 
 
 ### Quorum
 
