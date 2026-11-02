@@ -58,7 +58,7 @@ So you came and enjoyed yourself? Why not get more involved in the community by 
 
 * [Sign up to our mailing list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/)
 * Chat with us in [`#software-development`](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L) in [cross-gov slack](https://x-govuk.github.io/posts/how-to-use-cross-government-slack/)
-* Members can access our [private community space](community-space) where you'll find notes from our past meetings/conferences
+* Members can access our [private community space](/community-space) where you'll find notes from our past meetings/conferences
 * Or email us at [hello@uk-x-gov-software-community.org.uk](mailto:hello@uk-x-gov-software-community.org.uk)
 
 *Alex Coleman, Cross Government Software Engineering Community*
