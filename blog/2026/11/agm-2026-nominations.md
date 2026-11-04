@@ -23,7 +23,7 @@ We're inviting **self-nominations** for the management committee, the small grou
 - **Social media officer** – grows our presence on social media
 - **Events officer** – curates our events programme, including Lean Coffee, and works with the SIGs
 
-You don't need to be a senior leader or a seasoned organiser to stand. We want a committee that reflects the breadth of our community: hands-on developers, testers, leads, career changers, and people from departments and arm's length bodies of every size. If you care about software engineering in government and want to help others connect, learn and share, we'd love to hear from you.
+You don't need to be a senior leader or a seasoned organiser to stand. We want a committee that reflects the breadth of our community: hands-on developers, associated technical roles, leads, career changers, and people from departments and arm's length bodies of every size. If you care about software engineering in government and want to help others connect, learn and share, we'd love to hear from you.
 
 ## How to nominate yourself
 
