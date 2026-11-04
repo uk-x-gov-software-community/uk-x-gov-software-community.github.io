@@ -16,11 +16,11 @@ module.exports = function(eleventyConfig) {
 
  module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
-  eleventyConfig.addPassthroughCopy('open-source-presentation/*.png')
+  eleventyConfig.addPassthroughCopy('special-interest/open-source/open-source-presentation/*.png')
  
    // Register the plugin
-   eleventyConfig.addPlugin(govukEleventyPlugin,{
-    fontFamily: 'arial, sans-serif',
+   eleventyConfig.addPlugin(govukEleventyPlugin, {
+     titleSuffix: false,
     header: {
       logotype: {
         html: '<img id="xgov-logo" src="/../../../assets/logo/cgov-logo-2.svg" alt="Cross Government Software Engineering Community">',

@@ -29,4 +29,4 @@ Also thank you to all who voted and to the candidates for their nominations. The
 
 ## Contact the Committee
 If you have any questions, suggestions, you can reach out to the 
-committee via the [Cross Government Software Engineering Community shared mailbox](cross-government-software-engineering-community-organisers@digital.cabinet-office.gov.uk). You can also chat with us in [`#software-development`]() on [cross-gov slack](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L).
+committee via the [Cross Government Software Engineering Community shared mailbox](mailto:cross-government-software-engineering-community-organisers@digital.cabinet-office.gov.uk). You can also chat with us in [`#software-development`](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L) on cross-gov slack.
