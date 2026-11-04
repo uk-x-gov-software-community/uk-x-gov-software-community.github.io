@@ -27,18 +27,15 @@ export default function (eleventyConfig) {
         html: 'A community project. <a class="govuk-footer__link" href="https://github.com/uk-x-gov-software-community/uk-x-gov-software-community.github.io">GitHub source</a>.<br /> Thanks to <a href="https://x-govuk.github.io/govuk-eleventy-plugin/" class="govuk-link" >X-GOVUK projects</a> for the template',
       },
       copyright: {
-        html: 'Responsibility &bull; Pragmatism &bull; Public Service<br /> © Cross Government Software Engineering Community'
-      }
-    }
-   })
-   
-   return {
-     dataTemplateEngine: 'njk',
-     htmlTemplateEngine: 'njk',
-     markdownTemplateEngine: 'njk',
-     dir: {
-       // Use layouts from the plugin
-       layouts: 'node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
-     }
-   }
- };
+        html: "Responsibility &bull; Pragmatism &bull; Public Service<br /> © Cross Government Software Engineering Community",
+      },
+    },
+    stylesheets: ["/assets/application.css"],
+  });
+
+  return {
+    dataTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+  };
+}
