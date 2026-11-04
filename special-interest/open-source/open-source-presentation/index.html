@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c">
 
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/govuk.css">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
+  <script src="/assets/application.js" type="module"></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
 
 
   <meta property="og:title" content="Code reuse - Open/Inner Source Presentation">
 
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
     <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
@@ -45,23 +48,21 @@
 </nav>
 
         <main class="govuk-main-wrapper" id="main-content">
-  <header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    Code reuse - Open/Inner Source Presentation
-  </h1>
-
+  
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">Code reuse - Open/Inner Source Presentation</h1>
 </header>
 
 
 
-  <div class="app-prose-scope"><h1 id="code-reuse---open%2Finner-source-presentation---19-may-2023" tabindex="-1" class="govuk-heading-xl"><a class="app-link--heading govuk-link" href="#code-reuse---open%2Finner-source-presentation---19-may-2023"><span>Code reuse - Open/Inner Source Presentation - 19 May 2023</span></a></h1>
+  <div class="app-prose-scope"><h1 id="code-reuse-open-inner-source-presentation-19-may-2023" tabindex="-1" class="govuk-heading-xl"><a class="app-link--heading govuk-link" href="#code-reuse-open-inner-source-presentation-19-may-2023"><span>Code reuse - Open/Inner Source Presentation - 19 May 2023</span></a></h1>
 <p class="govuk-body">Presenter: <a href="https://github.com/soydaner" class="govuk-link">Soydaner</a></p>
 <style>
   img {
     width:100%;
   }
 </style>
-<h2 id="code-reuse---open%2Finner-source" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#code-reuse---open%2Finner-source"><span>Code reuse - Open/Inner Source</span></a></h2>
+<h2 id="code-reuse-open-inner-source" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#code-reuse-open-inner-source"><span>Code reuse - Open/Inner Source</span></a></h2>
 <ul class="govuk-list govuk-list--bullet">
 <li>Intro</li>
 <li>Findings</li>
@@ -74,7 +75,7 @@
 <img src="slide-1.png" alt="Slide1"></li>
 </ul>
 <h2 id="findings" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#findings"><span>Findings</span></a></h2>
-<h3 id="sharing-reusing%3A" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#sharing-reusing%3A"><span>Sharing reusing:</span></a></h3>
+<h3 id="sharing-reusing" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#sharing-reusing"><span>Sharing reusing:</span></a></h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>No internal sharing/reusing practices</li>
 <li>There are successful projects that can be reusable are in open repositories.</li>
@@ -103,15 +104,15 @@
 <li>Then a question: what is the true value of being open!</li>
 </ul>
 <figure><img src="slide-2.png" alt="Slide2"></figure>
-<h2 id="findings-cont." tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#findings-cont."><span>Findings cont.</span></a></h2>
-<h3 id="opensource%3A" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#opensource%3A"><span>Opensource:</span></a></h3>
+<h2 id="findings-cont" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#findings-cont"><span>Findings cont.</span></a></h2>
+<h3 id="opensource" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#opensource"><span>Opensource:</span></a></h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>67 Country; ~900 public bodies.</li>
 <li>68 U.K. Central, 31 U.K. Council, 15322 repositories.</li>
 <li>Not all of them are are actual source code. There are documentations repositories as well.</li>
 <li>Difficult to know who is contributing, anyone, someone from the owner department or from another department.</li>
 </ul>
-<h3 id="departments%3A" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#departments%3A"><span>Departments:</span></a></h3>
+<h3 id="departments" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#departments"><span>Departments:</span></a></h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>800-1600-2000 engineers; 50-150 teams</li>
 <li>500 - 1200 repos and more than 10 million codes</li>
@@ -202,7 +203,7 @@ People may hesitate to join</p>
 <ul class="govuk-list govuk-list--bullet">
 <li>OpenSource is more than  code reuse(pragmatic).</li>
 </ul>
-<h3 id="open-source---%3E-inner-source" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#open-source---%3E-inner-source"><span>Open Source --&gt;  Inner Source</span></a></h3>
+<h3 id="open-source-inner-source" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#open-source-inner-source"><span>Open Source --&gt;  Inner Source</span></a></h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>Organisation can practice OpenSource internally. This is called  InnerSource</li>
 <li>Open/Inner Source has challenges like behavioural adoption, Technical,  Security,</li>
@@ -216,7 +217,7 @@ People may hesitate to join</p>
 <li>Does not need to be best!</li>
 <li>Library/package, code  snipped, component, API,  service.</li>
 </ul>
-<h3 id="searchable-%26-reachable" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#searchable-%26-reachable"><span>Searchable &amp; Reachable</span></a></h3>
+<h3 id="searchable-and-reachable" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#searchable-and-reachable"><span>Searchable &amp; Reachable</span></a></h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>Open resources</li>
 <li>Internal resources: Signposted</li>
@@ -242,7 +243,7 @@ People may hesitate to join</p>
 <li>Most popular searches</li>
 <li>Who will implement the pilot, Where is hosted, What are the KPIs?</li>
 </ul>
-<h3 id="innersource-adoption" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#innersource-adoption"><span>InnerSource Adoption</span></a></h3>
+<h3 id="inner-source-adoption" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#inner-source-adoption"><span>InnerSource Adoption</span></a></h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>Requires Strategic decision, Long Term detailed planning,  Difficult to achieve</li>
 <li>Required to get full benefit from code reuse</li>
@@ -250,7 +251,7 @@ People may hesitate to join</p>
 <li></li>
 </ul>
 <figure><img src="slide-6.png" alt="Slide6"></figure>
-<h2 id="maturity%3A-an-interpretation-for-open%2Finner-sourcing-concept" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#maturity%3A-an-interpretation-for-open%2Finner-sourcing-concept"><span>Maturity: An interpretation for Open/Inner Sourcing concept</span></a></h2>
+<h2 id="maturity-an-interpretation-for-open-inner-sourcing-concept" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#maturity-an-interpretation-for-open-inner-sourcing-concept"><span>Maturity: An interpretation for Open/Inner Sourcing concept</span></a></h2>
 <figure><img src="slide-7.png" alt="Slide7"></figure>
 <h2 id="a-solution" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#a-solution"><span>A Solution</span></a></h2>
 <ul class="govuk-list govuk-list--bullet">
@@ -297,6 +298,5 @@ success. Difficult to find a proper way of assuring the  success. Difficult to m
 </footer>
 
 
-  <script src="/assets/govuk.js" type="module"></script>
   </body>
 </html>

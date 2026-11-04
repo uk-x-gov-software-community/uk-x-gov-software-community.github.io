@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c">
 
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/govuk.css">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
+  <script src="/assets/application.js" type="module"></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
 
 
   <meta property="og:title" content="Welcome">
 <meta property="og:description" name="description" content="We are a group of engineers working in software engineering across government, some of us are hands on developers, others working in other technical or management roles.">
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
     <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
@@ -36,8 +39,7 @@
   
 
   <main id="main-content" role="main">
-    
-<div class="x-govuk-masthead">
+    <div class="x-govuk-masthead x-govuk-masthead--inverse">
   <div class="govuk-width-container">
     
     <div class="govuk-grid-row">
@@ -49,11 +51,11 @@
           We are a group of engineers working in software engineering across government, some of us are hands on developers, others working in other technical or management&nbsp;roles.
         </p>
         <a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/" role="button" draggable="false" class="govuk-button govuk-button--inverse govuk-button--start" data-module="govuk-button">
-  Join our Mailing list
-  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
-  </svg>
-</a>
+          Join our Mailing list
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+          </svg>
+        </a>
       </div>
       <div class="govuk-grid-column-one-third-from-desktop">
         <div class="x-govuk-masthead__image">
@@ -67,24 +69,6 @@
     <div class="govuk-main-wrapper">
       <div class="govuk-width-container">
           <div class="app-prose-scope"><div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-        2026 Conferences Announced
-      </p>
-      <p class="govuk-notification-banner__body">
-        <strong>GovDev North (Newcastle, 30 Sept) and GovDev Midlands (Nottingham, 21 Oct) — register your interest now. <a class="govuk-notification-banner__link" href="/blog/2026/07/govdev-conferences-2026">Read the conference blog post</a>.</strong>
-      </p>
-  </div>
-</div>
-<p class="govuk-body"></div></p>
-</div><div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
   <h1 class="govuk-heading-l">Learn about</h1>
   </div>
@@ -140,12 +124,12 @@
 <li>Hosting virtual software engineering meetups</li>
 <li>We have a small facilitation group that is doing some of the initial setup</li>
 </ul>
-<h2 id="do-you-want-to-help-facilitate-the-group-%3F" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#do-you-want-to-help-facilitate-the-group-%3F"><span>Do you want to help facilitate the group ?</span></a></h2>
+<h2 id="do-you-want-to-help-facilitate-the-group" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#do-you-want-to-help-facilitate-the-group"><span>Do you want to help facilitate the group ?</span></a></h2>
 <p class="govuk-body">If you’re interested in helping to facilitate the group in the future, please reach out to one of the current management committee members who will be happy to discuss this with you.</p>
-<h2 id="join-us!" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#join-us!"><span>Join us!</span></a></h2>
+<h2 id="join-us" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#join-us"><span>Join us!</span></a></h2>
 <ul class="govuk-list govuk-list--bullet">
 <li>Join the community by signing up to our <a href="https://uk-cross-government-software-engineering-community.mailchimpsites.com/" class="govuk-link">mailing list</a></li>
-<li>Chat with us in <a href="https://ukgovernmentdigital.slack.com/archives/C23NQUH3L" class="govuk-link"><code class="x-govuk-code x-govuk-code--inline">#software-development</code></a> in <a href="https://x-govuk.github.io/posts/how-to-use-cross-government-slack/" class="govuk-link">cross-gov slack</a>.</li>
+<li>Chat with us in <a href="https://ukgovernmentdigital.slack.com/archives/C23NQUH3L" class="govuk-link"><code class="app-code app-code--inline">#software-development</code></a> in <a href="https://x-govuk.github.io/posts/how-to-use-cross-government-slack/" class="govuk-link">cross-gov slack</a>.</li>
 <li>Members can access our <a href="community-space" class="govuk-link">private community space</a> where you’ll find notes from our past meetings</li>
 </ul>
 <h2 id="contributing-to-this-site" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#contributing-to-this-site"><span>Contributing to this site</span></a></h2>
@@ -154,10 +138,8 @@
 
 
 <div class="x-govuk-related-navigation">
-  <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-links">
-    <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-links">
-      Related links
-    </h2>
+  <nav class="x-govuk-related-navigation__nav-section" aria-labelledby="related-navigation-related-links">
+    <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-links">Related links</h2>
     <ul class="x-govuk-related-navigation__link-list">
       <li class="x-govuk-related-navigation__link">
         <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../../objectives">Objectives</a>
@@ -196,6 +178,5 @@
 </footer>
 
 
-  <script src="/assets/govuk.js" type="module"></script>
   </body>
 </html>

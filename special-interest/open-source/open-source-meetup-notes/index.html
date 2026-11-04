@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c">
 
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/govuk.css">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any"><link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"><link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
+  <script src="/assets/application.js" type="module"></script>
+
+  <link rel="stylesheet" href="/assets/application.css">
 
 
   <meta property="og:title" content="x-gov Open Source Community Meeting Notes">
 
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
   </head>
   <body class="govuk-template__body">
     <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
@@ -45,11 +48,9 @@
 </nav>
 
         <main class="govuk-main-wrapper" id="main-content">
-  <header class="app-document-header">
-  <h1 class="app-document-header__title govuk-heading-xl">
-    x-gov Open Source Community Meeting Notes
-  </h1>
-
+  
+<header class="app-document-header">
+  <h1 class="govuk-heading-xl">x-gov Open Source Community Meeting Notes</h1>
 </header>
 
 
@@ -464,7 +465,7 @@ Learn more about Snyk Code that uses AI for code security testing and provides a
 <p class="govuk-body">Use of GitHub for documentation and diagrams-as-code</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><a href="https://github.com/co-cddo/data-architecture/tree/main#publish-to-public-repository" class="govuk-link">Example of following a private/public repo approach</a>, with github action that pushes files to the public repo based on a file extension and naming convention</li>
-<li>Specifically all PlantUML files <code class="x-govuk-code x-govuk-code--inline">.puml</code> are automatically published along with other files ending in <code class="x-govuk-code x-govuk-code--inline">-p.*</code></li>
+<li>Specifically all PlantUML files <code class="app-code app-code--inline">.puml</code> are automatically published along with other files ending in <code class="app-code app-code--inline">-p.*</code></li>
 <li>Bit of a hacky approach, using GitHub like a CMS</li>
 <li>Could there be something similar / more built-in using github pages?</li>
 <li>Could you extract -&gt; put in git -&gt; have a release pipeline to zip it up and attach to a release for people to consume?</li>
@@ -476,24 +477,24 @@ Learn more about Snyk Code that uses AI for code security testing and provides a
 </li>
 <li>Mermaid is natively supported by GitHub markdown:</li>
 </ul>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--mermaid" tabindex="0"><code>classDiagram
-  Doodad &lt;|-- Thingamy
-  Doodad &lt;|-- Wotsit
-  Doodad &lt;|-- Bananas
-  Doodad : +<span class="x-govuk-code__keyword">int</span> id
-  Doodad: +isUseful()
-  Doodad: +twiddle()
-  <span class="x-govuk-code__class"><span class="x-govuk-code__keyword">class</span> <span class="x-govuk-code__title">Thingamy</span></span>{
-    +String colour
-    +untwirl()
+<pre class="app-code app-code--block app-code__language--mermaid" tabindex="0"><code>classDiagram
+  <span class="app-code__title class_">Doodad</span> &lt;|-- <span class="app-code__title class_">Thingamy</span>
+  <span class="app-code__title class_">Doodad</span> &lt;|-- <span class="app-code__title class_">Wotsit</span>
+  <span class="app-code__title class_">Doodad</span> &lt;|-- <span class="app-code__title class_">Bananas</span>
+  <span class="app-code__title class_">Doodad</span> : +<span class="app-code__built_in">int</span> id
+  <span class="app-code__title class_">Doodad</span>: +<span class="app-code__title function_">isUseful</span>()
+  <span class="app-code__title class_">Doodad</span>: +<span class="app-code__title function_">twiddle</span>()
+  <span class="app-code__class"><span class="app-code__keyword">class</span> <span class="app-code__title">Thingamy</span></span>{
+    +<span class="app-code__title class_">String</span> colour
+    +<span class="app-code__title function_">untwirl</span>()
   }
-  <span class="x-govuk-code__class"><span class="x-govuk-code__keyword">class</span> <span class="x-govuk-code__title">Wotsit</span></span>{
-    -<span class="x-govuk-code__keyword">int</span> size
-    -canTwirl()
+  <span class="app-code__class"><span class="app-code__keyword">class</span> <span class="app-code__title">Wotsit</span></span>{
+    -<span class="app-code__built_in">int</span> size
+    -<span class="app-code__title function_">canTwirl</span>()
   }
-  <span class="x-govuk-code__class"><span class="x-govuk-code__keyword">class</span> <span class="x-govuk-code__title">Bananas</span></span>{
-    +bool defunct
-    +unfold()
+  <span class="app-code__class"><span class="app-code__keyword">class</span> <span class="app-code__title">Bananas</span></span>{
+    +<span class="app-code__built_in">bool</span> defunct
+    +<span class="app-code__title function_">unfold</span>()
   }
 </code></pre>
 
@@ -609,7 +610,7 @@ Learn more about Snyk Code that uses AI for code security testing and provides a
 </li>
 </ul>
 <h2 id="19-may-2023" tabindex="-1" class="govuk-heading-l"><a class="app-link--heading govuk-link" href="#19-may-2023"><span>19 May 2023</span></a></h2>
-<h3 id="code-reuse---open%2Finner-source-presentation" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#code-reuse---open%2Finner-source-presentation"><span>Code reuse - Open/Inner Source Presentation</span></a></h3>
+<h3 id="code-reuse-open-inner-source-presentation" tabindex="-1" class="govuk-heading-m"><a class="app-link--heading govuk-link" href="#code-reuse-open-inner-source-presentation"><span>Code reuse - Open/Inner Source Presentation</span></a></h3>
 <ul class="govuk-list govuk-list--bullet">
 <li>Presenter: <a href="https://github.com/soydaner" class="govuk-link">Soydaner</a></li>
 <li>Slides: <a href="/special-interest/open-source/open-source-presentation/" class="govuk-link">open source presentation</a></li>
@@ -720,6 +721,5 @@ Learn more about Snyk Code that uses AI for code security testing and provides a
 </footer>
 
 
-  <script src="/assets/govuk.js" type="module"></script>
   </body>
 </html>
