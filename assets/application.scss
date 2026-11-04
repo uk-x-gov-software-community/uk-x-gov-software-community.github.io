@@ -1,9 +1,16 @@
-$govuk-brand-colour:#09233b;
-$govuk-link-colour:#062D56;
-$govuk-link-hover-colour:#1d70b8;
 $xgov-font-family: 'Helvetica', 'Arial', sans-serif;
+$xgov-link-hover-colour: #1d70b8;
 
-$govuk-font-family: $xgov-font-family;
+@use "pkg:govuk-frontend/dist/govuk" with (
+  $govuk-font-family: $xgov-font-family,
+  $govuk-brand-colour: #09233b,
+  $govuk-link-colour: #062D56,
+  $govuk-link-hover-colour: $xgov-link-hover-colour,
+);
+
+// Use GOV.UK Eleventy Plugin
+@use "pkg:@x-govuk/govuk-eleventy-plugin";
+
 
 #xgov-logo {
     background-color: transparent;
@@ -20,6 +27,7 @@ $govuk-font-family: $xgov-font-family;
     background-position: 85% 70%;
     font-family: $xgov-font-family;
 }
+
 .govuk-heading-l {
-    color: $govuk-link-hover-colour !important;
+    color: $xgov-link-hover-colour !important;
 }
