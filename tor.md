@@ -112,7 +112,7 @@ The committee's responsibilities include:
 * communications and social media presence  
 * maintains meeting minutes
 
-The management committee comprises the following roles which will be elected annually at our Annual General Meeting:
+Members of the management committee will be elected annually at our Annual General Meeting. Following each election, the committee will agree how roles are allocated among its members, based on interests, skills and capacity. The committee will always include a **Chair** and a **Secretary**. Other roles are set by the committee to meet the community's needs, and may include:
 
 1. **Chair**: Leads the community and sets strategic direction.  
 2. **Secretary**: Organizes meetings of the management committee, ensure that the meetings are minuted and actions communicated  
@@ -124,6 +124,8 @@ The management committee comprises the following roles which will be elected ann
 4. **Communications officer**: Manages external communication through our email list, blogging, mailchimp list, coordinate newsletter (stretch goal)  
 5. **Social media officer**: develop our presence on social media  
 6. **Events officer:** coordinate and curate our events programme including Lean Coffee, liaise with SIGs to ensure a coherent overall events programme
+
+Role holders will be recorded in the committee's minutes.
 
 SIG Leads can attend the Management committee to observe, to provide updates or to present proposals but do not have voting rights on the management committee.
 
@@ -153,6 +155,8 @@ The management committee will meet monthly, usually virtually. The secretary wil
 
 Elections will be held at the Annual General Meeting (AGM). 
 
+The management committee has no fixed size. Unless the committee sets a maximum number of places before nominations open, all eligible nominees will be elected unopposed and confirmed at the AGM. If a maximum is set and nominations exceed it, members will vote by ballot.
+
 The AGM will be held no later than 13 Months after the previous AGM. 
 
 Officers will serve for a 1 year term (or until the next AGM), for a maximum of 3 years. 
@@ -162,6 +166,12 @@ Notice of the AGM will be issued to members by the secretary no less than 3 week
 An AGM requires the same quorum as the Management committee. 
 
 The management committee can call an Extraordinary General Meeting at any time. The notice period and conditions of the AGM apply. 
+
+### Amending these Terms of Reference
+
+These Terms of Reference may be amended by a majority vote of members present at an AGM or EGM. Proposed amendments must be included with the notice of the meeting, so members have at least 3 weeks to consider them.
+
+The Code of Conduct may continue to be reviewed and updated by the management committee, as set out under Review and Updates.
 
 ### Accountability
 
