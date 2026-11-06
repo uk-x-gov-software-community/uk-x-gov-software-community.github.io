@@ -20,7 +20,6 @@ Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-
 * Wednesday 22nd October 2025 - Inclusive Recruitment SIG catch up - 10:30am - 11:30am - Virtual - Contact [Kulwant Lall](mailto:Kulwant.Lall@Justice.gov.uk)
 * Thursday 25th September 2025 - Lean Coffee - 11am - 11:50am  - Virtual
 
-
 ## Special Interest Groups
 
 Here are the next meetings for the special interest groups.
