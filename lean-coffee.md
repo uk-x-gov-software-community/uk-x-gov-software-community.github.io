@@ -9,9 +9,9 @@ Our Lean Coffees are held on the fourth Thursday of each month at 11am to midday
 
 Lean Coffee is a structured but agenda-less meeting. See [the Lean Coffee website](http://leancoffee.org/) for more information.
 
-As a community, we populate a [HackMd](https://hackmd.io/) Kanban board with ideas. We then vote for ideas, start discussing in a timeboxed session, and vote whether to continue discussing or move on to the next idea at the end of the timebox.
+As a community, we populate a [HackMD](https://hackmd.io/) Kanban board with ideas. We then vote for ideas, start discussing in a timeboxed session, and vote whether to continue discussing or move on to the next idea at the end of the timebox.
 
-You do not need to bring any content in advance. We will ask people to contribute topics in the session, however if you have something you want to discuss with the group, you can add it to our HackMd beforehand.
+You do not need to bring any content in advance. We will ask people to contribute topics in the session, however if you have something you want to discuss with the group, you can add it to our HackMD beforehand.
 
 ### Getting in touch
 
