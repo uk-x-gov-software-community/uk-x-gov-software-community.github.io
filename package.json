@@ -5,7 +5,7 @@
   "main": ".eleventy.js",
   "dependencies": {
     "@dvsa/cookie-manager": "^1.1.2",
-    "@x-govuk/govuk-eleventy-plugin": "^7.0.0",
+    "@x-govuk/govuk-eleventy-plugin": "^9.0.2",
     "npm": "^11.8.0",
     "sass": "^1.97.3"
   },
