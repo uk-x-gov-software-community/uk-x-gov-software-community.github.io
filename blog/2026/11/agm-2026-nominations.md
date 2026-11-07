@@ -29,7 +29,7 @@ You don't need to be a senior leader or a seasoned organiser to stand. We want a
 
 The nomination form is now available on the [nominations page](/nominations/). We'll also share the link on the mailing list and in [`#software-development`](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L) on cross-government Slack. 
 
-Voting is open to community members who have been on our [mailing list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) for at least six weeks, so if you're not signed up yet, please join.
+Nominees will have their nomination information shared on our website for members to review ahead of our AGM on 10th December. In a change from last year, we are proposing that all nominees are elected as a slate at the AGM. This reflects the intention of the committee to allow anyone who wants to be more involved to join the management committee.
 
 ## Thinking about it? Let's talk
 
