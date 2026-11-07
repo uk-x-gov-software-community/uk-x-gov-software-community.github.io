@@ -16,7 +16,7 @@ It's been a big year for the community. We've run monthly Lean Coffees, supporte
 
 We're inviting **self-nominations** for the management committee, the small group of facilitators who help run the community. Under our [Terms of Reference](/tor/), committee members serve a one-year term, and the committee includes these roles:
 
-- **Chair** – leads the community and sets strategic direction
+- **Chair** – chairs management committee meetings and sets the strategic direction
 - **Secretary** – organises committee meetings and makes sure actions are recorded and shared
 - **Infrastructure officer** – looks after the website, GitHub organisation and mailing list, and acts as our data protection officer
 - **Communications officer** – manages the mailing list, blog and newsletter
