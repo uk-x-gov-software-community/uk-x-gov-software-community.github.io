@@ -8,7 +8,7 @@ excerpt: "Our Annual General Meeting takes place on 10 December 2026. We're look
 author: Shaun Hare
 ---
 
-Our Annual General Meeting (AGM) will take place on **Wednesday 10 December 2026**. Full joining details and the agenda will be sent to members on the mailing list ahead of the day.
+Our Annual General Meeting (AGM) will take place on **Thursday 10 December 2026**. Full joining details and the agenda will be sent to members on the mailing list ahead of the day.
 
 It's been a big year for the community. We've run monthly Lean Coffees, supported our special interest groups, and brought people together in person at GovDev North in Newcastle and GovDev Midlands in Nottingham. None of that happens without a group of volunteers behind the scenes, and the AGM is where we elect the people who'll take that work forward next year.
 
