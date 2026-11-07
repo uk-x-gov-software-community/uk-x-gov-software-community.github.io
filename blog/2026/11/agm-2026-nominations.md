@@ -27,7 +27,7 @@ You don't need to be a senior leader or a seasoned organiser to stand. We want a
 
 ## How to nominate yourself
 
-The nomination form is now available on the [nominations page](/nominations/). We'll also share the link on the mailing list and in [`#software-development`](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L) on cross-government Slack. In the meantime, start thinking about a short statement on why you'd like to get involved and what you'd bring.
+The nomination form is now available on the [nominations page](/nominations/). We'll also share the link on the mailing list and in [`#software-development`](https://ukgovernmentdigital.slack.com/archives/C23NQUH3L) on cross-government Slack. 
 
 Voting is open to community members who have been on our [mailing list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) for at least six weeks, so if you're not signed up yet, please join.
 
