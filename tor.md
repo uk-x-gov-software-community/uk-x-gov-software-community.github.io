@@ -155,7 +155,7 @@ The management committee will meet monthly, usually virtually. The secretary wil
 
 Elections will be held at the Annual General Meeting (AGM). 
 
-The management committee has no fixed size. Unless the committee sets a maximum number of places before nominations open, all eligible nominees will be elected unopposed and confirmed at the AGM. If a maximum is set and nominations exceed it, members will vote by ballot.
+The management committee has no fixed size. All eligible nominees will be elected unopposed and confirmed at the AGM unless the committee sets a maximum number of places before nominations open and nominations exceed that maximum. In that case, members will vote by ballot.
 
 The AGM will be held no later than 13 Months after the previous AGM. 
 
