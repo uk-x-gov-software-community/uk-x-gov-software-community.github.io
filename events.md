@@ -4,21 +4,8 @@ title: Events
 ---
 
 # Upcoming Events  
-Join us for La Suite Numerique Tech Talk, a technical deep dive into the French Government open source project May 7th 11am [get tickets](https://www.eventbrite.co.uk/e/la-suite-numerique-tech-talk-tickets-1985703135532)
 
 Our regular lean coffees meetings are on the 4th Thursday of the month at 11.00-12.00. To get an invite please [join the mailchimp list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) 
-
-## 2026
-* 23rd July 2026 - Virtual - 11:00 - 12:00 - Lean Coffee
-* 30th September 2026 - In Person - Newcastle - [GovDev North 2026](https://www.eventbrite.co.uk/e/govdev-north-2026-tickets-1990481756516)
-* 21st October 2026 - In Person - Nottingham - [GovDev Midlands 2026](https://www.eventbrite.co.uk/e/govdev-midlands-2026-tickets-1992339250330)
-
-* Thursday 18th December 2025 - Lean Coffee - 11am - 11:50am - Virtual
-* Thursday 4th December 2025 - Green Software Community meeting - 1 PM - 2 PM - Virtual
-* Thursday 27th November 2025 - Lean Coffee - 11am - 11:50am - Virtual
-* Thursday 30th October 2025 - Lean Coffee - 11am - 11:50am - Virtual
-* Wednesday 22nd October 2025 - Inclusive Recruitment SIG catch up - 10:30am - 11:30am - Virtual - Contact [Kulwant Lall](mailto:Kulwant.Lall@Justice.gov.uk)
-* Thursday 25th September 2025 - Lean Coffee - 11am - 11:50am  - Virtual
 
 ## Special Interest Groups
 
@@ -45,10 +32,19 @@ If you wish to join this interest group, please [contact us](/special-interest/#
 
 * 7th May 2026 - Virtual - 11:00 - La Suite Numerique Tech Talk - a technical deep dive into the French Government open source project [get tickets](https://www.eventbrite.co.uk/e/la-suite-numerique-tech-talk-tickets-1985703135532)
 * June 2026 - Virtual - DEFRA - Interactive maps virtual Talk
+* 23rd July 2026 - Virtual - 11:00 - 12:00 - Lean Coffee
+* 30th September 2026 - In Person - Newcastle - [GovDev North 2026](https://www.eventbrite.co.uk/e/govdev-north-2026-tickets-1990481756516)
+* 21st October 2026 - In Person - Nottingham - [GovDev Midlands 2026](https://www.eventbrite.co.uk/e/govdev-midlands-2026-tickets-1992339250330)
 
 ## 2025
 
 * 31st July 2025 - Virtual - 11:00 - 12:00 - Lean Coffee
+* Thursday 25th September 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Wednesday 22nd October 2025 - Inclusive Recruitment SIG catch up - 10:30am - 11:30am - Virtual - Contact [Kulwant Lall](mailto:Kulwant.Lall@Justice.gov.uk)
+* Thursday 30th October 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Thursday 27th November 2025 - Lean Coffee - 11am - 11:50am - Virtual
+* Thursday 4th December 2025 - Green Software Community meeting - 1 PM - 2 PM - Virtual
+* Thursday 18th December 2025 - Lean Coffee - 11am - 11:50am - Virtual
 
 We just ran * 29th January 2025 - In Person Conference  - 9:00 - 17:00 - [Cross Government Software Engineering Conference 2025 see details ](/conference-2025-01-29/)!
 
