@@ -3,9 +3,11 @@ $xgov-link-hover-colour: #1d70b8;
 
 @use "pkg:govuk-frontend/dist/govuk" with (
   $govuk-font-family: $xgov-font-family,
-  $govuk-brand-colour: #09233b,
-  $govuk-link-colour: #062D56,
-  $govuk-link-hover-colour: $xgov-link-hover-colour,
+  $govuk-functional-colours: (
+    brand: #09233b,
+    link: #062D56,
+    link-hover: $xgov-link-hover-colour,
+  ),
 );
 
 // Use GOV.UK Eleventy Plugin
