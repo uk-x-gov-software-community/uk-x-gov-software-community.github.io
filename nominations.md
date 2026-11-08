@@ -10,7 +10,7 @@ The nominations to be a member of the management committee are now open. If you 
 
 Nominations will close at **12:00 on Monday 7 December 2026**.
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMWznVRC98YmdMflxgqQdKFh3xHRLCrYX0CNxlSmPIIM-hPw/viewform?embedded=true" style="width: 100%; max-width: 640px; height: 1789px; border: 0;" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMWznVRC98YmdMflxgqQdKFh3xHRLCrYX0CNxlSmPIIM-hPw/viewform?embedded=true" style="width: 100%; max-width: 640px; height: 1889px; border: 0;" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 
 Your nomination details will be shared on our website for members to review ahead of our AGM on 10th December. In a change from last year, nominees will be elected to the management committee as a slate by a single hand vote at the AGM.
