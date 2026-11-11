@@ -27,4 +27,4 @@ International Governments digital blogs and news we are aware of can be found [h
 
 ### Tools
 
-[Cross-UK-Gov Public Repository Leaderboard](https://github.com/uk-x-gov-software-community/xgov-opensource-repo-scraper) - a tool listing open source repos from across government - You can get the raw data in [json format](https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/repos.json) which is updated nightly via github actions.
+[Cross-UK-Gov Public Repository Leaderboard](https://github.com/uk-x-gov-software-community/xgov-opensource-repo-scraper) - a tool listing open source repos from across government - You can get the raw data in [json format](https://uk-x-gov-software-community.github.io/xgov-opensource-repo-scraper/repos.json) which is updated nightly via GitHub Actions.
