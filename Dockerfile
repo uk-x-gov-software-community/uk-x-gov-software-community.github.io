@@ -1,29 +1,23 @@
 FROM node:22-alpine
 
-ENV USER=xgov-software-community
-ENV UID=1001
-ENV GID=1001
+ENV APP_USER=xgov-software-community \
+    APP_UID=1001 \
+    APP_GID=1001
 
-RUN mkdir -p /app
+RUN addgroup -g "$APP_GID" "$APP_USER" \
+    && adduser -D -H -h /app -G "$APP_USER" -u "$APP_UID" "$APP_USER" \
+    && mkdir -p /app \
+    && chown "$APP_UID:$APP_GID" /app
+
 WORKDIR /app
 
-RUN addgroup -g "$UID" "$USER"
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "$(pwd)" \
-    --ingroup "$USER" \
-    --no-create-home \
-    --uid "$UID" \
-    "$USER"
+COPY package.json package-lock.json ./
+RUN npm ci
 
-COPY . /app/
-RUN npm install
+COPY --chown=1001:1001 . .
 
-RUN chown -R "$UID":"$GID" /app
-
-USER "$UID"
+USER 1001:1001
 
 EXPOSE 8081
 
-CMD [ "npx", "@11ty/eleventy", "--serve", "--port=8081" ]
+CMD ["npx", "@11ty/eleventy", "--serve", "--port=8081"]
