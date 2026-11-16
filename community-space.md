@@ -25,7 +25,7 @@ Here's how it looks:
 
 To get access to the community space:
 
-1. sign up to the [mailchimp email list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) and provide your <b>GitHub username</b> (the textual id such as `heathd` rather than the numeric id or email address)
+1. Sign up to the [mailchimp email list](https://uk-cross-government-software-engineering-community.mailchimpsites.com/) and provide your <b>GitHub username</b> (the textual id such as `heathd` rather than the numeric id or email address)
 2. We'll review your request to ensure you've given a <b>valid government email address</b>
 3. If approved, you'll get an email invitation from GitHub to join the `uk-x-gov-software-community` organisation).
 4. Make sure you accept the invitation, it expires after 7 days
